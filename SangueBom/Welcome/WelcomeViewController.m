@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    s
+    
     self.signupButton.layer.cornerRadius = 5.0;
     self.facebookButton.layer.cornerRadius = 5.0;
     self.loginButton.layer.cornerRadius = 5.0;
