@@ -24,6 +24,7 @@
     self.signupButton.layer.cornerRadius = 5.0;
     self.facebookButton.layer.cornerRadius = 5.0;
     self.loginButton.layer.cornerRadius = 5.0;
+    s
     
     [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init]
                                                   forBarMetrics:UIBarMetricsDefault];

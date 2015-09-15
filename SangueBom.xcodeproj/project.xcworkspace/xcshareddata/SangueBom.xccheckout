@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>294E66F4-8AAE-4608-817E-C10E1B4FF7DD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SangueBom</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BD0A759CA3D1A2F56AF2AA00E9380F4FA3A347BC</key>
+		<string>https://github.com/marioconcilio/SangueBom.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SangueBom.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BD0A759CA3D1A2F56AF2AA00E9380F4FA3A347BC</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/marioconcilio/SangueBom.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BD0A759CA3D1A2F56AF2AA00E9380F4FA3A347BC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BD0A759CA3D1A2F56AF2AA00E9380F4FA3A347BC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SangueBom</string>
+		</dict>
+	</array>
+</dict>
+</plist>
