@@ -14,6 +14,12 @@
 		425AE3421BA886560059F945 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 425AE3411BA886560059F945 /* Images.xcassets */; };
 		425AE3451BA886560059F945 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 425AE3431BA886560059F945 /* LaunchScreen.xib */; };
 		425AE3511BA886560059F945 /* SangueBomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE3501BA886560059F945 /* SangueBomTests.m */; };
+		425AE35E1BA888800059F945 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 425AE35D1BA888800059F945 /* Welcome.storyboard */; };
+		425AE3611BA888980059F945 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE3601BA888980059F945 /* WelcomeViewController.m */; };
+		425AE3651BA888B00059F945 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE3641BA888B00059F945 /* SignupViewController.m */; };
+		425AE3691BA888C40059F945 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE3681BA888C40059F945 /* LoginViewController.m */; };
+		425AE36E1BA8944E0059F945 /* FadeInAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE36B1BA8944E0059F945 /* FadeInAnimator.m */; };
+		425AE36F1BA8944E0059F945 /* FadeInNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE36D1BA8944E0059F945 /* FadeInNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +46,17 @@
 		425AE34A1BA886560059F945 /* SangueBomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SangueBomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		425AE34F1BA886560059F945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		425AE3501BA886560059F945 /* SangueBomTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SangueBomTests.m; sourceTree = "<group>"; };
+		425AE35D1BA888800059F945 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Welcome.storyboard; path = Welcome/Welcome.storyboard; sourceTree = "<group>"; };
+		425AE35F1BA888980059F945 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WelcomeViewController.h; path = Welcome/WelcomeViewController.h; sourceTree = "<group>"; };
+		425AE3601BA888980059F945 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WelcomeViewController.m; path = Welcome/WelcomeViewController.m; sourceTree = "<group>"; };
+		425AE3631BA888B00059F945 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignupViewController.h; path = Welcome/Signup/SignupViewController.h; sourceTree = "<group>"; };
+		425AE3641BA888B00059F945 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignupViewController.m; path = Welcome/Signup/SignupViewController.m; sourceTree = "<group>"; };
+		425AE3671BA888C40059F945 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Welcome/Login/LoginViewController.h; sourceTree = "<group>"; };
+		425AE3681BA888C40059F945 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Welcome/Login/LoginViewController.m; sourceTree = "<group>"; };
+		425AE36A1BA8944E0059F945 /* FadeInAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FadeInAnimator.h; path = Transitions/FadeIn/FadeInAnimator.h; sourceTree = "<group>"; };
+		425AE36B1BA8944E0059F945 /* FadeInAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FadeInAnimator.m; path = Transitions/FadeIn/FadeInAnimator.m; sourceTree = "<group>"; };
+		425AE36C1BA8944E0059F945 /* FadeInNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FadeInNavigationController.h; path = Transitions/FadeIn/FadeInNavigationController.h; sourceTree = "<group>"; };
+		425AE36D1BA8944E0059F945 /* FadeInNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FadeInNavigationController.m; path = Transitions/FadeIn/FadeInNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +98,8 @@
 		425AE3331BA886560059F945 /* SangueBom */ = {
 			isa = PBXGroup;
 			children = (
+				425AE3701BA894580059F945 /* Transitions */,
+				425AE35A1BA888540059F945 /* Welcome */,
 				425AE3381BA886560059F945 /* AppDelegate.h */,
 				425AE3391BA886560059F945 /* AppDelegate.m */,
 				425AE33B1BA886560059F945 /* ViewController.h */,
@@ -117,6 +136,55 @@
 				425AE34F1BA886560059F945 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		425AE35A1BA888540059F945 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				425AE3661BA888B50059F945 /* Login */,
+				425AE3621BA8889D0059F945 /* Signup */,
+				425AE35F1BA888980059F945 /* WelcomeViewController.h */,
+				425AE3601BA888980059F945 /* WelcomeViewController.m */,
+				425AE35D1BA888800059F945 /* Welcome.storyboard */,
+			);
+			name = Welcome;
+			sourceTree = "<group>";
+		};
+		425AE3621BA8889D0059F945 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				425AE3631BA888B00059F945 /* SignupViewController.h */,
+				425AE3641BA888B00059F945 /* SignupViewController.m */,
+			);
+			name = Signup;
+			sourceTree = "<group>";
+		};
+		425AE3661BA888B50059F945 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				425AE3671BA888C40059F945 /* LoginViewController.h */,
+				425AE3681BA888C40059F945 /* LoginViewController.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		425AE3701BA894580059F945 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				425AE3711BA8945E0059F945 /* FadeIn */,
+			);
+			name = Transitions;
+			sourceTree = "<group>";
+		};
+		425AE3711BA8945E0059F945 /* FadeIn */ = {
+			isa = PBXGroup;
+			children = (
+				425AE36A1BA8944E0059F945 /* FadeInAnimator.h */,
+				425AE36B1BA8944E0059F945 /* FadeInAnimator.m */,
+				425AE36C1BA8944E0059F945 /* FadeInNavigationController.h */,
+				425AE36D1BA8944E0059F945 /* FadeInNavigationController.m */,
+			);
+			name = FadeIn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				425AE3401BA886560059F945 /* Main.storyboard in Resources */,
+				425AE35E1BA888800059F945 /* Welcome.storyboard in Resources */,
 				425AE3451BA886560059F945 /* LaunchScreen.xib in Resources */,
 				425AE3421BA886560059F945 /* Images.xcassets in Resources */,
 			);
@@ -220,8 +289,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				425AE33D1BA886560059F945 /* ViewController.m in Sources */,
+				425AE3611BA888980059F945 /* WelcomeViewController.m in Sources */,
+				425AE36F1BA8944E0059F945 /* FadeInNavigationController.m in Sources */,
+				425AE3691BA888C40059F945 /* LoginViewController.m in Sources */,
 				425AE33A1BA886560059F945 /* AppDelegate.m in Sources */,
 				425AE3371BA886560059F945 /* main.m in Sources */,
+				425AE36E1BA8944E0059F945 /* FadeInAnimator.m in Sources */,
+				425AE3651BA888B00059F945 /* SignupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +492,7 @@
 				425AE3561BA886560059F945 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		425AE3571BA886560059F945 /* Build configuration list for PBXNativeTarget "SangueBomTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +501,7 @@
 				425AE3591BA886560059F945 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
