@@ -84,7 +84,7 @@
     NSDictionary *parameters = @{@"password": password,
                                  @"email": email};
     
-    NSString *url = [NSString stringWithFormat:@"%@/login", kBaseURL];
+    NSString *url = [NSString stringWithFormat:@"%@/login", @"asd"];
     
     AFHTTPSessionManager *manager = [self managerWithAuth:NO];
     
