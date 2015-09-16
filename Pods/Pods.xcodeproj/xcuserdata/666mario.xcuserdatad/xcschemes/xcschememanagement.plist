@@ -7,42 +7,52 @@
 		<key>AFNetworking.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<true/>
+			<false/>
+		</dict>
+		<key>AFViewShaker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>KIF.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<true/>
+			<false/>
 		</dict>
 		<key>KVNProgress.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<true/>
+			<false/>
 		</dict>
 		<key>Pods-SangueBom.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<true/>
+			<false/>
 		</dict>
 		<key>Pods-SangueBomTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<true/>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>03C0EF882950FEA6483BE367793E3731</key>
+		<key>1D8A91B20ADD270BC78C476D8AED52C5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>73B0E9DC42475069730B58542298A908</key>
+		<key>61AFCC3EC0774F59BE355FB3F980436D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>84B8A6F664D99A3199112F07BB8283DE</key>
+		<key>7E815D6E7793F91C8CEAA55B7ED1E4A4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B76FFAD4EC5A1ED4168EA6C2F277105E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,7 +62,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DD89E47560AF56FDF666EF27B2A2C3B5</key>
+		<key>DAF45E766C1BF66DFF19F9BC789547A0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

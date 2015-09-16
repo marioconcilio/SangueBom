@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.6.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - AFViewShaker (0.0.2)
   - KIF (3.3.0):
     - KIF/Core (= 3.3.0)
   - KIF/Core (3.3.0)
@@ -27,11 +28,13 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6)
+  - AFViewShaker
   - KIF (~> 3.0)
   - KVNProgress
 
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
+  AFViewShaker: 7e4bc215ca3e92347b78da436fca74e1730b52e8
   KIF: 0a82046d06f3648799cac522d2d0f7934214caac
   KVNProgress: 7001d2d16a2755cee5599e8e485befe056f2197b
 

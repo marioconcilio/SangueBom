@@ -7,6 +7,10 @@
 //
 
 #import "LoginViewController.h"
+#import "APIService.h"
+
+#import <AFViewShaker/AFViewShaker.h>
+#import <KVNProgress/KVNProgress.h>
 
 #define kEmailTag   89
 #define kPassTag    90
@@ -16,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 
 @end
 
@@ -33,6 +38,7 @@
     self.passwordTextField.delegate = self;
     
     self.loginButton.layer.cornerRadius = 5.0;
+    self.errorLabel.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,7 +48,43 @@
 
 #pragma mark - Actions
 - (IBAction)doLogin:(UIButton *)sender {
+    [self.view endEditing:YES];
     
+    if (self.emailTextField.text.length == 0 || self.passwordTextField.text.length == 0) {
+        [self showError];
+        return;
+    }
+    
+    [[APIService sharedInstance] login:self.emailTextField.text
+                              password:self.passwordTextField.text
+                                 block:^(NSError *error) {
+                                     [KVNProgress dismiss];
+                                     
+                                     if (error) {
+                                         NSLog(@"code: %ld, %@", error.code, [error.userInfo valueForKey:NSLocalizedDescriptionKey]);
+                                         [self showError];
+                                     }
+                                     else {
+                                         NSLog(@"login success");
+                                         self.errorLabel.hidden = YES;
+                                         [KVNProgress showSuccessWithStatus:@"Logado"];
+                                     }
+                                 }];
+}
+
+#pragma mark - Helper Methods
+- (void)showError {
+    AFViewShaker *shaker = [[AFViewShaker alloc] initWithViewsArray:@[self.emailTextField,
+                                                                      self.passwordTextField]];
+    [shaker shake];
+    
+    [UIView transitionWithView:self.errorLabel
+                      duration:0.3
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{
+                        self.errorLabel.hidden = NO;
+                    }
+                    completion:NULL];
 }
 
 #pragma mark - TextField Delegate

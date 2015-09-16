@@ -20,7 +20,9 @@
 		425AE3691BA888C40059F945 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE3681BA888C40059F945 /* LoginViewController.m */; };
 		425AE36E1BA8944E0059F945 /* FadeInAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE36B1BA8944E0059F945 /* FadeInAnimator.m */; };
 		425AE36F1BA8944E0059F945 /* FadeInNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE36D1BA8944E0059F945 /* FadeInNavigationController.m */; };
-		42F1C8651BA995DD002B6CF2 /* WelcomeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F1C8641BA995DD002B6CF2 /* WelcomeTests.m */; };
+		42F1C8651BA995DD002B6CF2 /* WelcomeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F1C8641BA995DD002B6CF2 /* WelcomeUITests.m */; };
+		42F1C8691BA9A74B002B6CF2 /* APIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F1C8681BA9A74B002B6CF2 /* APIService.m */; };
+		42F1C86F1BA9BC87002B6CF2 /* APIServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F1C86E1BA9BC87002B6CF2 /* APIServiceTests.m */; };
 		6EA495C986002EF4DE827221 /* libPods-SangueBom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A5DAA66E5AB340EB57C19C /* libPods-SangueBom.a */; };
 		982EC87153329E75287A9670 /* libPods-SangueBomTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65643619A2E320A06B24BFE6 /* libPods-SangueBomTests.a */; };
 /* End PBXBuildFile section */
@@ -61,7 +63,10 @@
 		425AE36B1BA8944E0059F945 /* FadeInAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FadeInAnimator.m; path = Transitions/FadeIn/FadeInAnimator.m; sourceTree = "<group>"; };
 		425AE36C1BA8944E0059F945 /* FadeInNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FadeInNavigationController.h; path = Transitions/FadeIn/FadeInNavigationController.h; sourceTree = "<group>"; };
 		425AE36D1BA8944E0059F945 /* FadeInNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FadeInNavigationController.m; path = Transitions/FadeIn/FadeInNavigationController.m; sourceTree = "<group>"; };
-		42F1C8641BA995DD002B6CF2 /* WelcomeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeTests.m; sourceTree = "<group>"; };
+		42F1C8641BA995DD002B6CF2 /* WelcomeUITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeUITests.m; sourceTree = "<group>"; };
+		42F1C8671BA9A74B002B6CF2 /* APIService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIService.h; path = API/APIService.h; sourceTree = "<group>"; };
+		42F1C8681BA9A74B002B6CF2 /* APIService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIService.m; path = API/APIService.m; sourceTree = "<group>"; };
+		42F1C86E1BA9BC87002B6CF2 /* APIServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIServiceTests.m; sourceTree = "<group>"; };
 		65643619A2E320A06B24BFE6 /* libPods-SangueBomTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SangueBomTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CC7FDD5135EB24949CB3F65 /* Pods-SangueBom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SangueBom.release.xcconfig"; path = "Pods/Target Support Files/Pods-SangueBom/Pods-SangueBom.release.xcconfig"; sourceTree = "<group>"; };
 		6D4D051B23902711283E3E43 /* Pods-SangueBomTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SangueBomTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SangueBomTests/Pods-SangueBomTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +126,7 @@
 		425AE3331BA886560059F945 /* SangueBom */ = {
 			isa = PBXGroup;
 			children = (
+				42F1C8661BA9A739002B6CF2 /* API */,
 				425AE3701BA894580059F945 /* Transitions */,
 				425AE35A1BA888540059F945 /* Welcome */,
 				425AE3381BA886560059F945 /* AppDelegate.h */,
@@ -147,8 +153,9 @@
 		425AE34D1BA886560059F945 /* SangueBomTests */ = {
 			isa = PBXGroup;
 			children = (
+				42F1C8641BA995DD002B6CF2 /* WelcomeUITests.m */,
+				42F1C86E1BA9BC87002B6CF2 /* APIServiceTests.m */,
 				425AE3501BA886560059F945 /* SangueBomTests.m */,
-				42F1C8641BA995DD002B6CF2 /* WelcomeTests.m */,
 				425AE34E1BA886560059F945 /* Supporting Files */,
 			);
 			path = SangueBomTests;
@@ -209,6 +216,15 @@
 				425AE36D1BA8944E0059F945 /* FadeInNavigationController.m */,
 			);
 			name = FadeIn;
+			sourceTree = "<group>";
+		};
+		42F1C8661BA9A739002B6CF2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				42F1C8671BA9A74B002B6CF2 /* APIService.h */,
+				42F1C8681BA9A74B002B6CF2 /* APIService.m */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 		FFD4394DE65DE7956C1A72DE /* Pods */ = {
@@ -390,6 +406,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42F1C8691BA9A74B002B6CF2 /* APIService.m in Sources */,
 				425AE33D1BA886560059F945 /* ViewController.m in Sources */,
 				425AE3611BA888980059F945 /* WelcomeViewController.m in Sources */,
 				425AE36F1BA8944E0059F945 /* FadeInNavigationController.m in Sources */,
@@ -405,7 +422,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42F1C8651BA995DD002B6CF2 /* WelcomeTests.m in Sources */,
+				42F1C86F1BA9BC87002B6CF2 /* APIServiceTests.m in Sources */,
+				42F1C8651BA995DD002B6CF2 /* WelcomeUITests.m in Sources */,
 				425AE3511BA886560059F945 /* SangueBomTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

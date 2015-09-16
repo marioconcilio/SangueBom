@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FCCA5FB0F635587BCA4E9054"
-               BuildableName = "libKVNProgress.a"
-               BlueprintName = "KVNProgress"
+               BlueprintIdentifier = "11C536B0923AB674F9D6E8CD"
+               BuildableName = "libAFViewShaker.a"
+               BlueprintName = "AFViewShaker"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

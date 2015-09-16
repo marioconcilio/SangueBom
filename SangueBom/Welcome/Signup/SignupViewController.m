@@ -8,6 +8,9 @@
 
 #import "SignupViewController.h"
 
+#import <AFViewShaker/AFViewShaker.h>
+#import <KVNProgress/KVNProgress.h>
+
 #define kNameTag    89
 #define kSurnameTag 90
 #define kEmailTag   91
@@ -20,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *signupButton;
+@property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 
 @end
 
@@ -41,6 +45,7 @@
     self.passwordTextField.delegate = self;
     
     self.signupButton.layer.cornerRadius = 5.0;
+    self.errorLabel.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,7 +55,37 @@
 
 #pragma mark - Actions
 - (IBAction)doSignup:(UIButton *)sender {
+    [self.view endEditing:YES];
+    if (self.nameTextField.text.length == 0 ||
+        self.surnameTextField.text.length == 0 ||
+        self.emailTextField.text.length == 0 ||
+        self.passwordTextField.text.length == 0) {
+        [self showError];
+        return;
+    }
     
+    [KVNProgress show];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [KVNProgress showSuccessWithStatus:@"Conta Criada"];
+    });
+}
+
+#pragma mark - Helper Methods
+- (void)showError {
+    AFViewShaker *shaker = [[AFViewShaker alloc] initWithViewsArray:@[self.nameTextField,
+                                                                      self.surnameTextField,
+                                                                      self.emailTextField,
+                                                                      self.passwordTextField]];
+    [shaker shake];
+    
+    [UIView transitionWithView:self.errorLabel
+                      duration:0.3
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{
+                        self.errorLabel.hidden = NO;
+                    }
+                    completion:NULL];
 }
 
 #pragma mark - TextField Delegate

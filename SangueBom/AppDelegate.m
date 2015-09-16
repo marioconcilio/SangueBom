@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import <KVNProgress/KVNProgress.h>
+#import <KVNProgress/KVNProgressConfiguration.h>
 
 @interface AppDelegate ()
 
@@ -20,6 +22,10 @@
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Thin" size:17.0],
                                                            NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    
+    KVNProgressConfiguration *config = [[KVNProgressConfiguration alloc] init];
+    config.statusFont = [UIFont fontWithName:@"HelveticaNeue-Thin" size:15.0];
+    [KVNProgress setConfiguration:config];
     
     return YES;
 }
