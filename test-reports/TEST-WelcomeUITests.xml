@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite errors="0" failures="0" hostname="MacBook" name="WelcomeUITests" tests="6" time="10.0" timestamp="2015-09-16 13:42:12 -0300"><testcase classname='WelcomeUITests' name='test00NavigationToSignup' time='0.614' />
+<testcase classname='WelcomeUITests' name='test01SignupTextFields' time='4.986' />
+<testcase classname='WelcomeUITests' name='test02BackToWelcome' time='0.52' />
+<testcase classname='WelcomeUITests' name='test03NavigationToLogin' time='0.514' />
+<testcase classname='WelcomeUITests' name='test04LoginTextFields' time='3.229' />
+<testcase classname='WelcomeUITests' name='test05BackToWelcome' time='0.518' />
+</testsuite>

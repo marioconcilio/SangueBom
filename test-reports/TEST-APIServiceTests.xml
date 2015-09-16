@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite errors="0" failures="0" hostname="MacBook" name="APIServiceTests" tests="5" time="0.0" timestamp="2015-09-16 13:42:02 -0300"><testcase classname='APIServiceTests' name='testLogin' time='0.132' />
+<testcase classname='APIServiceTests' name='testSingletonDifferentFromUniqueInstance' time='0.0' />
+<testcase classname='APIServiceTests' name='testSingletonReturnsSameSharedInstance' time='0.0' />
+<testcase classname='APIServiceTests' name='testSingletonSharedInstance' time='0.0' />
+<testcase classname='APIServiceTests' name='testUniqueInstance' time='0.0' />
+</testsuite>

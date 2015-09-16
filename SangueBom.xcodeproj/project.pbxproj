@@ -13,7 +13,6 @@
 		425AE3401BA886560059F945 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 425AE33E1BA886560059F945 /* Main.storyboard */; };
 		425AE3421BA886560059F945 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 425AE3411BA886560059F945 /* Images.xcassets */; };
 		425AE3451BA886560059F945 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 425AE3431BA886560059F945 /* LaunchScreen.xib */; };
-		425AE3511BA886560059F945 /* SangueBomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE3501BA886560059F945 /* SangueBomTests.m */; };
 		425AE35E1BA888800059F945 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 425AE35D1BA888800059F945 /* Welcome.storyboard */; };
 		425AE3611BA888980059F945 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE3601BA888980059F945 /* WelcomeViewController.m */; };
 		425AE3651BA888B00059F945 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE3641BA888B00059F945 /* SignupViewController.m */; };
@@ -51,7 +50,6 @@
 		425AE3441BA886560059F945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		425AE34A1BA886560059F945 /* SangueBomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SangueBomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		425AE34F1BA886560059F945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		425AE3501BA886560059F945 /* SangueBomTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SangueBomTests.m; sourceTree = "<group>"; };
 		425AE35D1BA888800059F945 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Welcome.storyboard; path = Welcome/Welcome.storyboard; sourceTree = "<group>"; };
 		425AE35F1BA888980059F945 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WelcomeViewController.h; path = Welcome/WelcomeViewController.h; sourceTree = "<group>"; };
 		425AE3601BA888980059F945 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WelcomeViewController.m; path = Welcome/WelcomeViewController.m; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 			children = (
 				42F1C8641BA995DD002B6CF2 /* WelcomeUITests.m */,
 				42F1C86E1BA9BC87002B6CF2 /* APIServiceTests.m */,
-				425AE3501BA886560059F945 /* SangueBomTests.m */,
 				425AE34E1BA886560059F945 /* Supporting Files */,
 			);
 			path = SangueBomTests;
@@ -424,7 +421,6 @@
 			files = (
 				42F1C86F1BA9BC87002B6CF2 /* APIServiceTests.m in Sources */,
 				42F1C8651BA995DD002B6CF2 /* WelcomeUITests.m in Sources */,
-				425AE3511BA886560059F945 /* SangueBomTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
