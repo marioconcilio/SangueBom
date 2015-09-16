@@ -7,30 +7,56 @@
 		<key>AFNetworking.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 		</dict>
 		<key>KIF.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 		</dict>
 		<key>KVNProgress.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 		</dict>
 		<key>Pods-SangueBom.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 		</dict>
 		<key>Pods-SangueBomTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>03C0EF882950FEA6483BE367793E3731</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>73B0E9DC42475069730B58542298A908</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>84B8A6F664D99A3199112F07BB8283DE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C6006376B638CB0483986C4D7EE9E995</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DD89E47560AF56FDF666EF27B2A2C3B5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>
