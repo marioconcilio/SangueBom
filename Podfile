@@ -2,10 +2,13 @@
 # platform :ios, '6.0'
 
 target 'SangueBom' do
+    pod 'AFNetworking', '~> 2.6'
+    pod 'KVNProgress'
 
 end
 
-target 'SangueBomTests' do
+target 'SangueBomTests', :exclusive => true do
+    pod 'KIF', '~> 3.0', :configurations => ['Debug']
 
 end
 

@@ -20,6 +20,9 @@
 		425AE3691BA888C40059F945 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE3681BA888C40059F945 /* LoginViewController.m */; };
 		425AE36E1BA8944E0059F945 /* FadeInAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE36B1BA8944E0059F945 /* FadeInAnimator.m */; };
 		425AE36F1BA8944E0059F945 /* FadeInNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE36D1BA8944E0059F945 /* FadeInNavigationController.m */; };
+		42F1C8651BA995DD002B6CF2 /* WelcomeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F1C8641BA995DD002B6CF2 /* WelcomeTests.m */; };
+		6EA495C986002EF4DE827221 /* libPods-SangueBom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A5DAA66E5AB340EB57C19C /* libPods-SangueBom.a */; };
+		982EC87153329E75287A9670 /* libPods-SangueBomTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65643619A2E320A06B24BFE6 /* libPods-SangueBomTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B2D17224C2F19B72A2FF1AC /* Pods-SangueBomTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SangueBomTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SangueBomTests/Pods-SangueBomTests.release.xcconfig"; sourceTree = "<group>"; };
 		425AE3311BA886560059F945 /* SangueBom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SangueBom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		425AE3351BA886560059F945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		425AE3361BA886560059F945 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -57,6 +61,12 @@
 		425AE36B1BA8944E0059F945 /* FadeInAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FadeInAnimator.m; path = Transitions/FadeIn/FadeInAnimator.m; sourceTree = "<group>"; };
 		425AE36C1BA8944E0059F945 /* FadeInNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FadeInNavigationController.h; path = Transitions/FadeIn/FadeInNavigationController.h; sourceTree = "<group>"; };
 		425AE36D1BA8944E0059F945 /* FadeInNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FadeInNavigationController.m; path = Transitions/FadeIn/FadeInNavigationController.m; sourceTree = "<group>"; };
+		42F1C8641BA995DD002B6CF2 /* WelcomeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeTests.m; sourceTree = "<group>"; };
+		65643619A2E320A06B24BFE6 /* libPods-SangueBomTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SangueBomTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CC7FDD5135EB24949CB3F65 /* Pods-SangueBom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SangueBom.release.xcconfig"; path = "Pods/Target Support Files/Pods-SangueBom/Pods-SangueBom.release.xcconfig"; sourceTree = "<group>"; };
+		6D4D051B23902711283E3E43 /* Pods-SangueBomTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SangueBomTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SangueBomTests/Pods-SangueBomTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D8A5DAA66E5AB340EB57C19C /* libPods-SangueBom.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SangueBom.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCE41971E4AD9094DBD67153 /* Pods-SangueBom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SangueBom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SangueBom/Pods-SangueBom.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EA495C986002EF4DE827221 /* libPods-SangueBom.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,18 +82,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				982EC87153329E75287A9670 /* libPods-SangueBomTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28427377B144412B31681ECA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65643619A2E320A06B24BFE6 /* libPods-SangueBomTests.a */,
+				D8A5DAA66E5AB340EB57C19C /* libPods-SangueBom.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		425AE3281BA886560059F945 = {
 			isa = PBXGroup;
 			children = (
 				425AE3331BA886560059F945 /* SangueBom */,
 				425AE34D1BA886560059F945 /* SangueBomTests */,
 				425AE3321BA886560059F945 /* Products */,
+				FFD4394DE65DE7956C1A72DE /* Pods */,
+				28427377B144412B31681ECA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				425AE3501BA886560059F945 /* SangueBomTests.m */,
+				42F1C8641BA995DD002B6CF2 /* WelcomeTests.m */,
 				425AE34E1BA886560059F945 /* Supporting Files */,
 			);
 			path = SangueBomTests;
@@ -187,6 +211,17 @@
 			name = FadeIn;
 			sourceTree = "<group>";
 		};
+		FFD4394DE65DE7956C1A72DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6D4D051B23902711283E3E43 /* Pods-SangueBomTests.debug.xcconfig */,
+				3B2D17224C2F19B72A2FF1AC /* Pods-SangueBomTests.release.xcconfig */,
+				DCE41971E4AD9094DBD67153 /* Pods-SangueBom.debug.xcconfig */,
+				6CC7FDD5135EB24949CB3F65 /* Pods-SangueBom.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -194,9 +229,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 425AE3541BA886560059F945 /* Build configuration list for PBXNativeTarget "SangueBom" */;
 			buildPhases = (
+				CA7B44F0625D0938ED7A5A5E /* Check Pods Manifest.lock */,
 				425AE32D1BA886560059F945 /* Sources */,
 				425AE32E1BA886560059F945 /* Frameworks */,
 				425AE32F1BA886560059F945 /* Resources */,
+				72D479B4C8EE76376B354BF2 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -211,9 +248,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 425AE3571BA886560059F945 /* Build configuration list for PBXNativeTarget "SangueBomTests" */;
 			buildPhases = (
+				C0E4BB95E7ED032B20E65848 /* Check Pods Manifest.lock */,
 				425AE3461BA886560059F945 /* Sources */,
 				425AE3471BA886560059F945 /* Frameworks */,
 				425AE3481BA886560059F945 /* Resources */,
+				06935867F17401FF83E3AC92 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -283,6 +322,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06935867F17401FF83E3AC92 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SangueBomTests/Pods-SangueBomTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72D479B4C8EE76376B354BF2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SangueBom/Pods-SangueBom-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0E4BB95E7ED032B20E65848 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CA7B44F0625D0938ED7A5A5E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		425AE32D1BA886560059F945 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -303,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42F1C8651BA995DD002B6CF2 /* WelcomeTests.m in Sources */,
 				425AE3511BA886560059F945 /* SangueBomTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +522,7 @@
 		};
 		425AE3551BA886560059F945 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCE41971E4AD9094DBD67153 /* Pods-SangueBom.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SangueBom/Info.plist;
@@ -430,6 +534,7 @@
 		};
 		425AE3561BA886560059F945 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CC7FDD5135EB24949CB3F65 /* Pods-SangueBom.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SangueBom/Info.plist;
@@ -441,6 +546,7 @@
 		};
 		425AE3581BA886560059F945 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D4D051B23902711283E3E43 /* Pods-SangueBomTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -460,6 +566,7 @@
 		};
 		425AE3591BA886560059F945 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B2D17224C2F19B72A2FF1AC /* Pods-SangueBomTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
