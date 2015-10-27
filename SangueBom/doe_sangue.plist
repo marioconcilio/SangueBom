@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Você pode doar sangue?</key>
+	<true/>
+	<key>Tem idade entre 18 e 67 anos?</key>
+    <true/>
+	<key>Está com boa saúde (sem gripe, resfriado, diarréia ou alergias) e sem feridas ou machucados no corpo ou na boca?</key>
+	<true/>
+	<key>Pesa mais que 50 kg?</key>
+	<true/>
+	<key>Já teve ou tem: Hepatite após os 11 anos de idade, Diabetes tipo I e Diabetes tipo II insulinodependentes, Lepra (Hanseníase), Doença de Chagas, Malária (Maleita), AIDS, Diabetes ou Câncer?</key>
+	<false/>
+	<key>Fez ou faz uso de drogas ilícitas?</key>
+	<false/>
+	<key>Mantém relações sexuais de risco, com parceiros desconhecidos ou relações sem proteção?</key>
+	<false/>
+	<key>Sua ultima doação ocorreu a mais de 90 dias (mulher) ou a mais de 60 dias (homem)?</key>
+    <true/>
+</dict>
+</plist>

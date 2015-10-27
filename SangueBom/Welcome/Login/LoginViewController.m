@@ -6,9 +6,10 @@
 //  Copyright (c) 2015 Mario Concilio. All rights reserved.
 //
 
-#import "LoginViewController.h"
 #import "APIService.h"
-
+#import "AppDelegate.h"
+#import "LoginViewController.h"
+#import "Macros.h"
 #import <AFViewShaker/AFViewShaker.h>
 #import <KVNProgress/KVNProgress.h>
 
@@ -28,8 +29,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.navigationItem.title = @"Login";
     
     self.emailTextField.tag = kEmailTag;
     self.passwordTextField.tag = kPassTag;
@@ -55,19 +54,20 @@
         return;
     }
     
+//    [KVNProgress show];
+    
     [[APIService sharedInstance] login:self.emailTextField.text
                               password:self.passwordTextField.text
                                  block:^(NSError *error) {
-                                     [KVNProgress dismiss];
+//                                     [KVNProgress dismiss];
                                      
                                      if (error) {
-                                         NSLog(@"code: %ld, %@", error.code, [error.userInfo valueForKey:NSLocalizedDescriptionKey]);
+                                         NSLog(@"code: %ld, %@", error.code, error.userInfo[NSLocalizedDescriptionKey]);
                                          [self showError];
                                      }
                                      else {
-                                         NSLog(@"login success");
                                          self.errorLabel.hidden = YES;
-                                         [KVNProgress showSuccessWithStatus:@"Logado"];
+                                         [UIAppDelegate defineRootViewControllerAnimated:YES];
                                      }
                                  }];
 }

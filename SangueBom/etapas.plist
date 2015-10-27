@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1. Recepção</key>
+	<string>É realizado o cadastro do doador, a sua identificação, onde vai preencher um cadastro com os seus dados pessoais. Não esqueça: somente podem doar aqueles que apresentarem no momento do cadastro um documento oficial com foto (RG, carteiria de motorista, carteira profissional, passaporte etc.).</string>
+	<key>2. Pré-Triagem</key>
+	<string>É realizada a verificação dos dados vitais (pressão arterial, pulso, temperatura, peso e altura) e a realização do teste de anemia, realizado com uma mínima quantidade de sangue coletado a partir de uma punção na região digital do doador.</string>
+	<key>3. Triagem Clínica</key>
+	<string>É realizada a entrevista com o doador, na qual um profissional capacitado o questiona sobre seu estado de saúde, doenças atuais e pregressas, tratamentos médicos e cirúrgicos, uso de medicamentos, estilo de vida, visando a sua proteção e a proteção de quem irá receber o seu sangue. É o momento em que o doador é avaliado se está apto ou inapto à doação de sangue.</string>
+	<key>4. Coleta de Sangue</key>
+	<string>O sangue é colhido utilizando-se material totalmente descartável, estéril livre de contaminação. O procedimento é realizado por profissionais altamente capacitados e com segurança. O tempo de doação é em torno de 10 minutos, serão coletados em torno de 450 ml de sangue e mais 3 tubos para exames laboratoriais obrigatórios.</string>
+	<key>5. Copa</key>
+	<string>Após a doação, você será encaminhado para um lanche para auxiliar na sua hidratação e repor o volume doado. Deve ainda permanecer no banco de sangue por aproximadamente 15 minutos após a doação e, deixar o banco de sangue somente se estiver se sentindo bem.</string>
+</dict>
+</plist>

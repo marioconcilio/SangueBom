@@ -7,14 +7,14 @@
 //
 
 #import "APIService.h"
-#import <AFNetworking/AFNetworking.h>
-
-#define kBaseURL        @"http://ec2-54-94-252-195.sa-east-1.compute.amazonaws.com"
-#define kUserToken      @"user_token"
-#define kProfileInfo    @"profile_info"
-#define NSUserDefaults  [NSUserDefaults standardUserDefaults]
+#import "Person.h"
+#import "Macros.h"
+#import "Helper.h"
+#import <MagicalRecord/MagicalRecord.h>
 
 @implementation APIService
+
+static NSString *const kDomain = @"com.marioconcilio.SangueBom";
 
 #pragma mark - Shared Instance
 + (instancetype)sharedInstance {
@@ -29,83 +29,60 @@
 }
 
 #pragma mark - Private Methods
-- (AFHTTPSessionManager *)managerWithAuth:(BOOL)auth {
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    //    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    
-    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    
-    if (auth) {
-        [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:@"x" password:[NSUserDefaults objectForKey:kUserToken]];
-    }
-    
-    return manager;
+- (void)saveUserInfo:(Person *)person {
+    [Helper saveCustomObject:person forKey:kProfileInfo];
+    [NSUserDefaults setObject:person.email forKey:kUserToken];
+    [NSUserDefaults synchronize];
 }
 
-//- (void)saveUserInfo:(NSDictionary *)dictionary {
-//    VOUser *user = [[VOUser alloc] initWithDictionary:dictionary];
-//    [Helper saveCustomObject:user forKey:kProfileInfo];
-//    [NSUserDefaults setObject:[dictionary objectForKey:@"student_hash"] forKey:kUserToken];
-//    [NSUserDefaults synchronize];
-//}
-
 #pragma mark - Login & Register User Flow
-- (void)registerUser:(NSString *)name email:(NSString *)email password:(NSString *)password block:(void (^)(NSError *error))block {
-    NSDictionary *parameters = @{@"name": name,
-                                 @"email": email,
-                                 @"password": password};
+- (void)registerUser:(NSString *)name
+             surname:(NSString *)surname
+               email:(NSString *)email
+            password:(NSString *)password
+            birthday:(NSDate *)birthday
+           bloodType:(NSString *)bloodType
+               block:(void (^)(NSError *error))block {
+    __block Person *person = [Person MR_findFirstByAttribute:@"email" withValue:email];
+    if (person) {
+        block([NSError errorWithDomain:kDomain code:400 userInfo:@{NSLocalizedDescriptionKey: @"email already exists"}]);
+        return;
+    }
     
-    NSString *url = [NSString stringWithFormat:@"%@/student", kBaseURL];
-    AFHTTPSessionManager *manager = [self managerWithAuth:NO];
-    
-    [manager POST:url
-       parameters:parameters
-          success:^(NSURLSessionDataTask *operation, id responseObject) {
-              NSDictionary *response = (NSDictionary *)responseObject;
-              if (![[response valueForKey:@"error"] boolValue]) {
-//                  [self saveUserInfo:response];
-                  block(nil);
-              }
-              else {
-                  NSInteger statusCode = [[response valueForKey:@"status_code"] integerValue];
-                  NSDictionary *info = @{NSLocalizedDescriptionKey: [response valueForKey:@"message"]};
-                  block([NSError errorWithDomain:@"Fanta" code:statusCode userInfo:info]);
-              }
-          }
-          failure:^(NSURLSessionDataTask *operation, NSError *error) {
-              block(error);
-              NSLog(@"%@", error.debugDescription);
-          }];
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+        person = [Person MR_createEntityInContext:localContext];
+        person.name = name;
+        person.surname = surname;
+        person.email = email;
+        person.password = password;
+        person.birthday = birthday;
+        person.bloodType = bloodType;
+    } completion:^(BOOL contextDidSave, NSError *error) {
+        if (contextDidSave) {
+            [self saveUserInfo:person];
+            block(nil);
+        }
+        else {
+            block(error);
+        }
+    }];
 }
 
 - (void)login:(NSString *)email password:(NSString *)password block:(void (^)(NSError *error))block {
-    NSDictionary *parameters = @{@"password": password,
-                                 @"email": email};
-    
-    NSString *url = [NSString stringWithFormat:@"%@/login", kBaseURL];
-    
-    AFHTTPSessionManager *manager = [self managerWithAuth:NO];
-    
-    [manager POST: url
-       parameters:parameters
-          success:^(NSURLSessionDataTask *operation, id responseObject) {
-              NSDictionary *response = (NSDictionary *)responseObject;
-              if (![[response valueForKey: @"error"] boolValue]) {
-//                  [self saveUserInfo:response];
-                  block(nil);
-              }
-              else {
-                  NSInteger statusCode = [[response valueForKey:@"status_code"] integerValue];
-                  NSDictionary *info = @{NSLocalizedDescriptionKey: [response valueForKey:@"message"]};
-                  block([NSError errorWithDomain:@"Fanta" code:statusCode userInfo:info]);
-              }
-          }
-          failure:^(NSURLSessionDataTask *operation, NSError *error) {
-              block(error);
-              NSLog(@"%@", error.debugDescription);
-          }];
+    Person *person = [Person MR_findFirstByAttribute:@"email" withValue:email];
+    if (person) {
+        if ([password isEqualToString:person.password]) {
+            [self saveUserInfo:person];
+            block(nil);
+        }
+        else {
+            block([NSError errorWithDomain:kDomain code:400 userInfo:@{NSLocalizedDescriptionKey: @"wrong password"}]);
+        }
+    }
+    else {
+        block([NSError errorWithDomain:kDomain code:400 userInfo:@{NSLocalizedDescriptionKey: @"wrong email"}]);
+    }
+
 }
 
 @end

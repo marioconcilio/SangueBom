@@ -7,7 +7,8 @@
 //
 
 #import "SignupViewController.h"
-
+#import "Person.h"
+#import "MoreInfoViewController.h"
 #import <AFViewShaker/AFViewShaker.h>
 #import <KVNProgress/KVNProgress.h>
 
@@ -27,12 +28,12 @@
 
 @end
 
+static NSString *const kMoreInfoSegue = @"moreInfoSegue";
+
 @implementation SignupViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.navigationItem.title = @"Criar Conta";
     
     self.nameTextField.tag = kNameTag;
     self.surnameTextField.tag = kSurnameTag;
@@ -53,6 +54,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:kMoreInfoSegue]) {
+        MoreInfoViewController *vc = (MoreInfoViewController *) segue.destinationViewController;
+        vc.name = self.nameTextField.text;
+        vc.surname = self.surnameTextField.text;
+        vc.email = self.emailTextField.text;
+        vc.password = self.passwordTextField.text;
+    }
+}
+
 #pragma mark - Actions
 - (IBAction)doSignup:(UIButton *)sender {
     [self.view endEditing:YES];
@@ -64,11 +76,13 @@
         return;
     }
     
-    [KVNProgress show];
+    [self performSegueWithIdentifier:kMoreInfoSegue sender:self];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [KVNProgress showSuccessWithStatus:@"Conta Criada"];
-    });
+//    [KVNProgress show];
+//    
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [KVNProgress showSuccessWithStatus:@"Conta Criada"];
+//    });
 }
 
 #pragma mark - Helper Methods
@@ -91,7 +105,8 @@
 #pragma mark - TextField Delegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if (textField.tag == kPassTag) {
-        [textField resignFirstResponder];
+//        [textField resignFirstResponder];
+        [self doSignup:nil];
     }
     else {
         UITextField *txt = (UITextField *) [self.view viewWithTag:textField.tag + 1];

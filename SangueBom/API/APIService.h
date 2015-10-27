@@ -14,8 +14,11 @@
 
 #pragma mark - Login & Signup Flow
 - (void)registerUser:(NSString *)name
+             surname:(NSString *)surname
                email:(NSString *)email
             password:(NSString *)password
+            birthday:(NSDate *)birthday
+           bloodType:(NSString *)bloodType
                block:(void (^)(NSError *error))block;
 
 - (void)login:(NSString *)email

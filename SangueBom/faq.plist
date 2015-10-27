@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Por que o diabético não pode doar sangue?</key>
+	<string>Diabético que não pode doar sangue é aquele que chamamos de insulino-dependente; ou seja, aquele que necessita de insulina para manter seu metabolismo de açúcar próximo da normalidade. Esses pacientes têm importantes alterações do sistema cardiovascular e, em conseqüência disto, durante ou logo após a doação de sangue, podem apresentar alguma reação que agrave seu estado de saúde.</string>
+    <key>Por que pessoas com peso inferior a 50kg não podem doar sangue?</key>
+    <string>O volume de sangue total a ser coletado é diretamente relacionado ao peso do doador. Para os homens não pode exceder a 9ml / kg peso e, para as mulheres, a 8ml / kg peso. O anticoagulante presente na bolsa de coleta liga-se ao sangue impedindo que este coagule. O volume de anticoagulante da bolsa é padronizado para um mínimo de 400ml de sangue. Logo, uma pessoa com peso inferior a 50 kg não poderia doar o volume mínimo.</string>
+    <key>Menores de 18 anos podem doar?</key>
+    <string>De acordo com a legislação brasileira que regulamenta as normas técnicas a serem aplicadas em todos os bancos de sangue do país, o menor de idade poderá doar sangue a partir dos 16 anos, sempre com autorização prévia dos pais ou responsáveis e com o formulário " Autorização para doação de sangue por menor de idade" preenchido.</string>
+    <key>A doação de sangue é permitida durante a amamentação?</key>
+    <string>Não. A mulher que está amamentando não pode doar sangue, a menos que o parto tenha ocorrido há mais de um ano.</string>
+    <key>Qual o tempo que o organismo leva para repor o sangue doado?</key>
+    <string>A reposição do volume de plasma retirado se dá entre 48 a 72h, sendo que a reposição de hemácias é mais lenta - ao redor de 4 semanas. A reposição do volume de plasma ocorre em 24 horas e a dos glóbulos vermelhos em 4 semanas. Entretanto, para o organismo atingir o mesmo nível de estoque de ferro que apresentava antes da doação, são necessárias 8 semanas para os homens e 12 semanas para as mulheres. Esses são os intervalos mínimos entre as duas doações de sangue.</string>
+    <key>Quais as vacinas que impedem a doação? Quanto tempo depois de ter tomado a vacina a pessoa poderá doar sangue?</key>
+    <string>Vacinas compostas de vírus ou bactérias vivos e atenuados (ex.: sarampo, poliomielite oral, febre amarela) necessitam de 3 a 4 semanas de intervalo para a doação. Já as vacinas compostas de vírus ou bactérias mortas, toxóides ou recombinantes (ex.: tétano, poliomielite salk etc) exigem um período mínimo de 48 horas para doação de sangue desde que o candidato não apresente qualquer reação decorrente da vacinação. Vacinação anti-rábica após exposição animal exige período mínimo de 01 ano para a doação de sangue.</string>
+    <key>Por que só 1 dia de abono pela doação de sangue?</key>
+    <string>É o que estabelecem a CLT e a CLF.</string>
+</dict>
+</plist>

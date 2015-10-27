@@ -14,12 +14,32 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>JSQMessagesViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JSQSystemSoundPlayer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>KIF.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>KVNProgress.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MagicalRecord.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>NYAlertViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -34,35 +54,75 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SSKeychain.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SWRevealViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1D8A91B20ADD270BC78C476D8AED52C5</key>
+		<key>06B2232CE73059846F04E5C3DFEE0D38</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>61AFCC3EC0774F59BE355FB3F980436D</key>
+		<key>1900A4786F2C4637F2AE1016FFBB8E6A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7E815D6E7793F91C8CEAA55B7ED1E4A4</key>
+		<key>25CF57D5F98A0EB7650687DEEB11C50C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B76FFAD4EC5A1ED4168EA6C2F277105E</key>
+		<key>2EFEDBB649146422B0A076290AB959DE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C6006376B638CB0483986C4D7EE9E995</key>
+		<key>393EE65B1532ED3D13242071B215784B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DAF45E766C1BF66DFF19F9BC789547A0</key>
+		<key>410B25DF16EA5C5B3E2698F74F9625FB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4964B5F6DB39F365B3C3DF6017696E8F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>499E02707080D83C86D4029D60C38866</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4CDD1CF6EBD53220271E2AA912E9771C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6CD72EBA655AD61991863324DEF7B562</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D54AB3ECEB9A8FBA15D4F73CBE326692</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D607CE439EBD256738A38E8D3933E56F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

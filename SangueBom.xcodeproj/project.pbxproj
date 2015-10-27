@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		425AE3371BA886560059F945 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE3361BA886560059F945 /* main.m */; };
 		425AE33A1BA886560059F945 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE3391BA886560059F945 /* AppDelegate.m */; };
-		425AE33D1BA886560059F945 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE33C1BA886560059F945 /* ViewController.m */; };
-		425AE3401BA886560059F945 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 425AE33E1BA886560059F945 /* Main.storyboard */; };
 		425AE3421BA886560059F945 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 425AE3411BA886560059F945 /* Images.xcassets */; };
 		425AE3451BA886560059F945 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 425AE3431BA886560059F945 /* LaunchScreen.xib */; };
 		425AE35E1BA888800059F945 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 425AE35D1BA888800059F945 /* Welcome.storyboard */; };
@@ -19,9 +17,35 @@
 		425AE3691BA888C40059F945 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE3681BA888C40059F945 /* LoginViewController.m */; };
 		425AE36E1BA8944E0059F945 /* FadeInAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE36B1BA8944E0059F945 /* FadeInAnimator.m */; };
 		425AE36F1BA8944E0059F945 /* FadeInNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE36D1BA8944E0059F945 /* FadeInNavigationController.m */; };
+		4289DA2E1BD99FD1006D35D3 /* UIViewController+BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4289DA2D1BD99FD1006D35D3 /* UIViewController+BaseViewController.m */; settings = {ASSET_TAGS = (); }; };
+		428BCCB81BD93650007DBD77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 428BCCB71BD93650007DBD77 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		428BCCBC1BD9526A007DBD77 /* DrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 428BCCBB1BD9526A007DBD77 /* DrawerViewController.m */; settings = {ASSET_TAGS = (); }; };
+		428BCCC21BD95677007DBD77 /* UIColor+CustomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 428BCCC11BD95677007DBD77 /* UIColor+CustomColor.m */; settings = {ASSET_TAGS = (); }; };
+		428BCCC51BD9591A007DBD77 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 428BCCC41BD9591A007DBD77 /* Helper.m */; settings = {ASSET_TAGS = (); }; };
+		42B420EA1BDEDF3800453D31 /* DoeSangueButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B420E91BDEDF3800453D31 /* DoeSangueButtonCell.m */; settings = {ASSET_TAGS = (); }; };
+		42B420EE1BDEF0BC00453D31 /* SangueBomModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42B420EC1BDEF0BC00453D31 /* SangueBomModel.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
+		42B420F81BDEF9F100453D31 /* PerfilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B420F71BDEF9F100453D31 /* PerfilViewController.m */; settings = {ASSET_TAGS = (); }; };
+		42B421021BDF0A0900453D31 /* MoreInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B421011BDF0A0900453D31 /* MoreInfoViewController.m */; settings = {ASSET_TAGS = (); }; };
+		42B421071BDF1BFB00453D31 /* Person+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B421041BDF1BFB00453D31 /* Person+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		42B421081BDF1BFB00453D31 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B421061BDF1BFB00453D31 /* Person.m */; settings = {ASSET_TAGS = (); }; };
+		42B449721BDE8D4F005FA81D /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B449711BDE8D4F005FA81D /* FAQViewController.m */; settings = {ASSET_TAGS = (); }; };
+		42B449761BDE8F38005FA81D /* FAQCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B449751BDE8F38005FA81D /* FAQCell.m */; settings = {ASSET_TAGS = (); }; };
+		42B4497A1BDE95AC005FA81D /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B449791BDE95AC005FA81D /* MapViewController.m */; settings = {ASSET_TAGS = (); }; };
+		42B4497C1BDE982E005FA81D /* doe_sangue.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42B4497B1BDE982E005FA81D /* doe_sangue.plist */; settings = {ASSET_TAGS = (); }; };
+		42B449801BDE9944005FA81D /* DoeSangueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B4497F1BDE9944005FA81D /* DoeSangueCell.m */; settings = {ASSET_TAGS = (); }; };
+		42E0EDBC1BDD52D40097233B /* faq.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42E0EDBB1BDD52D40097233B /* faq.plist */; settings = {ASSET_TAGS = (); }; };
 		42F1C8651BA995DD002B6CF2 /* WelcomeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F1C8641BA995DD002B6CF2 /* WelcomeUITests.m */; };
 		42F1C8691BA9A74B002B6CF2 /* APIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F1C8681BA9A74B002B6CF2 /* APIService.m */; };
 		42F1C86F1BA9BC87002B6CF2 /* APIServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F1C86E1BA9BC87002B6CF2 /* APIServiceTests.m */; };
+		42F543DB1BDAE57200121B77 /* UIFont+CustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F543DA1BDAE57200121B77 /* UIFont+CustomFont.m */; settings = {ASSET_TAGS = (); }; };
+		42F543DF1BDAF34E00121B77 /* EtapasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F543DE1BDAF34E00121B77 /* EtapasViewController.m */; settings = {ASSET_TAGS = (); }; };
+		42F543E41BDAF41100121B77 /* EtapasCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F543E31BDAF41000121B77 /* EtapasCell.m */; settings = {ASSET_TAGS = (); }; };
+		42F543E61BDAF78700121B77 /* etapas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42F543E51BDAF78700121B77 /* etapas.plist */; settings = {ASSET_TAGS = (); }; };
+		42F543E91BDAFBFE00121B77 /* UIStoryboard+CustomStoryboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F543E81BDAFBFE00121B77 /* UIStoryboard+CustomStoryboard.m */; settings = {ASSET_TAGS = (); }; };
+		42F543EE1BDB05E900121B77 /* CuriosidadesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F543ED1BDB05E900121B77 /* CuriosidadesCell.m */; settings = {ASSET_TAGS = (); }; };
+		42F543F11BDB060200121B77 /* CuriosidadesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F543F01BDB060200121B77 /* CuriosidadesViewController.m */; settings = {ASSET_TAGS = (); }; };
+		42F543F31BDB075F00121B77 /* curiosidades.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42F543F21BDB075F00121B77 /* curiosidades.plist */; settings = {ASSET_TAGS = (); }; };
+		42FF4AAA1BDABAFE00E3BFC5 /* DoeSangueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FF4AA91BDABAFE00E3BFC5 /* DoeSangueViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6EA495C986002EF4DE827221 /* libPods-SangueBom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A5DAA66E5AB340EB57C19C /* libPods-SangueBom.a */; };
 		982EC87153329E75287A9670 /* libPods-SangueBomTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65643619A2E320A06B24BFE6 /* libPods-SangueBomTests.a */; };
 /* End PBXBuildFile section */
@@ -43,9 +67,6 @@
 		425AE3361BA886560059F945 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		425AE3381BA886560059F945 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		425AE3391BA886560059F945 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		425AE33B1BA886560059F945 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		425AE33C1BA886560059F945 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		425AE33F1BA886560059F945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		425AE3411BA886560059F945 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		425AE3441BA886560059F945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		425AE34A1BA886560059F945 /* SangueBomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SangueBomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,10 +82,57 @@
 		425AE36B1BA8944E0059F945 /* FadeInAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FadeInAnimator.m; path = Transitions/FadeIn/FadeInAnimator.m; sourceTree = "<group>"; };
 		425AE36C1BA8944E0059F945 /* FadeInNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FadeInNavigationController.h; path = Transitions/FadeIn/FadeInNavigationController.h; sourceTree = "<group>"; };
 		425AE36D1BA8944E0059F945 /* FadeInNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FadeInNavigationController.m; path = Transitions/FadeIn/FadeInNavigationController.m; sourceTree = "<group>"; };
+		4289DA2C1BD99FD1006D35D3 /* UIViewController+BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+BaseViewController.h"; path = "Categories/UIViewController+BaseViewController.h"; sourceTree = "<group>"; };
+		4289DA2D1BD99FD1006D35D3 /* UIViewController+BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+BaseViewController.m"; path = "Categories/UIViewController+BaseViewController.m"; sourceTree = "<group>"; };
+		428BCCB71BD93650007DBD77 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Controller/SideMenu/Main.storyboard; sourceTree = "<group>"; };
+		428BCCBA1BD9526A007DBD77 /* DrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DrawerViewController.h; path = Controller/SideMenu/Drawer/DrawerViewController.h; sourceTree = "<group>"; };
+		428BCCBB1BD9526A007DBD77 /* DrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DrawerViewController.m; path = Controller/SideMenu/Drawer/DrawerViewController.m; sourceTree = "<group>"; };
+		428BCCBE1BD9543A007DBD77 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Macros.h; path = Helper/Macros.h; sourceTree = "<group>"; };
+		428BCCC01BD95677007DBD77 /* UIColor+CustomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+CustomColor.h"; path = "Categories/UIColor+CustomColor.h"; sourceTree = "<group>"; };
+		428BCCC11BD95677007DBD77 /* UIColor+CustomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+CustomColor.m"; path = "Categories/UIColor+CustomColor.m"; sourceTree = "<group>"; };
+		428BCCC31BD9591A007DBD77 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Helper.h; path = Helper/Helper.h; sourceTree = "<group>"; };
+		428BCCC41BD9591A007DBD77 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Helper.m; path = Helper/Helper.m; sourceTree = "<group>"; };
+		42B420E81BDEDF3800453D31 /* DoeSangueButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DoeSangueButtonCell.h; path = Controller/SideMenu/DoeSangue/DoeSangueButtonCell/DoeSangueButtonCell.h; sourceTree = "<group>"; };
+		42B420E91BDEDF3800453D31 /* DoeSangueButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DoeSangueButtonCell.m; path = Controller/SideMenu/DoeSangue/DoeSangueButtonCell/DoeSangueButtonCell.m; sourceTree = "<group>"; };
+		42B420ED1BDEF0BC00453D31 /* SangueBomModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SangueBomModel.xcdatamodel; sourceTree = "<group>"; };
+		42B420F61BDEF9F100453D31 /* PerfilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PerfilViewController.h; path = Controller/SideMenu/Perfil/PerfilViewController.h; sourceTree = "<group>"; };
+		42B420F71BDEF9F100453D31 /* PerfilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PerfilViewController.m; path = Controller/SideMenu/Perfil/PerfilViewController.m; sourceTree = "<group>"; };
+		42B421001BDF0A0900453D31 /* MoreInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoreInfoViewController.h; path = Welcome/MoreInfo/MoreInfoViewController.h; sourceTree = "<group>"; };
+		42B421011BDF0A0900453D31 /* MoreInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoreInfoViewController.m; path = Welcome/MoreInfo/MoreInfoViewController.m; sourceTree = "<group>"; };
+		42B421031BDF1BFB00453D31 /* Person+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Person+CoreDataProperties.h"; path = "Model/Person+CoreDataProperties.h"; sourceTree = "<group>"; };
+		42B421041BDF1BFB00453D31 /* Person+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Person+CoreDataProperties.m"; path = "Model/Person+CoreDataProperties.m"; sourceTree = "<group>"; };
+		42B421051BDF1BFB00453D31 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Person.h; path = Model/Person.h; sourceTree = "<group>"; };
+		42B421061BDF1BFB00453D31 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = Model/Person.m; sourceTree = "<group>"; };
+		42B449701BDE8D4F005FA81D /* FAQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FAQViewController.h; path = Controller/SideMenu/FAQ/FAQViewController.h; sourceTree = "<group>"; };
+		42B449711BDE8D4F005FA81D /* FAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FAQViewController.m; path = Controller/SideMenu/FAQ/FAQViewController.m; sourceTree = "<group>"; };
+		42B449741BDE8F38005FA81D /* FAQCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FAQCell.h; path = Controller/SideMenu/FAQ/FAQCell/FAQCell.h; sourceTree = "<group>"; };
+		42B449751BDE8F38005FA81D /* FAQCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FAQCell.m; path = Controller/SideMenu/FAQ/FAQCell/FAQCell.m; sourceTree = "<group>"; };
+		42B449781BDE95AC005FA81D /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = Controller/SideMenu/Map/MapViewController.h; sourceTree = "<group>"; };
+		42B449791BDE95AC005FA81D /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = Controller/SideMenu/Map/MapViewController.m; sourceTree = "<group>"; };
+		42B4497B1BDE982E005FA81D /* doe_sangue.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = doe_sangue.plist; sourceTree = "<group>"; };
+		42B4497E1BDE9944005FA81D /* DoeSangueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DoeSangueCell.h; path = Controller/SideMenu/DoeSangue/DoeSangueCell/DoeSangueCell.h; sourceTree = "<group>"; };
+		42B4497F1BDE9944005FA81D /* DoeSangueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DoeSangueCell.m; path = Controller/SideMenu/DoeSangue/DoeSangueCell/DoeSangueCell.m; sourceTree = "<group>"; };
+		42E0EDBB1BDD52D40097233B /* faq.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = faq.plist; sourceTree = "<group>"; };
 		42F1C8641BA995DD002B6CF2 /* WelcomeUITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeUITests.m; sourceTree = "<group>"; };
 		42F1C8671BA9A74B002B6CF2 /* APIService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIService.h; path = API/APIService.h; sourceTree = "<group>"; };
 		42F1C8681BA9A74B002B6CF2 /* APIService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIService.m; path = API/APIService.m; sourceTree = "<group>"; };
 		42F1C86E1BA9BC87002B6CF2 /* APIServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIServiceTests.m; sourceTree = "<group>"; };
+		42F543D91BDAE57200121B77 /* UIFont+CustomFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+CustomFont.h"; path = "Categories/UIFont+CustomFont.h"; sourceTree = "<group>"; };
+		42F543DA1BDAE57200121B77 /* UIFont+CustomFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+CustomFont.m"; path = "Categories/UIFont+CustomFont.m"; sourceTree = "<group>"; };
+		42F543DD1BDAF34E00121B77 /* EtapasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EtapasViewController.h; path = Controller/SideMenu/Etapas/EtapasViewController.h; sourceTree = "<group>"; };
+		42F543DE1BDAF34E00121B77 /* EtapasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EtapasViewController.m; path = Controller/SideMenu/Etapas/EtapasViewController.m; sourceTree = "<group>"; };
+		42F543E21BDAF41000121B77 /* EtapasCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EtapasCell.h; path = Controller/SideMenu/Etapas/EtapasCell/EtapasCell.h; sourceTree = "<group>"; };
+		42F543E31BDAF41000121B77 /* EtapasCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EtapasCell.m; path = Controller/SideMenu/Etapas/EtapasCell/EtapasCell.m; sourceTree = "<group>"; };
+		42F543E51BDAF78700121B77 /* etapas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = etapas.plist; sourceTree = "<group>"; };
+		42F543E71BDAFBFE00121B77 /* UIStoryboard+CustomStoryboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIStoryboard+CustomStoryboard.h"; path = "Categories/UIStoryboard+CustomStoryboard.h"; sourceTree = "<group>"; };
+		42F543E81BDAFBFE00121B77 /* UIStoryboard+CustomStoryboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIStoryboard+CustomStoryboard.m"; path = "Categories/UIStoryboard+CustomStoryboard.m"; sourceTree = "<group>"; };
+		42F543EC1BDB05E900121B77 /* CuriosidadesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CuriosidadesCell.h; path = Controller/SideMenu/Curiosidades/CuriosidadesCell/CuriosidadesCell.h; sourceTree = "<group>"; };
+		42F543ED1BDB05E900121B77 /* CuriosidadesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CuriosidadesCell.m; path = Controller/SideMenu/Curiosidades/CuriosidadesCell/CuriosidadesCell.m; sourceTree = "<group>"; };
+		42F543EF1BDB060200121B77 /* CuriosidadesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CuriosidadesViewController.h; path = Controller/SideMenu/Curiosidades/CuriosidadesViewController.h; sourceTree = "<group>"; };
+		42F543F01BDB060200121B77 /* CuriosidadesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CuriosidadesViewController.m; path = Controller/SideMenu/Curiosidades/CuriosidadesViewController.m; sourceTree = "<group>"; };
+		42F543F21BDB075F00121B77 /* curiosidades.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = curiosidades.plist; sourceTree = "<group>"; };
+		42FF4AA81BDABAFE00E3BFC5 /* DoeSangueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DoeSangueViewController.h; path = Controller/SideMenu/DoeSangue/DoeSangueViewController.h; sourceTree = "<group>"; };
+		42FF4AA91BDABAFE00E3BFC5 /* DoeSangueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DoeSangueViewController.m; path = Controller/SideMenu/DoeSangue/DoeSangueViewController.m; sourceTree = "<group>"; };
 		65643619A2E320A06B24BFE6 /* libPods-SangueBomTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SangueBomTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CC7FDD5135EB24949CB3F65 /* Pods-SangueBom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SangueBom.release.xcconfig"; path = "Pods/Target Support Files/Pods-SangueBom/Pods-SangueBom.release.xcconfig"; sourceTree = "<group>"; };
 		6D4D051B23902711283E3E43 /* Pods-SangueBomTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SangueBomTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SangueBomTests/Pods-SangueBomTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,14 +192,14 @@
 		425AE3331BA886560059F945 /* SangueBom */ = {
 			isa = PBXGroup;
 			children = (
-				42F1C8661BA9A739002B6CF2 /* API */,
-				425AE3701BA894580059F945 /* Transitions */,
-				425AE35A1BA888540059F945 /* Welcome */,
 				425AE3381BA886560059F945 /* AppDelegate.h */,
 				425AE3391BA886560059F945 /* AppDelegate.m */,
-				425AE33B1BA886560059F945 /* ViewController.h */,
-				425AE33C1BA886560059F945 /* ViewController.m */,
-				425AE33E1BA886560059F945 /* Main.storyboard */,
+				42B420EB1BDEEC7800453D31 /* Model */,
+				428BCCBF1BD9564E007DBD77 /* Categories */,
+				428BCCBD1BD95415007DBD77 /* Helper */,
+				42F1C8661BA9A739002B6CF2 /* API */,
+				425AE3701BA894580059F945 /* Transitions */,
+				428BCCB61BD9361D007DBD77 /* Controller */,
 				425AE3411BA886560059F945 /* Images.xcassets */,
 				425AE3431BA886560059F945 /* LaunchScreen.xib */,
 				425AE3341BA886560059F945 /* Supporting Files */,
@@ -144,6 +212,11 @@
 			children = (
 				425AE3351BA886560059F945 /* Info.plist */,
 				425AE3361BA886560059F945 /* main.m */,
+				42F543E51BDAF78700121B77 /* etapas.plist */,
+				42F543F21BDB075F00121B77 /* curiosidades.plist */,
+				42E0EDBB1BDD52D40097233B /* faq.plist */,
+				42B4497B1BDE982E005FA81D /* doe_sangue.plist */,
+				42B420EC1BDEF0BC00453D31 /* SangueBomModel.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -169,6 +242,7 @@
 		425AE35A1BA888540059F945 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
+				42B420FF1BDF09EA00453D31 /* MoreInfo */,
 				425AE3661BA888B50059F945 /* Login */,
 				425AE3621BA8889D0059F945 /* Signup */,
 				425AE35F1BA888980059F945 /* WelcomeViewController.h */,
@@ -215,6 +289,139 @@
 			name = FadeIn;
 			sourceTree = "<group>";
 		};
+		428BCCB51BD93585007DBD77 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				42B420F51BDEF9C900453D31 /* Perfil */,
+				42B449771BDE9580005FA81D /* Map */,
+				42B4496F1BDE8D10005FA81D /* FAQ */,
+				42F543EA1BDB05A800121B77 /* Curiosidades */,
+				42F543DC1BDAF32A00121B77 /* Etapas */,
+				42FF4AA71BDABAA900E3BFC5 /* DoeSangue */,
+				428BCCB91BD95247007DBD77 /* Drawer */,
+				428BCCB71BD93650007DBD77 /* Main.storyboard */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		428BCCB61BD9361D007DBD77 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				425AE35A1BA888540059F945 /* Welcome */,
+				428BCCB51BD93585007DBD77 /* Main */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		428BCCB91BD95247007DBD77 /* Drawer */ = {
+			isa = PBXGroup;
+			children = (
+				428BCCBA1BD9526A007DBD77 /* DrawerViewController.h */,
+				428BCCBB1BD9526A007DBD77 /* DrawerViewController.m */,
+			);
+			name = Drawer;
+			sourceTree = "<group>";
+		};
+		428BCCBD1BD95415007DBD77 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				428BCCBE1BD9543A007DBD77 /* Macros.h */,
+				428BCCC31BD9591A007DBD77 /* Helper.h */,
+				428BCCC41BD9591A007DBD77 /* Helper.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		428BCCBF1BD9564E007DBD77 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				428BCCC01BD95677007DBD77 /* UIColor+CustomColor.h */,
+				428BCCC11BD95677007DBD77 /* UIColor+CustomColor.m */,
+				4289DA2C1BD99FD1006D35D3 /* UIViewController+BaseViewController.h */,
+				4289DA2D1BD99FD1006D35D3 /* UIViewController+BaseViewController.m */,
+				42F543D91BDAE57200121B77 /* UIFont+CustomFont.h */,
+				42F543DA1BDAE57200121B77 /* UIFont+CustomFont.m */,
+				42F543E71BDAFBFE00121B77 /* UIStoryboard+CustomStoryboard.h */,
+				42F543E81BDAFBFE00121B77 /* UIStoryboard+CustomStoryboard.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		42B420E71BDEDF0B00453D31 /* DoeSangueButtonCell */ = {
+			isa = PBXGroup;
+			children = (
+				42B420E81BDEDF3800453D31 /* DoeSangueButtonCell.h */,
+				42B420E91BDEDF3800453D31 /* DoeSangueButtonCell.m */,
+			);
+			name = DoeSangueButtonCell;
+			sourceTree = "<group>";
+		};
+		42B420EB1BDEEC7800453D31 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				42B421031BDF1BFB00453D31 /* Person+CoreDataProperties.h */,
+				42B421041BDF1BFB00453D31 /* Person+CoreDataProperties.m */,
+				42B421051BDF1BFB00453D31 /* Person.h */,
+				42B421061BDF1BFB00453D31 /* Person.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		42B420F51BDEF9C900453D31 /* Perfil */ = {
+			isa = PBXGroup;
+			children = (
+				42B420F61BDEF9F100453D31 /* PerfilViewController.h */,
+				42B420F71BDEF9F100453D31 /* PerfilViewController.m */,
+			);
+			name = Perfil;
+			sourceTree = "<group>";
+		};
+		42B420FF1BDF09EA00453D31 /* MoreInfo */ = {
+			isa = PBXGroup;
+			children = (
+				42B421001BDF0A0900453D31 /* MoreInfoViewController.h */,
+				42B421011BDF0A0900453D31 /* MoreInfoViewController.m */,
+			);
+			name = MoreInfo;
+			sourceTree = "<group>";
+		};
+		42B4496F1BDE8D10005FA81D /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				42B449731BDE8F0D005FA81D /* FAQCell */,
+				42B449701BDE8D4F005FA81D /* FAQViewController.h */,
+				42B449711BDE8D4F005FA81D /* FAQViewController.m */,
+			);
+			name = FAQ;
+			sourceTree = "<group>";
+		};
+		42B449731BDE8F0D005FA81D /* FAQCell */ = {
+			isa = PBXGroup;
+			children = (
+				42B449741BDE8F38005FA81D /* FAQCell.h */,
+				42B449751BDE8F38005FA81D /* FAQCell.m */,
+			);
+			name = FAQCell;
+			sourceTree = "<group>";
+		};
+		42B449771BDE9580005FA81D /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				42B449781BDE95AC005FA81D /* MapViewController.h */,
+				42B449791BDE95AC005FA81D /* MapViewController.m */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		42B4497D1BDE991D005FA81D /* DoeSangueCell */ = {
+			isa = PBXGroup;
+			children = (
+				42B4497E1BDE9944005FA81D /* DoeSangueCell.h */,
+				42B4497F1BDE9944005FA81D /* DoeSangueCell.m */,
+			);
+			name = DoeSangueCell;
+			sourceTree = "<group>";
+		};
 		42F1C8661BA9A739002B6CF2 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +429,55 @@
 				42F1C8681BA9A74B002B6CF2 /* APIService.m */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		42F543DC1BDAF32A00121B77 /* Etapas */ = {
+			isa = PBXGroup;
+			children = (
+				42F543E11BDAF3F200121B77 /* EtapasCell */,
+				42F543DD1BDAF34E00121B77 /* EtapasViewController.h */,
+				42F543DE1BDAF34E00121B77 /* EtapasViewController.m */,
+			);
+			name = Etapas;
+			sourceTree = "<group>";
+		};
+		42F543E11BDAF3F200121B77 /* EtapasCell */ = {
+			isa = PBXGroup;
+			children = (
+				42F543E21BDAF41000121B77 /* EtapasCell.h */,
+				42F543E31BDAF41000121B77 /* EtapasCell.m */,
+			);
+			name = EtapasCell;
+			sourceTree = "<group>";
+		};
+		42F543EA1BDB05A800121B77 /* Curiosidades */ = {
+			isa = PBXGroup;
+			children = (
+				42F543EB1BDB05AF00121B77 /* CuriosidadesCell */,
+				42F543EF1BDB060200121B77 /* CuriosidadesViewController.h */,
+				42F543F01BDB060200121B77 /* CuriosidadesViewController.m */,
+			);
+			name = Curiosidades;
+			sourceTree = "<group>";
+		};
+		42F543EB1BDB05AF00121B77 /* CuriosidadesCell */ = {
+			isa = PBXGroup;
+			children = (
+				42F543EC1BDB05E900121B77 /* CuriosidadesCell.h */,
+				42F543ED1BDB05E900121B77 /* CuriosidadesCell.m */,
+			);
+			name = CuriosidadesCell;
+			sourceTree = "<group>";
+		};
+		42FF4AA71BDABAA900E3BFC5 /* DoeSangue */ = {
+			isa = PBXGroup;
+			children = (
+				42B420E71BDEDF0B00453D31 /* DoeSangueButtonCell */,
+				42B4497D1BDE991D005FA81D /* DoeSangueCell */,
+				42FF4AA81BDABAFE00E3BFC5 /* DoeSangueViewController.h */,
+				42FF4AA91BDABAFE00E3BFC5 /* DoeSangueViewController.m */,
+			);
+			name = DoeSangue;
 			sourceTree = "<group>";
 		};
 		FFD4394DE65DE7956C1A72DE /* Pods */ = {
@@ -247,6 +503,7 @@
 				425AE32E1BA886560059F945 /* Frameworks */,
 				425AE32F1BA886560059F945 /* Resources */,
 				72D479B4C8EE76376B354BF2 /* Copy Pods Resources */,
+				E8A4A34EECAB82E95BCCE16E /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -266,6 +523,7 @@
 				425AE3471BA886560059F945 /* Frameworks */,
 				425AE3481BA886560059F945 /* Resources */,
 				06935867F17401FF83E3AC92 /* Copy Pods Resources */,
+				6A39B311451D7D9B37BE9F53 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -319,10 +577,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				425AE3401BA886560059F945 /* Main.storyboard in Resources */,
+				42E0EDBC1BDD52D40097233B /* faq.plist in Resources */,
 				425AE35E1BA888800059F945 /* Welcome.storyboard in Resources */,
+				42F543E61BDAF78700121B77 /* etapas.plist in Resources */,
 				425AE3451BA886560059F945 /* LaunchScreen.xib in Resources */,
+				42B4497C1BDE982E005FA81D /* doe_sangue.plist in Resources */,
 				425AE3421BA886560059F945 /* Images.xcassets in Resources */,
+				428BCCB81BD93650007DBD77 /* Main.storyboard in Resources */,
+				42F543F31BDB075F00121B77 /* curiosidades.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +611,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SangueBomTests/Pods-SangueBomTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A39B311451D7D9B37BE9F53 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SangueBomTests/Pods-SangueBomTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		72D479B4C8EE76376B354BF2 /* Copy Pods Resources */ = {
@@ -396,6 +673,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		E8A4A34EECAB82E95BCCE16E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SangueBom/Pods-SangueBom-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -403,14 +695,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42F543E91BDAFBFE00121B77 /* UIStoryboard+CustomStoryboard.m in Sources */,
+				42B449721BDE8D4F005FA81D /* FAQViewController.m in Sources */,
+				428BCCC21BD95677007DBD77 /* UIColor+CustomColor.m in Sources */,
+				42F543DB1BDAE57200121B77 /* UIFont+CustomFont.m in Sources */,
+				42F543E41BDAF41100121B77 /* EtapasCell.m in Sources */,
+				428BCCBC1BD9526A007DBD77 /* DrawerViewController.m in Sources */,
 				42F1C8691BA9A74B002B6CF2 /* APIService.m in Sources */,
-				425AE33D1BA886560059F945 /* ViewController.m in Sources */,
+				42B420EA1BDEDF3800453D31 /* DoeSangueButtonCell.m in Sources */,
 				425AE3611BA888980059F945 /* WelcomeViewController.m in Sources */,
+				42FF4AAA1BDABAFE00E3BFC5 /* DoeSangueViewController.m in Sources */,
+				42B420EE1BDEF0BC00453D31 /* SangueBomModel.xcdatamodeld in Sources */,
 				425AE36F1BA8944E0059F945 /* FadeInNavigationController.m in Sources */,
+				42B421071BDF1BFB00453D31 /* Person+CoreDataProperties.m in Sources */,
+				42B421021BDF0A0900453D31 /* MoreInfoViewController.m in Sources */,
+				42B420F81BDEF9F100453D31 /* PerfilViewController.m in Sources */,
 				425AE3691BA888C40059F945 /* LoginViewController.m in Sources */,
+				4289DA2E1BD99FD1006D35D3 /* UIViewController+BaseViewController.m in Sources */,
+				42B4497A1BDE95AC005FA81D /* MapViewController.m in Sources */,
 				425AE33A1BA886560059F945 /* AppDelegate.m in Sources */,
 				425AE3371BA886560059F945 /* main.m in Sources */,
+				42F543EE1BDB05E900121B77 /* CuriosidadesCell.m in Sources */,
+				428BCCC51BD9591A007DBD77 /* Helper.m in Sources */,
+				42B421081BDF1BFB00453D31 /* Person.m in Sources */,
 				425AE36E1BA8944E0059F945 /* FadeInAnimator.m in Sources */,
+				42B449761BDE8F38005FA81D /* FAQCell.m in Sources */,
+				42F543F11BDB060200121B77 /* CuriosidadesViewController.m in Sources */,
+				42B449801BDE9944005FA81D /* DoeSangueCell.m in Sources */,
+				42F543DF1BDAF34E00121B77 /* EtapasViewController.m in Sources */,
 				425AE3651BA888B00059F945 /* SignupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,14 +747,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		425AE33E1BA886560059F945 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				425AE33F1BA886560059F945 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		425AE3431BA886560059F945 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -625,6 +929,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		42B420EC1BDEF0BC00453D31 /* SangueBomModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				42B420ED1BDEF0BC00453D31 /* SangueBomModel.xcdatamodel */,
+			);
+			currentVersion = 42B420ED1BDEF0BC00453D31 /* SangueBomModel.xcdatamodel */;
+			path = SangueBomModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 425AE3291BA886560059F945 /* Project object */;
 }
