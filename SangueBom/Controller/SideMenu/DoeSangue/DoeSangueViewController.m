@@ -16,6 +16,7 @@
 @interface DoeSangueViewController ()
 
 @property (nonatomic, strong) NSDictionary *data;
+@property (nonatomic, strong) NSMutableDictionary *answers;
 
 @end
 
@@ -34,6 +35,10 @@ static NSString *const ButtonCellID = @"ButtonCell";
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"doe_sangue" ofType:@"plist"];
     self.data = [[NSDictionary alloc] initWithContentsOfFile:path];
+    
+    self.answers = [self.data mutableCopy];
+    NSArray *allValues = [self.answers allValues];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -62,6 +67,14 @@ static NSString *const ButtonCellID = @"ButtonCell";
     }
     
     return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return UITableViewAutomaticDimension;
+    }
+    
+    return 61.0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

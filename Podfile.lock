@@ -21,6 +21,7 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - AFViewShaker (0.0.2)
+  - BEMCheckBox (1.1.0)
   - Bolts (1.4.0):
     - Bolts/AppLinks (= 1.4.0)
     - Bolts/Tasks (= 1.4.0)
@@ -56,6 +57,7 @@ DEPENDENCIES:
   - AFNetworking (~> 2.5)
   - AFNetworking (~> 2.6)
   - AFViewShaker
+  - BEMCheckBox
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
@@ -70,6 +72,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
   AFViewShaker: 7e4bc215ca3e92347b78da436fca74e1730b52e8
+  BEMCheckBox: abb7b1ffcc24c25c31ffa7b7167a3e869f4f15ba
   Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
   FBSDKCoreKit: 9141b70960a37930850370495fe565f4a27ac141
   FBSDKLoginKit: c11ed3c2833472db3bb4a4aecf27af4a6f69b173

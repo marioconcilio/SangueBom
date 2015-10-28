@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>BEMCheckBox.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Bolts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -102,11 +107,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3A3F91D1D300E4CB1D2925510B8369DB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>410B25DF16EA5C5B3E2698F74F9625FB</key>
 		<dict>
 			<key>primary</key>
@@ -127,12 +127,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6CD72EBA655AD61991863324DEF7B562</key>
+		<key>55B6B225B48B68B310D51059E8B7C36B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>70909FCEA4C58CED59009E3AAE8A15EF</key>
+		<key>58D368F80EB84B3016B6BD3E73F51753</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5A52EBCC32FAC1E2E406D8C3A6780839</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6CD72EBA655AD61991863324DEF7B562</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -142,12 +152,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A48601FEE4437A924848DB48369BA809</key>
+		<key>8C80F913EE213FA1EE3801FF8CEF0DD4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BAD43863812BFC0E1EF821FE958C9F9A</key>
+		<key>A48601FEE4437A924848DB48369BA809</key>
 		<dict>
 			<key>primary</key>
 			<true/>

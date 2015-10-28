@@ -14,6 +14,7 @@ target 'SangueBom' do
     pod 'FBSDKCoreKit'
     pod 'FBSDKShareKit'
     pod 'FBSDKLoginKit'
+    pod 'BEMCheckBox'
 
 end
 

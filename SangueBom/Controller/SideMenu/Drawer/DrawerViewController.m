@@ -35,8 +35,8 @@
     
     self.profileImageView.layer.cornerRadius = 50.0;
     self.profileImageView.clipsToBounds = YES;
-    self.profileImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    self.profileImageView.layer.borderWidth = 1.0;
+    self.profileImageView.layer.borderColor = [UIColor customDarkBackground].CGColor;
+    self.profileImageView.layer.borderWidth = 0.5;
     
     self.tableView.separatorColor = [UIColor customDarkBackground];
 }
@@ -46,11 +46,9 @@
     
     Person *person = [Helper loadUser];
     self.nameLabel.text = [NSString stringWithFormat:@"%@ %@", person.name, person.surname];
-//    self.profileImageView.image = [UIImage imageWithData:person.profileImage];
     
     [Helper avatarFromName:self.nameLabel.text font:[UIFont customUltraLightFontWithSize:30.0] diameter:100.0 callback:^(UIImage *image) {
         [self.profileImageView setImageWithURL:[NSURL URLWithString:person.thumbnail] placeholderImage:image];
-//        self.profileImageView.image = image;
     }];
 }
 
