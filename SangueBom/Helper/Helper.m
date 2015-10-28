@@ -11,14 +11,13 @@
 #import "Macros.h"
 #import "UIColor+CustomColor.h"
 #import <JSQMessagesViewController/JSQMessagesAvatarImageFactory.h>
+#import <MagicalRecord/MagicalRecord.h>
 
 @implementation Helper
 
 + (Person *)loadUser {
-    NSData *myEncodedObject = [NSUserDefaults objectForKey:kProfileInfo];
-    Person* obj = (Person *) [NSKeyedUnarchiver unarchiveObjectWithData:myEncodedObject];
-    
-    return obj;
+    NSString *email = [NSUserDefaults objectForKey:kUserToken];
+    return [Person MR_findFirstByAttribute:@"email" withValue:email];
 }
 
 + (void)saveCustomObject:(id)obj forKey:(NSString *)key {

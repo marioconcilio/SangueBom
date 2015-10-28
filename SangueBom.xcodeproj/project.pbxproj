@@ -26,8 +26,6 @@
 		42B420EE1BDEF0BC00453D31 /* SangueBomModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42B420EC1BDEF0BC00453D31 /* SangueBomModel.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		42B420F81BDEF9F100453D31 /* PerfilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B420F71BDEF9F100453D31 /* PerfilViewController.m */; settings = {ASSET_TAGS = (); }; };
 		42B421021BDF0A0900453D31 /* MoreInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B421011BDF0A0900453D31 /* MoreInfoViewController.m */; settings = {ASSET_TAGS = (); }; };
-		42B421071BDF1BFB00453D31 /* Person+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B421041BDF1BFB00453D31 /* Person+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		42B421081BDF1BFB00453D31 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B421061BDF1BFB00453D31 /* Person.m */; settings = {ASSET_TAGS = (); }; };
 		42B449721BDE8D4F005FA81D /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B449711BDE8D4F005FA81D /* FAQViewController.m */; settings = {ASSET_TAGS = (); }; };
 		42B449761BDE8F38005FA81D /* FAQCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B449751BDE8F38005FA81D /* FAQCell.m */; settings = {ASSET_TAGS = (); }; };
 		42B4497A1BDE95AC005FA81D /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B449791BDE95AC005FA81D /* MapViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -45,6 +43,8 @@
 		42F543EE1BDB05E900121B77 /* CuriosidadesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F543ED1BDB05E900121B77 /* CuriosidadesCell.m */; settings = {ASSET_TAGS = (); }; };
 		42F543F11BDB060200121B77 /* CuriosidadesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F543F01BDB060200121B77 /* CuriosidadesViewController.m */; settings = {ASSET_TAGS = (); }; };
 		42F543F31BDB075F00121B77 /* curiosidades.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42F543F21BDB075F00121B77 /* curiosidades.plist */; settings = {ASSET_TAGS = (); }; };
+		42F5AA321BE05CF600F007DC /* Person+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F5AA2F1BE05CF600F007DC /* Person+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		42F5AA331BE05CF600F007DC /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F5AA311BE05CF600F007DC /* Person.m */; settings = {ASSET_TAGS = (); }; };
 		42FF4AAA1BDABAFE00E3BFC5 /* DoeSangueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FF4AA91BDABAFE00E3BFC5 /* DoeSangueViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6EA495C986002EF4DE827221 /* libPods-SangueBom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A5DAA66E5AB340EB57C19C /* libPods-SangueBom.a */; };
 		982EC87153329E75287A9670 /* libPods-SangueBomTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65643619A2E320A06B24BFE6 /* libPods-SangueBomTests.a */; };
@@ -99,10 +99,6 @@
 		42B420F71BDEF9F100453D31 /* PerfilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PerfilViewController.m; path = Controller/SideMenu/Perfil/PerfilViewController.m; sourceTree = "<group>"; };
 		42B421001BDF0A0900453D31 /* MoreInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoreInfoViewController.h; path = Welcome/MoreInfo/MoreInfoViewController.h; sourceTree = "<group>"; };
 		42B421011BDF0A0900453D31 /* MoreInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoreInfoViewController.m; path = Welcome/MoreInfo/MoreInfoViewController.m; sourceTree = "<group>"; };
-		42B421031BDF1BFB00453D31 /* Person+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Person+CoreDataProperties.h"; path = "Model/Person+CoreDataProperties.h"; sourceTree = "<group>"; };
-		42B421041BDF1BFB00453D31 /* Person+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Person+CoreDataProperties.m"; path = "Model/Person+CoreDataProperties.m"; sourceTree = "<group>"; };
-		42B421051BDF1BFB00453D31 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Person.h; path = Model/Person.h; sourceTree = "<group>"; };
-		42B421061BDF1BFB00453D31 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = Model/Person.m; sourceTree = "<group>"; };
 		42B449701BDE8D4F005FA81D /* FAQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FAQViewController.h; path = Controller/SideMenu/FAQ/FAQViewController.h; sourceTree = "<group>"; };
 		42B449711BDE8D4F005FA81D /* FAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FAQViewController.m; path = Controller/SideMenu/FAQ/FAQViewController.m; sourceTree = "<group>"; };
 		42B449741BDE8F38005FA81D /* FAQCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FAQCell.h; path = Controller/SideMenu/FAQ/FAQCell/FAQCell.h; sourceTree = "<group>"; };
@@ -131,6 +127,10 @@
 		42F543EF1BDB060200121B77 /* CuriosidadesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CuriosidadesViewController.h; path = Controller/SideMenu/Curiosidades/CuriosidadesViewController.h; sourceTree = "<group>"; };
 		42F543F01BDB060200121B77 /* CuriosidadesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CuriosidadesViewController.m; path = Controller/SideMenu/Curiosidades/CuriosidadesViewController.m; sourceTree = "<group>"; };
 		42F543F21BDB075F00121B77 /* curiosidades.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = curiosidades.plist; sourceTree = "<group>"; };
+		42F5AA2E1BE05CF600F007DC /* Person+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Person+CoreDataProperties.h"; path = "Model/Person+CoreDataProperties.h"; sourceTree = "<group>"; };
+		42F5AA2F1BE05CF600F007DC /* Person+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Person+CoreDataProperties.m"; path = "Model/Person+CoreDataProperties.m"; sourceTree = "<group>"; };
+		42F5AA301BE05CF600F007DC /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Person.h; path = Model/Person.h; sourceTree = "<group>"; };
+		42F5AA311BE05CF600F007DC /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = Model/Person.m; sourceTree = "<group>"; };
 		42FF4AA81BDABAFE00E3BFC5 /* DoeSangueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DoeSangueViewController.h; path = Controller/SideMenu/DoeSangue/DoeSangueViewController.h; sourceTree = "<group>"; };
 		42FF4AA91BDABAFE00E3BFC5 /* DoeSangueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DoeSangueViewController.m; path = Controller/SideMenu/DoeSangue/DoeSangueViewController.m; sourceTree = "<group>"; };
 		65643619A2E320A06B24BFE6 /* libPods-SangueBomTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SangueBomTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -359,10 +359,10 @@
 		42B420EB1BDEEC7800453D31 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				42B421031BDF1BFB00453D31 /* Person+CoreDataProperties.h */,
-				42B421041BDF1BFB00453D31 /* Person+CoreDataProperties.m */,
-				42B421051BDF1BFB00453D31 /* Person.h */,
-				42B421061BDF1BFB00453D31 /* Person.m */,
+				42F5AA2E1BE05CF600F007DC /* Person+CoreDataProperties.h */,
+				42F5AA2F1BE05CF600F007DC /* Person+CoreDataProperties.m */,
+				42F5AA301BE05CF600F007DC /* Person.h */,
+				42F5AA311BE05CF600F007DC /* Person.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -707,7 +707,7 @@
 				42FF4AAA1BDABAFE00E3BFC5 /* DoeSangueViewController.m in Sources */,
 				42B420EE1BDEF0BC00453D31 /* SangueBomModel.xcdatamodeld in Sources */,
 				425AE36F1BA8944E0059F945 /* FadeInNavigationController.m in Sources */,
-				42B421071BDF1BFB00453D31 /* Person+CoreDataProperties.m in Sources */,
+				42F5AA321BE05CF600F007DC /* Person+CoreDataProperties.m in Sources */,
 				42B421021BDF0A0900453D31 /* MoreInfoViewController.m in Sources */,
 				42B420F81BDEF9F100453D31 /* PerfilViewController.m in Sources */,
 				425AE3691BA888C40059F945 /* LoginViewController.m in Sources */,
@@ -717,7 +717,7 @@
 				425AE3371BA886560059F945 /* main.m in Sources */,
 				42F543EE1BDB05E900121B77 /* CuriosidadesCell.m in Sources */,
 				428BCCC51BD9591A007DBD77 /* Helper.m in Sources */,
-				42B421081BDF1BFB00453D31 /* Person.m in Sources */,
+				42F5AA331BE05CF600F007DC /* Person.m in Sources */,
 				425AE36E1BA8944E0059F945 /* FadeInAnimator.m in Sources */,
 				42B449761BDE8F38005FA81D /* FAQCell.m in Sources */,
 				42F543F11BDB060200121B77 /* CuriosidadesViewController.m in Sources */,
@@ -843,6 +843,10 @@
 			baseConfigurationReference = DCE41971E4AD9094DBD67153 /* Pods-SangueBom.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SangueBom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -855,6 +859,10 @@
 			baseConfigurationReference = 6CC7FDD5135EB24949CB3F65 /* Pods-SangueBom.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SangueBom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

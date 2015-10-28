@@ -8,8 +8,12 @@
 
 #import "UIColor+CustomColor.h"
 #import "UIStoryboard+CustomStoryboard.h"
+#import "UIFont+CustomFont.h"
 #import "DrawerViewController.h"
+#import "Helper.h"
+#import "Person.h"
 #import <SWRevealViewController.h>
+#import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface DrawerViewController ()
 
@@ -35,6 +39,19 @@
     self.profileImageView.layer.borderWidth = 1.0;
     
     self.tableView.separatorColor = [UIColor customDarkBackground];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    Person *person = [Helper loadUser];
+    self.nameLabel.text = [NSString stringWithFormat:@"%@ %@", person.name, person.surname];
+//    self.profileImageView.image = [UIImage imageWithData:person.profileImage];
+    
+    [Helper avatarFromName:self.nameLabel.text font:[UIFont customUltraLightFontWithSize:30.0] diameter:100.0 callback:^(UIImage *image) {
+        [self.profileImageView setImageWithURL:[NSURL URLWithString:person.thumbnail] placeholderImage:image];
+//        self.profileImageView.image = image;
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

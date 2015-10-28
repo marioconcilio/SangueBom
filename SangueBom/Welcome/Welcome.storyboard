@@ -211,6 +211,7 @@
                         <outlet property="facebookButton" destination="ZnM-dH-nN2" id="lTK-ox-4x6"/>
                         <outlet property="loginButton" destination="ev7-df-bR8" id="5q2-M1-INe"/>
                         <outlet property="signupButton" destination="m1T-ox-oxs" id="tBQ-SK-U5b"/>
+                        <segue destination="NWX-pz-6Dc" kind="show" identifier="moreInfoSegue" id="MzV-uv-3gJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XCA-jq-Bix" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -502,10 +503,10 @@
             </objects>
             <point key="canvasLocation" x="2289" y="156"/>
         </scene>
-        <!--Criar Conta-->
+        <!--More Info View Controller-->
         <scene sceneID="SbF-Y6-sWc">
             <objects>
-                <viewController title="Criar Conta" id="NWX-pz-6Dc" customClass="MoreInfoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="moreInfo" id="NWX-pz-6Dc" customClass="MoreInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZwU-c9-PIR"/>
                         <viewControllerLayoutGuide type="bottom" id="3Uu-h1-tsN"/>
@@ -639,9 +640,10 @@
                                 <exclude reference="B6E-Ca-hca"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="6Fn-TS-8bz"/>
-                                <exclude reference="b7H-VP-owo"/>
-                                <exclude reference="s1i-i8-M98"/>
+                                <exclude reference="Y3t-cr-CLD"/>
+                                <exclude reference="5UO-WI-RFC"/>
+                                <exclude reference="o23-tG-PsH"/>
+                                <exclude reference="r04-AZ-ePz"/>
                                 <exclude reference="AYv-0b-v1X"/>
                                 <exclude reference="fbe-U8-4lN"/>
                                 <exclude reference="q56-C5-cJf"/>
@@ -653,10 +655,9 @@
                                 <exclude reference="dZa-b2-WeY"/>
                                 <exclude reference="g3L-aN-H2k"/>
                                 <exclude reference="p9Y-E1-80I"/>
-                                <exclude reference="5UO-WI-RFC"/>
-                                <exclude reference="o23-tG-PsH"/>
-                                <exclude reference="r04-AZ-ePz"/>
-                                <exclude reference="Y3t-cr-CLD"/>
+                                <exclude reference="6Fn-TS-8bz"/>
+                                <exclude reference="b7H-VP-owo"/>
+                                <exclude reference="s1i-i8-M98"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -668,9 +669,10 @@
                                 <include reference="B6E-Ca-hca"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="6Fn-TS-8bz"/>
-                                <include reference="b7H-VP-owo"/>
-                                <include reference="s1i-i8-M98"/>
+                                <include reference="Y3t-cr-CLD"/>
+                                <include reference="5UO-WI-RFC"/>
+                                <include reference="o23-tG-PsH"/>
+                                <include reference="r04-AZ-ePz"/>
                                 <include reference="AYv-0b-v1X"/>
                                 <include reference="fbe-U8-4lN"/>
                                 <include reference="q56-C5-cJf"/>
@@ -682,14 +684,15 @@
                                 <include reference="dZa-b2-WeY"/>
                                 <exclude reference="g3L-aN-H2k"/>
                                 <include reference="p9Y-E1-80I"/>
-                                <include reference="5UO-WI-RFC"/>
-                                <include reference="o23-tG-PsH"/>
-                                <include reference="r04-AZ-ePz"/>
-                                <include reference="Y3t-cr-CLD"/>
+                                <include reference="6Fn-TS-8bz"/>
+                                <include reference="b7H-VP-owo"/>
+                                <include reference="s1i-i8-M98"/>
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="qLl-0e-do9"/>
+                    <navigationItem key="navigationItem" id="qLl-0e-do9">
+                        <barButtonItem key="backBarButtonItem" title=" " id="2E7-ek-9f2"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="birthdayTextField" destination="VJx-Ve-K4e" id="6BK-7w-Gjb"/>
                         <outlet property="bloodTypeTextField" destination="ihc-jh-zUL" id="dmc-mD-tS8"/>
@@ -926,4 +929,7 @@
         <image name="sgb_background" width="400" height="800"/>
         <image name="sgb_whitelogo" width="143" height="220"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="MzV-uv-3gJ"/>
+    </inferredMetricsTieBreakers>
 </document>

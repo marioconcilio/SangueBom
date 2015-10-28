@@ -7,8 +7,15 @@
 //
 
 #import "WelcomeViewController.h"
+#import "AppDelegate.h"
+#import "Macros.h"
+#import "ApiService.h"
+#import "MoreInfoViewController.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <KVNProgress.h>
 
-@interface WelcomeViewController ()
+@interface WelcomeViewController () <FBSDKGraphRequestConnectionDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *signupButton;
 @property (weak, nonatomic) IBOutlet UIButton *facebookButton;
@@ -17,6 +24,8 @@
 @end
 
 @implementation WelcomeViewController
+
+static NSString *const kMoreInfoSegue = @"moreInfoSegue";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,8 +41,6 @@
     self.navigationController.view.backgroundColor = [UIColor clearColor];
     self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,7 +50,65 @@
 
 #pragma mark - Actions
 - (IBAction)doFacebookLogin:(UIButton *)sender {
+    [KVNProgress show];
     
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login logInWithReadPermissions:@[@"email", @"public_profile"]
+                 fromViewController:nil
+                            handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+                                [self loginWithResult:result error:error];
+                            }];
+}
+
+- (void)loginWithResult:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error {
+    if (error) {
+        NSLog(@"%@", error.description);
+    }
+    else if (result.isCancelled ) {
+        NSLog(@"cancelled by user");
+    }
+    else {
+        NSDictionary *params = @{@"fields": @"id, first_name, last_name, email, picture.height(400).width(400)"};
+        FBSDKGraphRequest *requestMe = [[FBSDKGraphRequest alloc] initWithGraphPath:@"me"
+                                                                         parameters:params
+                                                                         HTTPMethod:@"GET"];
+        
+        FBSDKGraphRequestConnection *connection = [[FBSDKGraphRequestConnection alloc] init];
+        [connection addRequest:requestMe
+             completionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                 NSDictionary *responseObject = (NSDictionary *)result;
+                 
+                 [[APIService sharedInstance] loginWithFacebook:responseObject[@"email"] block:^(NSError *error) {
+                     if (error) {
+                         [self performSegueWithIdentifier:kMoreInfoSegue sender:result];
+                     }
+                     else {
+                         [UIAppDelegate defineRootViewControllerAnimated:YES];
+                     }
+                 }];
+                 
+             }];
+        
+        connection.delegate = self;
+        [connection start];
+    }
+}
+
+#pragma mark - FBSDK Graph Request Connection
+- (void)requestConnectionDidFinishLoading:(FBSDKGraphRequestConnection *)connection {
+//    [UIAppDelegate defineRootViewControllerAnimated:YES];
+}
+
+#pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:kMoreInfoSegue]) {
+        MoreInfoViewController *vc = segue.destinationViewController;
+        NSDictionary *dict = (NSDictionary *)sender;
+        vc.name = dict[@"first_name"];
+        vc.surname = dict[@"last_name"];
+        vc.email = dict[@"email"];
+        vc.thumb = dict[@"picture"][@"data"][@"url"];
+    }
 }
 
 @end

@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "Macros.h"
 #import <AFViewShaker.h>
+#import <KVNProgress.h>
 
 @interface MoreInfoViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
 
@@ -54,6 +55,11 @@
     self.bloodTypeTextField.inputView = picker;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [KVNProgress dismiss];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -64,6 +70,7 @@
     [self.view endEditing:YES];
     if (self.birthdayTextField.text.length == 0 ||
         self.bloodTypeTextField.text.length == 0) {
+        self.errorLabel.text = @"Preencha todos os campos";
         [self showError];
         return;
     }
@@ -71,21 +78,46 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"dd/MM/yyyy"];
     
-    [[APIService sharedInstance] registerUser:self.name
-                                      surname:self.surname
-                                        email:self.email
-                                     password:self.password
-                                     birthday:[formatter dateFromString:self.birthdayTextField.text]
-                                    bloodType:self.bloodTypeTextField.text
-                                        block:^(NSError *error) {
-                                            if (error) {
-                                                NSLog(@"code: %ld, %@", error.code, error.userInfo[NSLocalizedDescriptionKey]);
-                                                [self showError];
-                                            }
-                                            else {
-                                                [UIAppDelegate defineRootViewControllerAnimated:YES];
-                                            }
-                                        }];
+    // is email login
+    if (self.password) {
+        [[APIService sharedInstance] registerUser:self.name
+                                          surname:self.surname
+                                            email:self.email
+                                         password:self.password
+                                         birthday:[formatter dateFromString:self.birthdayTextField.text]
+                                        bloodType:self.bloodTypeTextField.text
+                                            block:^(NSError *error) {
+                                                if (error) {
+                                                    NSLog(@"code: %ld, %@", error.code, error.userInfo[NSLocalizedDescriptionKey]);
+                                                    if (error.code == 400) {
+                                                        self.errorLabel.text = @"Email já existente";
+                                                    }
+                                                    
+                                                    [self showError];
+                                                }
+                                                else {
+                                                    [UIAppDelegate defineRootViewControllerAnimated:YES];
+                                                }
+                                            }];
+    }
+    // is facebook login
+    else {
+        [[APIService sharedInstance] saveFacebookUser:self.name
+                                              surname:self.surname
+                                                email:self.email
+                                             birthday:[formatter dateFromString:self.birthdayTextField.text]
+                                            bloodType:self.bloodTypeTextField.text
+                                            thumbnail:self.thumb
+                                                block:^(NSError *error) {
+                                                    if (error) {
+                                                        self.errorLabel.text = @"Erro ao fazer login";
+                                                        [self showError];
+                                                    }
+                                                    else {
+                                                        [UIAppDelegate defineRootViewControllerAnimated:YES];
+                                                    }
+                                                }];
+    }
 }
 
 #pragma mark - Helper Methods

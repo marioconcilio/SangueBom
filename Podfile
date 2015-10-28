@@ -11,6 +11,9 @@ target 'SangueBom' do
     pod 'NYAlertViewController'
     pod 'MagicalRecord'
     pod 'SSKeychain'
+    pod 'FBSDKCoreKit'
+    pod 'FBSDKShareKit'
+    pod 'FBSDKLoginKit'
 
 end
 

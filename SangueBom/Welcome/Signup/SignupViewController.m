@@ -47,6 +47,8 @@ static NSString *const kMoreInfoSegue = @"moreInfoSegue";
     
     self.signupButton.layer.cornerRadius = 5.0;
     self.errorLabel.hidden = YES;
+    
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 }
 
 - (void)didReceiveMemoryWarning {

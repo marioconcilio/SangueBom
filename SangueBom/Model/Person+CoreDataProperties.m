@@ -17,7 +17,7 @@
 @dynamic bloodType;
 @dynamic email;
 @dynamic name;
-@dynamic profileImage;
 @dynamic surname;
+@dynamic thumbnail;
 
 @end

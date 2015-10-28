@@ -30,4 +30,8 @@
     return [self fontWithName:@"HelveticaNeue-Thin" size:size];
 }
 
++ (UIFont *)customUltraLightFontWithSize:(CGFloat)size {
+    return [self fontWithName:@"HelveticaNeue-UltraLight" size:size];
+}
+
 @end

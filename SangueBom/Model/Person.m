@@ -32,5 +32,4 @@ static NSString *const SERVICE = @"com.marioconcilio.SangueBom";
         [SSKeychain deletePasswordForService:SERVICE account:self.email];
     }
 }
-
 @end

@@ -25,4 +25,17 @@
      password:(NSString *)password
         block:(void (^)(NSError *error))block;
 
+- (void)loginWithFacebook:(NSString *)email
+                    block:(void (^)(NSError *error))block;
+
+- (void)saveFacebookUser:(NSString *)name
+                 surname:(NSString *)surname
+                   email:(NSString *)email
+                birthday:(NSDate *)birthday
+               bloodType:(NSString *)bloodType
+               thumbnail:(NSString *)thumbnail
+                   block:(void (^)(NSError *error))block;
+
+- (void)truncateAll;
+
 @end

@@ -15,5 +15,6 @@
 + (UIFont *)customRegularFontWithSize:(CGFloat)size;
 + (UIFont *)customLightFontWithSize:(CGFloat)size;
 + (UIFont *)customThinFontWithSize:(CGFloat)size;
++ (UIFont *)customUltraLightFontWithSize:(CGFloat)size;
 
 @end

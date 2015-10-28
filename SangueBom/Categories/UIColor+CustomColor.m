@@ -26,4 +26,8 @@
     return UIColorFromHEX(0xffff66);
 }
 
++ (UIColor *)customOrange {
+    return UIColorFromHEX(0xff8000);
+}
+
 @end

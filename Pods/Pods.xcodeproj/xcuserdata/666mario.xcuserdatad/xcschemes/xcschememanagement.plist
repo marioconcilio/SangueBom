@@ -14,6 +14,26 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FBSDKCoreKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FBSDKLoginKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FBSDKShareKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JSQMessagesViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,11 +92,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1900A4786F2C4637F2AE1016FFBB8E6A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>25CF57D5F98A0EB7650687DEEB11C50C</key>
 		<dict>
 			<key>primary</key>
@@ -87,7 +102,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>393EE65B1532ED3D13242071B215784B</key>
+		<key>3A3F91D1D300E4CB1D2925510B8369DB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,12 +122,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4CDD1CF6EBD53220271E2AA912E9771C</key>
+		<key>4E286D373D75563CE26E479A68203892</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>6CD72EBA655AD61991863324DEF7B562</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>70909FCEA4C58CED59009E3AAE8A15EF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>81D7FE2A0FD9258247B1232874B837DA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A48601FEE4437A924848DB48369BA809</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BAD43863812BFC0E1EF821FE958C9F9A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C78CAB9013653EB1A250B2DFD3BC7666</key>
 		<dict>
 			<key>primary</key>
 			<true/>

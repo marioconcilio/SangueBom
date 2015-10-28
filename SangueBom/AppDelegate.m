@@ -14,6 +14,7 @@
 #import <KVNProgress/KVNProgress.h>
 #import <KVNProgress/KVNProgressConfiguration.h>
 #import <MagicalRecord/MagicalRecord.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface AppDelegate ()
 
@@ -36,6 +37,9 @@
     KVNProgressConfiguration *config = [[KVNProgressConfiguration alloc] init];
     config.statusFont = [UIFont fontWithName:@"HelveticaNeue-Thin" size:15.0];
     [KVNProgress setConfiguration:config];
+    
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
     
     [MagicalRecord setupCoreDataStack];
     [self defineRootViewControllerAnimated:YES];
@@ -63,6 +67,14 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation
+            ];
 }
 
 - (void)defineRootViewControllerAnimated:(BOOL)animated {

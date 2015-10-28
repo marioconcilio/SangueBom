@@ -8,10 +8,13 @@
 
 #import "PerfilViewController.h"
 #import "AppDelegate.h"
+#import "Person.h"
+#import "Helper.h"
 #import "UIViewController+BaseViewController.h"
 #import "UIFont+CustomFont.h"
 #import "UIColor+CustomColor.h"
 #import <NYAlertViewController.h>
+#import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface PerfilViewController ()
 
@@ -35,11 +38,28 @@
     [self.logoutButton addTarget:self action:@selector(doLogout:) forControlEvents:UIControlEventTouchUpInside];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"dd/MM/yyyy"];
+    
+    Person *person = [Helper loadUser];
+    self.nameLabel.text = [NSString stringWithFormat:@"%@ %@", person.name, person.surname];
+    self.emailLabel.text = person.email;
+    self.birthdayLabel.text = [formatter stringFromDate:person.birthday];
+    self.bloodTypeLabel.text = person.bloodType;
+    
+    [Helper avatarFromName:self.nameLabel.text font:[UIFont customUltraLightFontWithSize:34.0] diameter:120.0 callback:^(UIImage *image) {
+        [self.profileImageView setImageWithURL:[NSURL URLWithString:person.thumbnail] placeholderImage:image];
+    }];
+}
+
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
     self.profileImageView.layer.cornerRadius = CGRectGetHeight(self.profileImageView.frame)/2;
-    self.profileImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.profileImageView.layer.borderColor = [UIColor customOrange].CGColor;
     self.profileImageView.layer.borderWidth = 1.0;
     self.profileImageView.clipsToBounds = YES;
     

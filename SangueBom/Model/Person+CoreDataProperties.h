@@ -19,8 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *bloodType;
 @property (nullable, nonatomic, retain) NSString *email;
 @property (nullable, nonatomic, retain) NSString *name;
-@property (nullable, nonatomic, retain) NSData *profileImage;
 @property (nullable, nonatomic, retain) NSString *surname;
+@property (nullable, nonatomic, retain) NSString *thumbnail;
 
 @end
 
