@@ -50,7 +50,7 @@ static NSString *const kMoreInfoSegue = @"moreInfoSegue";
 
 #pragma mark - Actions
 - (IBAction)doFacebookLogin:(UIButton *)sender {
-    [KVNProgress show];
+//    [KVNProgress show];
     
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
     [login logInWithReadPermissions:@[@"email", @"public_profile"]

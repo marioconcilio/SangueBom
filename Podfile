@@ -7,7 +7,6 @@ target 'SangueBom' do
     pod 'KVNProgress'
     pod 'SWRevealViewController', '~> 2.3'
     pod 'JSQMessagesViewController', '~> 7.2'
-    pod 'AFNetworking', '~> 2.5'
     pod 'NYAlertViewController'
     pod 'MagicalRecord'
     pod 'SSKeychain'
@@ -15,6 +14,7 @@ target 'SangueBom' do
     pod 'FBSDKShareKit'
     pod 'FBSDKLoginKit'
     pod 'BEMCheckBox'
+    pod 'GPUImage'
 
 end
 
@@ -22,4 +22,3 @@ target 'SangueBomTests', :exclusive => true do
     pod 'KIF', '~> 3.0', :configurations => ['Debug']
 
 end
-

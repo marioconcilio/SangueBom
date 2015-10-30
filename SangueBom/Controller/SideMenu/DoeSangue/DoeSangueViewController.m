@@ -12,11 +12,14 @@
 #import "UIViewController+BaseViewController.h"
 #import "UIColor+CustomColor.h"
 #import "UIFont+CustomFont.h"
+#import "AlertViewController.h"
+#import "APIService.h"
+#import <BEMCheckBox.h>
 
-@interface DoeSangueViewController ()
+@interface DoeSangueViewController () <BEMCheckBoxDelegate>
 
 @property (nonatomic, strong) NSDictionary *data;
-@property (nonatomic, strong) NSMutableDictionary *answers;
+@property (nonatomic, strong) NSMutableArray *answers;
 
 @end
 
@@ -29,16 +32,16 @@ static NSString *const ButtonCellID = @"ButtonCell";
     [super viewDidLoad];
     [self addDrawerButton];
     
+//    [[APIService sharedInstance] populateBloodCenters];
+//    [[APIService sharedInstance] truncateAll];
+    
     self.tableView.estimatedRowHeight = 38.0;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.view.backgroundColor = UIColorFromHEX(0xefeff4);
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"doe_sangue" ofType:@"plist"];
     self.data = [[NSDictionary alloc] initWithContentsOfFile:path];
     
-    self.answers = [self.data mutableCopy];
-    NSArray *allValues = [self.answers allValues];
-
+    self.answers = [self createAnswersArray];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -51,9 +54,48 @@ static NSString *const ButtonCellID = @"ButtonCell";
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Verify Answers
+- (NSMutableArray *)createAnswersArray {
+    NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:self.data.count];
+    for (NSInteger i=0; i<self.data.count; i++) {
+        @autoreleasepool {
+            [array addObject:@(NO)];
+        }
+    }
+    
+    return array;
+}
+
+- (BOOL)checkAnswers {
+    NSArray *allValues = self.data.allValues;
+    
+    for (NSInteger i=0; i<self.data.count; i++) {
+        if ([allValues[i] boolValue] != [self.answers[i] boolValue]) {
+            return NO;
+        }
+    }
+    
+    return YES;
+}
+
 #pragma mark - Action
 - (void)doVerify {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+    if ([self checkAnswers]) {
+        
+    }
+    else {
+        AlertViewController *alert = [[AlertViewController alloc] init];
+        alert.title = @"Atenção";
+        alert.message = @"Infelizmente você não está apto a doar sangue.";
+
+        [alert addAction:[NYAlertAction actionWithTitle:@"Ok"
+                                                  style:UIAlertActionStyleDefault
+                                                handler:^(NYAlertAction *action) {
+                                                    [self dismissViewControllerAnimated:YES completion:NULL];
+                                                }]];
+        
+        [self presentViewController:alert animated:YES completion:NULL];
+    }
 }
 
 #pragma mark - Table View Data Source
@@ -83,6 +125,11 @@ static NSString *const ButtonCellID = @"ButtonCell";
         cell.descriptionLabel.text = [self.data allKeys][indexPath.row];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
+        cell.checkBox.on = [self.answers[indexPath.row] boolValue];
+        cell.checkBox.tag = indexPath.row;
+        cell.checkBox.delegate = self;
+        [cell.checkBox reload];
+        
         return cell;
     }
     
@@ -107,6 +154,11 @@ static NSString *const ButtonCellID = @"ButtonCell";
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
     header.textLabel.font = [UIFont customMediumFontWithSize:15.0];
+}
+
+#pragma mark - BEMCheckBox Delegate
+- (void)animationDidStopForCheckBox:(BEMCheckBox *)checkBox {
+    self.answers[checkBox.tag] = @(checkBox.on);
 }
 
 @end

@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>GPUImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JSQMessagesViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -127,17 +132,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>55B6B225B48B68B310D51059E8B7C36B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>58D368F80EB84B3016B6BD3E73F51753</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5A52EBCC32FAC1E2E406D8C3A6780839</key>
+		<key>6610362E50A6DE8BACCA1F2885CD9157</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -153,6 +148,21 @@
 			<true/>
 		</dict>
 		<key>8C80F913EE213FA1EE3801FF8CEF0DD4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9B612E98D2408AD8E15274F9F9BF41ED</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9C19AD6F3A918BC977910FF5338B8D2B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A2C7248CE7F02D16C4CC612DF5C1BB78</key>
 		<dict>
 			<key>primary</key>
 			<true/>

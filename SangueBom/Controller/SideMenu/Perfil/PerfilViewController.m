@@ -13,10 +13,14 @@
 #import "UIViewController+BaseViewController.h"
 #import "UIFont+CustomFont.h"
 #import "UIColor+CustomColor.h"
-#import <NYAlertViewController.h>
+#import "AlertViewController.h"
+#import "APIService.h"
+#import "DBCameraViewController.h"
+#import "DBCameraContainerViewController.h"
+#import "FadeInNavigationController.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
-@interface PerfilViewController ()
+@interface PerfilViewController () <DBCameraViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -50,8 +54,21 @@
     self.birthdayLabel.text = [formatter stringFromDate:person.birthday];
     self.bloodTypeLabel.text = person.bloodType;
     
-    [Helper avatarFromName:self.nameLabel.text font:[UIFont customUltraLightFontWithSize:34.0] diameter:120.0 callback:^(UIImage *image) {
-        [self.profileImageView setImageWithURL:[NSURL URLWithString:person.thumbnail] placeholderImage:image];
+    [Helper avatarFromName:self.nameLabel.text font:[UIFont customUltraLightFontWithSize:38.0] diameter:120.0 callback:^(UIImage *image) {
+        if (person.thumbnail) {
+            NSURL *url;
+            if ([person.thumbnail hasPrefix:@"http"]) {
+                url = [NSURL URLWithString:person.thumbnail];
+            }
+            else {
+                url = [NSURL fileURLWithPath:[person.thumbnail stringByExpandingTildeInPath]];
+            }
+            
+            [self.profileImageView setImageWithURL:url placeholderImage:image];
+        }
+        else {
+            self.profileImageView.image = image;
+        }
     }];
 }
 
@@ -74,20 +91,23 @@
 
 #pragma mark - Action Methods
 - (void)doChangePicture:(UIButton *)sender {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+    DBCameraViewController *cameraController = [DBCameraViewController initWithDelegate:self];
+    [cameraController setForceQuadCrop:YES];
+    [cameraController setUseCameraSegue:YES];
+    
+    DBCameraContainerViewController *container = [[DBCameraContainerViewController alloc] initWithDelegate:self];
+    [container setCameraViewController:cameraController];
+    [container setFullScreenMode];
+    
+    FadeInNavigationController *nav = [[FadeInNavigationController alloc] initWithRootViewController:container];
+    [nav setNavigationBarHidden:YES];
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 -(void)doLogout:(UIButton *)sender {
-    NYAlertViewController *alert = [[NYAlertViewController alloc] init];
-    alert.backgroundTapDismissalGestureEnabled = YES;
-    alert.buttonCornerRadius = 10.0;
-    alert.view.tintColor = [UIColor customDarkBackground];
-    alert.titleFont = [UIFont customBoldFontWithSize:17.0];
-    alert.messageFont = [UIFont customLightFontWithSize:17.0];
-    alert.buttonTitleFont = [UIFont customRegularFontWithSize:17.0];
-    alert.cancelButtonTitleFont = [UIFont customRegularFontWithSize:17.0];
-    alert.destructiveButtonTitleFont = [UIFont customMediumFontWithSize:17.0];
-    alert.destructiveButtonColor = [UIColor customRed];
+    AlertViewController *alert = [[AlertViewController alloc] init];
     alert.title = @"Atenção";
     alert.message = @"Deseja fazer logout?";
     
@@ -105,6 +125,29 @@
                                             }]];
     
     [self presentViewController:alert animated:YES completion:NULL];
+}
+
+#pragma mark - DBCameraViewControllerDelegate
+- (void)camera:(id)cameraViewController didFinishWithImage:(UIImage *)image withMetadata:(NSDictionary *)metadata {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[APIService sharedInstance] saveThumbnail:image fromPerson:[Helper loadUser] block:^(NSError *error) {
+            self.profileImageView.image = image;
+        }];
+    });
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+    
+    NSString *source = [metadata objectForKey:@"DBCameraSource"];
+    if( [source hasSuffix:@"Camera"] ){
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+    }
+}
+
+-(void)dismissCamera:(id)cameraViewController {
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [cameraViewController restoreFullScreenMode];
 }
 
 @end

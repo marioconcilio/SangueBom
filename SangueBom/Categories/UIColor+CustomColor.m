@@ -27,7 +27,15 @@
 }
 
 + (UIColor *)customOrange {
-    return UIColorFromHEX(0xff8000);
+    return UIColorFromHEX(0xff0000);
+}
+
++ (UIColor *)customLightGray {
+    return UIColorFromHEX(0xe6e6e6);
+}
+
++ (UIColor *)customPurple {
+    return UIColorFromHEX(0x400080);
 }
 
 @end

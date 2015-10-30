@@ -30,7 +30,6 @@ static NSString *const CellID = @"Cell";
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedSectionHeaderHeight = 22.0;
-    self.view.backgroundColor = UIColorFromHEX(0xefeff4);
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"faq" ofType:@"plist"];
     self.data = [[NSDictionary alloc] initWithContentsOfFile:path];

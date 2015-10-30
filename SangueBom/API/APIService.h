@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^APIDefaultBlock)(NSError *error);
+
+@class Person, UIImage;
 @interface APIService : NSObject
 
 + (instancetype)sharedInstance;
@@ -19,11 +22,11 @@
             password:(NSString *)password
             birthday:(NSDate *)birthday
            bloodType:(NSString *)bloodType
-               block:(void (^)(NSError *error))block;
+               block:(APIDefaultBlock)block;
 
 - (void)login:(NSString *)email
      password:(NSString *)password
-        block:(void (^)(NSError *error))block;
+        block:(APIDefaultBlock)block;
 
 - (void)loginWithFacebook:(NSString *)email
                     block:(void (^)(NSError *error))block;
@@ -34,8 +37,16 @@
                 birthday:(NSDate *)birthday
                bloodType:(NSString *)bloodType
                thumbnail:(NSString *)thumbnail
-                   block:(void (^)(NSError *error))block;
+                   block:(APIDefaultBlock)block;
+
+- (void)saveThumbnail:(UIImage *)image
+           fromPerson:(Person *)person
+                block:(APIDefaultBlock)block;
 
 - (void)truncateAll;
+
+- (void)bloodCenters:(void (^)(NSArray *centers))block;
+
+- (void)populateBloodCenters;
 
 @end

@@ -28,7 +28,6 @@ static NSString *const CellID = @"Cell";
     
     self.tableView.estimatedRowHeight = 38.0;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.view.backgroundColor = UIColorFromHEX(0xefeff4);
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"curiosidades" ofType:@"plist"];
     self.data = [[NSArray alloc] initWithContentsOfFile:path];

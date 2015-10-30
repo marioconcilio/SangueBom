@@ -41,6 +41,7 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.7.1):
     - FBSDKCoreKit
+  - GPUImage (0.1.7)
   - JSQMessagesViewController (7.2.0):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
@@ -54,13 +55,13 @@ PODS:
   - SWRevealViewController (2.3.0)
 
 DEPENDENCIES:
-  - AFNetworking (~> 2.5)
   - AFNetworking (~> 2.6)
   - AFViewShaker
   - BEMCheckBox
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
+  - GPUImage
   - JSQMessagesViewController (~> 7.2)
   - KIF (~> 3.0)
   - KVNProgress
@@ -77,6 +78,7 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 9141b70960a37930850370495fe565f4a27ac141
   FBSDKLoginKit: c11ed3c2833472db3bb4a4aecf27af4a6f69b173
   FBSDKShareKit: 213adf63e073f41a346b0e7a689805880dc5150e
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   JSQMessagesViewController: 73cab48aa92fc2d512f3b6724f3425cc47a19eb5
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   KIF: 0a82046d06f3648799cac522d2d0f7934214caac

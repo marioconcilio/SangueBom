@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class BEMCheckBox;
 @interface DoeSangueCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
-@property (weak, nonatomic) IBOutlet UISwitch *cellSwitch;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet BEMCheckBox *checkBox;
 
 @end

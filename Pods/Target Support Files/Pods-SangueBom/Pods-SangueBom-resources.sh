@@ -58,6 +58,11 @@ install_resource()
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "GPUImage/framework/Resources/lookup.png"
+  install_resource "GPUImage/framework/Resources/lookup_amatorka.png"
+  install_resource "GPUImage/framework/Resources/lookup_miss_etikate.png"
+  install_resource "GPUImage/framework/Resources/lookup_soft_elegance_1.png"
+  install_resource "GPUImage/framework/Resources/lookup_soft_elegance_2.png"
   install_resource "JSQMessagesViewController/JSQMessagesViewController/Assets/JSQMessagesAssets.bundle"
   install_resource "JSQMessagesViewController/JSQMessagesViewController/Controllers/JSQMessagesViewController.xib"
   install_resource "JSQMessagesViewController/JSQMessagesViewController/Views/JSQMessagesCollectionViewCellIncoming.xib"
@@ -68,6 +73,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "KVNProgress/KVNProgress/Resources/KVNProgressView.xib"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "GPUImage/framework/Resources/lookup.png"
+  install_resource "GPUImage/framework/Resources/lookup_amatorka.png"
+  install_resource "GPUImage/framework/Resources/lookup_miss_etikate.png"
+  install_resource "GPUImage/framework/Resources/lookup_soft_elegance_1.png"
+  install_resource "GPUImage/framework/Resources/lookup_soft_elegance_2.png"
   install_resource "JSQMessagesViewController/JSQMessagesViewController/Assets/JSQMessagesAssets.bundle"
   install_resource "JSQMessagesViewController/JSQMessagesViewController/Controllers/JSQMessagesViewController.xib"
   install_resource "JSQMessagesViewController/JSQMessagesViewController/Views/JSQMessagesCollectionViewCellIncoming.xib"

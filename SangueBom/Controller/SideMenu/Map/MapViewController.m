@@ -8,19 +8,23 @@
 
 #import "MapViewController.h"
 #import "Macros.h"
+#import "APIService.h"
 #import "UIViewController+BaseViewController.h"
+#import "CustomPin.h"
+#import "BloodCenter+CoreDataProperties.h"
 #import <MapKit/MapKit.h>
 
-#define kButtonSize         45
+#define kButtonSize         50
 #define kMarginInset        10
 #define kCompassViewTag     89
 #define kCompassButtonTag   66
 
-@interface MapViewController () <CLLocationManagerDelegate, UIGestureRecognizerDelegate>
+@interface MapViewController () <CLLocationManagerDelegate, UIGestureRecognizerDelegate, MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (assign, nonatomic, getter=isTrackingUser) BOOL trackingUser;
+@property (assign) BOOL canRequestEvents;
 
 @end
 
@@ -29,6 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.mapView.delegate = self;
     [self addDrawerButton];
     [self setupCompassButton];
     [self setupCameraAndLocationManager];
@@ -52,9 +57,9 @@
                                   viewHeight - kButtonSize - kMarginInset,
                                   kButtonSize,
                                   kButtonSize);
-    buttonView.layer.borderWidth = 1.0;
+    buttonView.layer.borderWidth = 0.5;
     buttonView.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    buttonView.layer.cornerRadius = 4.0;
+    buttonView.layer.cornerRadius = 5.0;
     buttonView.clipsToBounds = YES;
     buttonView.tag = kCompassViewTag;
     
@@ -133,7 +138,6 @@
     });
 }
 
-#pragma mark - Delegates
 #pragma mark - Gesture Recognizer Delegate
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
     return YES;
@@ -149,6 +153,79 @@
         newCamera.heading = location.course;
         [self.mapView setCamera:newCamera animated:YES];
     }
+}
+
+#pragma mark - MKMapViewDelegate
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
+    if (_canRequestEvents) {
+        _canRequestEvents = NO;
+        [self downloadPins: mapView.centerCoordinate];
+    }
+    
+}
+
+- (void)mapViewDidFinishRenderingMap:(MKMapView *)mapView fullyRendered:(BOOL)fullyRendered {
+    if (fullyRendered) {
+        _canRequestEvents = fullyRendered;
+    }
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
+    static NSString *AnnotationIdentifier = kCustomPinID;
+    
+    if ([annotation isKindOfClass:[CustomPin class]]) {
+        CustomPin *ann = (CustomPin *) annotation;
+        MKAnnotationView *annView = [mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationIdentifier];
+        annView = [ann annotationView];
+        annView.canShowCallout = YES;
+        
+        return annView;
+    }
+    
+    return nil;
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    CustomPin *pin = (CustomPin *)view.annotation;
+    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:pin.coordinate
+                                                   addressDictionary:nil];
+    MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+    mapItem.name = pin.title;
+    
+    MKMapItem *currentLocationMapItem = [MKMapItem mapItemForCurrentLocation];
+    
+    [MKMapItem openMapsWithItems:@[currentLocationMapItem, mapItem]
+                   launchOptions:@{MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving}];
+}
+
+#pragma mark - Download Pins
+- (void)downloadPins:(CLLocationCoordinate2D)coordinate {
+    [[APIService sharedInstance] bloodCenters:^(NSArray *centers) {
+        
+        for (BloodCenter *center in centers) {
+            if ([self checkIfPinExists:CLLocationCoordinate2DMake(center.latitude, center.longitude)])
+                continue;
+            
+            CustomPin *pin = [[CustomPin alloc] initWithBloodCenter:center];
+            [self.mapView addAnnotation:pin];
+        }
+        
+        _canRequestEvents = YES;
+        
+    }];
+}
+
+#pragma mark - MKAnnotation Helper
+- (BOOL)checkIfPinExists:(CLLocationCoordinate2D)coordinate {
+    for (id mk in self.mapView.annotations) {
+        if ([mk isKindOfClass:[CustomPin class]]) {
+            CustomPin *pin = (CustomPin *)mk;
+            if (pin.coordinate.latitude == coordinate.latitude && pin.coordinate.longitude == coordinate.longitude)
+                return YES;
+        }
+    }
+    
+    return NO;
 }
 
 @end
