@@ -12,6 +12,7 @@
 #import "DrawerViewController.h"
 #import "Helper.h"
 #import "Person.h"
+#import "Constants.h"
 #import <SWRevealViewController.h>
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
@@ -37,8 +38,10 @@
     self.profileImageView.clipsToBounds = YES;
     self.profileImageView.layer.borderColor = [UIColor customDarkBackground].CGColor;
     self.profileImageView.layer.borderWidth = 1.0;
+    self.profileImageView.accessibilityLabel = kProfileImageViewLabel;
     
     self.tableView.separatorColor = [UIColor customDarkBackground];
+    self.tableView.accessibilityLabel = kDrawerTableLabel;
 }
 
 - (void)viewWillAppear:(BOOL)animated {

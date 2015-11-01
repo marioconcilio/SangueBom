@@ -80,6 +80,8 @@
 		42F543F31BDB075F00121B77 /* curiosidades.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42F543F21BDB075F00121B77 /* curiosidades.plist */; };
 		42F5AA321BE05CF600F007DC /* Person+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F5AA2F1BE05CF600F007DC /* Person+CoreDataProperties.m */; };
 		42F5AA331BE05CF600F007DC /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F5AA311BE05CF600F007DC /* Person.m */; };
+		42FA20131BE5A9DF008394FB /* HelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FA20121BE5A9DF008394FB /* HelperTests.m */; };
+		42FA20161BE5BB67008394FB /* MainUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FA20151BE5BB67008394FB /* MainUITests.m */; };
 		42FE752A1BE2DB9E002E1C80 /* CustomPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FE75291BE2DB9E002E1C80 /* CustomPin.m */; };
 		42FF4AAA1BDABAFE00E3BFC5 /* DoeSangueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FF4AA91BDABAFE00E3BFC5 /* DoeSangueViewController.m */; };
 		6EA495C986002EF4DE827221 /* libPods-SangueBom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A5DAA66E5AB340EB57C19C /* libPods-SangueBom.a */; };
@@ -236,6 +238,9 @@
 		42F5AA2F1BE05CF600F007DC /* Person+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Person+CoreDataProperties.m"; path = "Model/Person+CoreDataProperties.m"; sourceTree = "<group>"; };
 		42F5AA301BE05CF600F007DC /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Person.h; path = Model/Person.h; sourceTree = "<group>"; };
 		42F5AA311BE05CF600F007DC /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = Model/Person.m; sourceTree = "<group>"; };
+		42FA20121BE5A9DF008394FB /* HelperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperTests.m; sourceTree = "<group>"; };
+		42FA20141BE5BA08008394FB /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Helper/Constants.h; sourceTree = "<group>"; };
+		42FA20151BE5BB67008394FB /* MainUITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainUITests.m; sourceTree = "<group>"; };
 		42FE75281BE2DB9E002E1C80 /* CustomPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomPin.h; path = View/Annotation/CustomPin.h; sourceTree = "<group>"; };
 		42FE75291BE2DB9E002E1C80 /* CustomPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomPin.m; path = View/Annotation/CustomPin.m; sourceTree = "<group>"; };
 		42FF4AA81BDABAFE00E3BFC5 /* DoeSangueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DoeSangueViewController.h; path = Controller/SideMenu/DoeSangue/DoeSangueViewController.h; sourceTree = "<group>"; };
@@ -463,9 +468,9 @@
 		425AE3341BA886560059F945 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				425AE3361BA886560059F945 /* main.m */,
 				42D516D51BE407B6009211E5 /* Each.gpx */,
 				425AE3351BA886560059F945 /* Info.plist */,
-				425AE3361BA886560059F945 /* main.m */,
 				42F543E51BDAF78700121B77 /* etapas.plist */,
 				42F543F21BDB075F00121B77 /* curiosidades.plist */,
 				42E0EDBB1BDD52D40097233B /* faq.plist */,
@@ -479,7 +484,9 @@
 			isa = PBXGroup;
 			children = (
 				42F1C8641BA995DD002B6CF2 /* WelcomeUITests.m */,
+				42FA20151BE5BB67008394FB /* MainUITests.m */,
 				42F1C86E1BA9BC87002B6CF2 /* APIServiceTests.m */,
+				42FA20121BE5A9DF008394FB /* HelperTests.m */,
 				425AE34E1BA886560059F945 /* Supporting Files */,
 			);
 			path = SangueBomTests;
@@ -580,6 +587,7 @@
 			isa = PBXGroup;
 			children = (
 				428BCCBE1BD9543A007DBD77 /* Macros.h */,
+				42FA20141BE5BA08008394FB /* Constants.h */,
 				428BCCC31BD9591A007DBD77 /* Helper.h */,
 				428BCCC41BD9591A007DBD77 /* Helper.m */,
 			);
@@ -1051,6 +1059,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				42F1C86F1BA9BC87002B6CF2 /* APIServiceTests.m in Sources */,
+				42FA20161BE5BB67008394FB /* MainUITests.m in Sources */,
+				42FA20131BE5A9DF008394FB /* HelperTests.m in Sources */,
 				42F1C8651BA995DD002B6CF2 /* WelcomeUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

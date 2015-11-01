@@ -11,6 +11,7 @@
 #import "BloodCenter.h"
 #import "Macros.h"
 #import "Helper.h"
+#import "Constants.h"
 #import <UIKit/UIKit.h>
 #import <MagicalRecord/MagicalRecord.h>
 
@@ -127,13 +128,24 @@ static NSString *const kDomain = @"com.marioconcilio.SangueBom";
     
 }
 
-- (void)truncateAll {
+- (void)truncateAllPersons:(APIDefaultBlock)block {
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
         [Person MR_truncateAllInContext:localContext];
     } completion:^(BOOL contextDidSave, NSError *error) {
         if (contextDidSave) {
             [NSUserDefaults setObject:nil forKey:kUserToken];
         }
+        else {
+            block(error);
+        }
+    }];
+}
+
+- (void)truncateAllBloodCenters:(APIDefaultBlock)block {
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+        [BloodCenter MR_truncateAllInContext:localContext];
+    } completion:^(BOOL contextDidSave, NSError *error) {
+        block(error);
     }];
 }
 
@@ -165,7 +177,7 @@ static NSString *const kDomain = @"com.marioconcilio.SangueBom";
 }
 
 #pragma mark - Populate Blood Centers
-- (void)populateBloodCenters {
+- (void)populateBloodCenters:(APIDefaultBlock)block {
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
         BloodCenter *b1 = [BloodCenter MR_createEntityInContext:localContext];
         b1.name = @"Fundação Pró-Sangue Hemocentro de São Paulo - Posto Barueri";
@@ -194,7 +206,9 @@ static NSString *const kDomain = @"com.marioconcilio.SangueBom";
         b4.phone = @"0800-55-0300";
         b4.latitude = -23.484512;
         b4.longitude = -46.630251;
-    }];
+    } completion:^(BOOL contextDidSave, NSError *error) {
+        block(error);
+    }];;
 }
 
 @end

@@ -10,6 +10,7 @@
 #import "APIService.h"
 #import "AppDelegate.h"
 #import "Macros.h"
+#import "Helper.h"
 #import <AFViewShaker.h>
 #import <KVNProgress.h>
 
@@ -75,16 +76,13 @@
         return;
     }
     
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"dd/MM/yyyy"];
-    
     // is email login
     if (self.password) {
         [[APIService sharedInstance] registerUser:self.name
                                           surname:self.surname
                                             email:self.email
                                          password:self.password
-                                         birthday:[formatter dateFromString:self.birthdayTextField.text]
+                                         birthday:[Helper parseDateFromString:self.birthdayTextField.text]
                                         bloodType:self.bloodTypeTextField.text
                                             block:^(NSError *error) {
                                                 if (error) {
@@ -105,7 +103,7 @@
         [[APIService sharedInstance] saveFacebookUser:self.name
                                               surname:self.surname
                                                 email:self.email
-                                             birthday:[formatter dateFromString:self.birthdayTextField.text]
+                                             birthday:[Helper parseDateFromString:self.birthdayTextField.text]
                                             bloodType:self.bloodTypeTextField.text
                                             thumbnail:self.thumb
                                                 block:^(NSError *error) {
@@ -136,9 +134,7 @@
 }
 
 - (void)dateUpdated:(UIDatePicker *)datePicker {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"dd/MM/yyyy"];
-    self.birthdayTextField.text = [formatter stringFromDate:datePicker.date];
+    self.birthdayTextField.text = [Helper formatDate:datePicker.date];
 }
 
 #pragma mark - Picker View Data Source

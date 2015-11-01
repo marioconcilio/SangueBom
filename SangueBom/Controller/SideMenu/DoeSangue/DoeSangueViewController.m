@@ -7,6 +7,7 @@
 //
 
 #import "DoeSangueViewController.h"
+#import "Helper.h"
 #import "DoeSangueCell.h"
 #import "DoeSangueButtonCell.h"
 #import "UIViewController+BaseViewController.h"
@@ -41,7 +42,7 @@ static NSString *const ButtonCellID = @"ButtonCell";
     NSString *path = [[NSBundle mainBundle] pathForResource:@"doe_sangue" ofType:@"plist"];
     self.data = [[NSDictionary alloc] initWithContentsOfFile:path];
     
-    self.answers = [self createAnswersArray];
+    self.answers = [Helper createAnswersArrayWithCapacity:self.data.count];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -54,33 +55,9 @@ static NSString *const ButtonCellID = @"ButtonCell";
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Verify Answers
-- (NSMutableArray *)createAnswersArray {
-    NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:self.data.count];
-    for (NSInteger i=0; i<self.data.count; i++) {
-        @autoreleasepool {
-            [array addObject:@(NO)];
-        }
-    }
-    
-    return array;
-}
-
-- (BOOL)checkAnswers {
-    NSArray *allValues = self.data.allValues;
-    
-    for (NSInteger i=0; i<self.data.count; i++) {
-        if ([allValues[i] boolValue] != [self.answers[i] boolValue]) {
-            return NO;
-        }
-    }
-    
-    return YES;
-}
-
 #pragma mark - Action
 - (void)doVerify {
-    if ([self checkAnswers]) {
+    if ([Helper compareAnswers:self.data.allValues with:self.answers]) {
         
     }
     else {

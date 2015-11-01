@@ -7,6 +7,7 @@
 //
 
 #import "AlertViewController.h"
+#import "Constants.h"
 #import "UIColor+CustomColor.h"
 #import "UIFont+CustomFont.h"
 
@@ -29,6 +30,7 @@
         self.destructiveButtonTitleFont = [UIFont customRegularFontWithSize:17.0];
         self.buttonColor = [UIColor customPurple];
         self.destructiveButtonColor = [UIColor customRed];
+        self.view.accessibilityLabel = kAlertViewLabel;
     }
     
     return self;

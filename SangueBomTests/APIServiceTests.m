@@ -7,6 +7,7 @@
 //
 
 #import "APIService.h"
+#import "Helper.h"
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
@@ -26,42 +27,99 @@
     [super tearDown];
 }
 
+#pragma mark - Helper Methods
+- (void)waitForExpectations {
+    [self waitForExpectationsWithTimeout:5.0 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"code: %ld, %@", error.code, [error.userInfo valueForKey:NSLocalizedDescriptionKey]);
+        }
+    }];
+}
+
+#pragma mark - Test Methods
 - (void)testSingletonSharedInstance {
-    XCTAssertNotNil([APIService sharedInstance]);
+    XCTAssertNotNil([APIService sharedInstance], @"returning nil from shared instance");
 }
 
 - (void)testUniqueInstance {
-    XCTAssertNotNil([[APIService alloc] init]);
+    XCTAssertNotNil([[APIService alloc] init], @"returning nil from unique instance");
 }
 
 - (void)testSingletonReturnsSameSharedInstance {
     APIService *s1 = [APIService sharedInstance];
     APIService *s2 = [APIService sharedInstance];
     
-    XCTAssertEqual(s1, s2);
+    XCTAssertEqual(s1, s2, @"singleton is not the same shared instance");
 }
 
 - (void)testSingletonDifferentFromUniqueInstance {
     APIService *singleton = [APIService sharedInstance];
     APIService *unique = [[APIService alloc] init];
     
-    XCTAssertNotEqual(singleton, unique);
+    XCTAssertNotEqual(singleton, unique, @"singleton and unique instance should not be equal");
+}
+
+- (void)testTruncateAllBloodCenters {
+    XCTestExpectation *expectation = [self expectationWithDescription:@"truncate"];
+    
+    [[APIService sharedInstance] truncateAllBloodCenters:^(NSError *error) {
+        XCTAssertNil(error);
+        [expectation fulfill];
+    }];
+    
+    [self waitForExpectations];
+}
+
+- (void)testPopulateBloodCenters {
+    XCTestExpectation *expectation = [self expectationWithDescription:@"populate"];
+    
+    [[APIService sharedInstance] populateBloodCenters:^(NSError *error) {
+        XCTAssertNil(error);
+        [expectation fulfill];
+    }];
+    
+    [self waitForExpectations];
+}
+
+- (void)testTruncateAllPersons {
+    XCTestExpectation *expectation = [self expectationWithDescription:@"truncate"];
+
+    [[APIService sharedInstance] truncateAllPersons:^(NSError *error) {
+        XCTAssertNil(error);
+        [expectation fulfill];
+    }];
+    
+    [self waitForExpectations];
+}
+
+- (void)testRegisterUser {
+    XCTestExpectation *expectation = [self expectationWithDescription:@"signup"];
+
+    [[APIService sharedInstance] registerUser:@"Mario"
+                                      surname:@"Concilio"
+                                        email:@"marioconcilio@test.com"
+                                     password:@"mario12345"
+                                     birthday:[Helper parseDateFromString:@"09/01/1989"]
+                                    bloodType:@"A+"
+                                        block:^(NSError *error) {
+                                            XCTAssertNil(error);
+                                            [expectation fulfill];
+                                        }];
+    
+    [self waitForExpectations];
 }
 
 - (void)testLogin {
-    XCTestExpectation *loginExpectation = [self expectationWithDescription:@"login"];
-    [[APIService sharedInstance] login:@"marioconcilio@gmail.com"
+    XCTestExpectation *expectation = [self expectationWithDescription:@"login"];
+    
+    [[APIService sharedInstance] login:@"marioconcilio@test.com"
                               password:@"mario12345"
                                  block:^(NSError *error) {
                                      XCTAssertNil(error);
-                                     [loginExpectation fulfill];
+                                     [expectation fulfill];
                                  }];
     
-    [self waitForExpectationsWithTimeout:5.0 handler:^(NSError *error) {
-        if (error) {
-            NSLog(@"code: %ld, %@", error.code, [error.userInfo valueForKey:NSLocalizedDescriptionKey]);
-        }
-    }];
+    [self waitForExpectations];
 }
 
 @end

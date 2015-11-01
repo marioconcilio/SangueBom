@@ -11,6 +11,7 @@
 #import "UIColor+CustomColor.h"
 #import "UIStoryboard+CustomStoryboard.h"
 #import "Macros.h"
+#import "Constants.h"
 #import <KVNProgress/KVNProgress.h>
 #import <KVNProgress/KVNProgressConfiguration.h>
 #import <MagicalRecord/MagicalRecord.h>

@@ -9,9 +9,6 @@
 #ifndef Macros_h
 #define Macros_h
 
-#define kUserToken      @"user_token"
-#define kProfileInfo    @"profile_info"
-
 #define NSUserDefaults      [NSUserDefaults standardUserDefaults]
 #define UIKeyWindow         [[UIApplication sharedApplication] keyWindow]
 #define UIKeyWindowHeight   CGRectGetHeight([[UIApplication sharedApplication] keyWindow].bounds)

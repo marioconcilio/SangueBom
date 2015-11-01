@@ -7,6 +7,7 @@
 //
 
 #import "Helper.h"
+#import "Constants.h"
 #import "Person.h"
 #import "Macros.h"
 #import "UIColor+CustomColor.h"
@@ -50,6 +51,45 @@
             callback(avatar.avatarImage);
         });
     });
+}
+
++ (NSMutableArray *)createAnswersArrayWithCapacity:(NSInteger)capacity {
+    NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:capacity];
+    for (NSInteger i=0; i<capacity; i++) {
+        @autoreleasepool {
+            [array addObject:@(NO)];
+        }
+    }
+    
+    return array;
+}
+
++ (BOOL)compareAnswers:(NSArray *)answers with:(NSArray *)ans {
+    if (answers.count != ans.count) {
+        return NO;
+    }
+    
+    for (NSInteger i=0; i<ans.count; i++) {
+        if ([ans[i] boolValue] != [answers[i] boolValue]) {
+            return NO;
+        }
+    }
+    
+    return YES;
+}
+
++ (NSString *)formatDate:(NSDate *)date {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"dd/MM/yyyy";
+    
+    return [formatter stringFromDate:date];
+}
+
++ (NSDate *)parseDateFromString:(NSString *)string {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"dd/MM/yyyy";
+    
+    return [formatter dateFromString:string];
 }
 
 @end

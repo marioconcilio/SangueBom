@@ -13,8 +13,22 @@
 @interface Helper : NSObject
 
 + (Person *)loadUser;
+
 + (void)saveCustomObject:(id)obj forKey:(NSString *)key;
+
 + (NSString *)initialsFromName:(NSString *)name;
-+ (void)avatarFromName:(NSString *)name font:(UIFont *)font diameter:(CGFloat)diameter callback:(void (^)(UIImage *image))callback;
+
++ (void)avatarFromName:(NSString *)name
+                  font:(UIFont *)font
+              diameter:(CGFloat)diameter
+              callback:(void (^)(UIImage *image))callback;
+
++ (NSMutableArray *)createAnswersArrayWithCapacity:(NSInteger)capacity;
+
++ (BOOL)compareAnswers:(NSArray *)answers with:(NSArray *)ans;
+
++ (NSString *)formatDate:(NSDate *)date;
+
++ (NSDate *)parseDateFromString:(NSString *)string;
 
 @end

@@ -43,10 +43,12 @@ typedef void (^APIDefaultBlock)(NSError *error);
            fromPerson:(Person *)person
                 block:(APIDefaultBlock)block;
 
-- (void)truncateAll;
+- (void)truncateAllPersons:(APIDefaultBlock)block;
+
+- (void)truncateAllBloodCenters:(APIDefaultBlock)block;
 
 - (void)bloodCenters:(void (^)(NSArray *centers))block;
 
-- (void)populateBloodCenters;
+- (void)populateBloodCenters:(APIDefaultBlock)block;
 
 @end

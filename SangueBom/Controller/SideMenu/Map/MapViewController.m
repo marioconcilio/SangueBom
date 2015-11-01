@@ -159,7 +159,7 @@
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
     if (_canRequestEvents) {
         _canRequestEvents = NO;
-        [self downloadPins: mapView.centerCoordinate];
+        [self downloadPins:mapView.centerCoordinate];
     }
     
 }
@@ -211,7 +211,6 @@
         }
         
         _canRequestEvents = YES;
-        
     }];
 }
 

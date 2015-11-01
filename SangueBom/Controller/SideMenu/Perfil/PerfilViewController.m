@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "Person.h"
 #import "Helper.h"
+#import "Constants.h"
 #import "UIViewController+BaseViewController.h"
 #import "UIFont+CustomFont.h"
 #import "UIColor+CustomColor.h"
@@ -45,13 +46,10 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"dd/MM/yyyy"];
-    
     Person *person = [Helper loadUser];
     self.nameLabel.text = [NSString stringWithFormat:@"%@ %@", person.name, person.surname];
     self.emailLabel.text = person.email;
-    self.birthdayLabel.text = [formatter stringFromDate:person.birthday];
+    self.birthdayLabel.text = [Helper formatDate:person.birthday];
     self.bloodTypeLabel.text = person.bloodType;
     
     [Helper avatarFromName:self.nameLabel.text font:[UIFont customUltraLightFontWithSize:38.0] diameter:120.0 callback:^(UIImage *image) {
