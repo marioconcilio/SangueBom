@@ -14,7 +14,6 @@
 #import "UIViewController+BaseViewController.h"
 #import "UIFont+CustomFont.h"
 #import "UIColor+CustomColor.h"
-#import "AlertViewController.h"
 #import "APIService.h"
 #import "DBCameraViewController.h"
 #import "DBCameraContainerViewController.h"
@@ -105,24 +104,22 @@
 }
 
 -(void)doLogout:(UIButton *)sender {
-    AlertViewController *alert = [[AlertViewController alloc] init];
-    alert.title = @"Atenção";
-    alert.message = @"Deseja fazer logout?";
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Logout"
+                                                                             message:@"Deseja sair da sua conta?"
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"Logout"
+                                                     style:UIAlertActionStyleDestructive
+                                                   handler:^(UIAlertAction * _Nonnull action) {
+                                                       [NSUserDefaults setObject:nil forKey:kUserToken];
+                                                       [UIAppDelegate defineRootViewControllerAnimated:YES];                                                   }];
     
-    [alert addAction:[NYAlertAction actionWithTitle:@"Logout"
-                                              style:UIAlertActionStyleDestructive
-                                            handler:^(NYAlertAction *action) {
-                                                [NSUserDefaults setObject:nil forKey:kUserToken];
-                                                [UIAppDelegate defineRootViewControllerAnimated:YES];
-                                            }]];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancelar"
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:NULL];
     
-    [alert addAction:[NYAlertAction actionWithTitle:@"Cancelar"
-                                              style:UIAlertActionStyleCancel
-                                            handler:^(NYAlertAction *action) {
-                                                [self dismissViewControllerAnimated:YES completion:NULL];
-                                            }]];
-    
-    [self presentViewController:alert animated:YES completion:NULL];
+    [alertController addAction:action];
+    [alertController addAction:cancelAction];
+    [self presentViewController:alertController animated:YES completion:NULL];
 }
 
 #pragma mark - DBCameraViewControllerDelegate

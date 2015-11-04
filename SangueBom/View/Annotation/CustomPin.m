@@ -17,9 +17,8 @@
 @private
     NSString *_title;
     NSString *_subtitle;
+    BloodCenter *_bloodCenter;
 }
-
-@property (strong) BloodCenter *center;
 
 @end
 

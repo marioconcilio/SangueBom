@@ -31,7 +31,7 @@
                                                            NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor customRed]];
-    [[UINavigationBar appearance] setBarStyle:UIBarStyleDefault];
+//    [[UINavigationBar appearance] setBarStyle:UIBarStyleDefault];
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
     

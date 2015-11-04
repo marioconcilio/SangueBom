@@ -13,7 +13,6 @@
 #import "UIViewController+BaseViewController.h"
 #import "UIColor+CustomColor.h"
 #import "UIFont+CustomFont.h"
-#import "AlertViewController.h"
 #import "APIService.h"
 #import <BEMCheckBox.h>
 
@@ -33,8 +32,8 @@ static NSString *const ButtonCellID = @"ButtonCell";
     [super viewDidLoad];
     [self addDrawerButton];
     
-//    [[APIService sharedInstance] populateBloodCenters];
-//    [[APIService sharedInstance] truncateAll];
+//    [[APIService sharedInstance] truncateAllBloodCenters:NULL];
+//    [[APIService sharedInstance] populateBloodCenters:NULL];
     
     self.tableView.estimatedRowHeight = 38.0;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -61,17 +60,15 @@ static NSString *const ButtonCellID = @"ButtonCell";
         
     }
     else {
-        AlertViewController *alert = [[AlertViewController alloc] init];
-        alert.title = @"Atenção";
-        alert.message = @"Infelizmente você não está apto a doar sangue.";
-
-        [alert addAction:[NYAlertAction actionWithTitle:@"Ok"
-                                                  style:UIAlertActionStyleDefault
-                                                handler:^(NYAlertAction *action) {
-                                                    [self dismissViewControllerAnimated:YES completion:NULL];
-                                                }]];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Ops..."
+                                                                                 message:@"Infelizmente você não está apto a doar sangue."
+                                                                          preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK"
+                                                         style:UIAlertActionStyleCancel
+                                                       handler:NULL];
         
-        [self presentViewController:alert animated:YES completion:NULL];
+        [alertController addAction:action];
+        [self presentViewController:alertController animated:YES completion:NULL];
     }
 }
 

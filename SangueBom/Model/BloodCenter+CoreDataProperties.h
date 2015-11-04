@@ -2,7 +2,7 @@
 //  BloodCenter+CoreDataProperties.h
 //  SangueBom
 //
-//  Created by Mario Concilio on 10/30/15.
+//  Created by Mario Concilio on 11/4/15.
 //  Copyright © 2015 Mario Concilio. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) double longitude;
 @property (nullable, nonatomic, retain) NSString *name;
 @property (nullable, nonatomic, retain) NSString *phone;
+@property (nullable, nonatomic, retain) NSString *image;
 
 @end
 

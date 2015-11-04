@@ -69,17 +69,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>NYAlertViewController.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-SangueBom.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-SangueBomTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PureLayout.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -94,99 +94,13 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>VGParallaxHeader.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>06B2232CE73059846F04E5C3DFEE0D38</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>25CF57D5F98A0EB7650687DEEB11C50C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2EFEDBB649146422B0A076290AB959DE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>410B25DF16EA5C5B3E2698F74F9625FB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4964B5F6DB39F365B3C3DF6017696E8F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>499E02707080D83C86D4029D60C38866</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4E286D373D75563CE26E479A68203892</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6610362E50A6DE8BACCA1F2885CD9157</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6CD72EBA655AD61991863324DEF7B562</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>81D7FE2A0FD9258247B1232874B837DA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8C80F913EE213FA1EE3801FF8CEF0DD4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9B612E98D2408AD8E15274F9F9BF41ED</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9C19AD6F3A918BC977910FF5338B8D2B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A2C7248CE7F02D16C4CC612DF5C1BB78</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A48601FEE4437A924848DB48369BA809</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C78CAB9013653EB1A250B2DFD3BC7666</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D54AB3ECEB9A8FBA15D4F73CBE326692</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D607CE439EBD256738A38E8D3933E56F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>

@@ -7,6 +7,7 @@
 //
 
 #import "MapViewController.h"
+#import "DetailViewController.h"
 #import "Macros.h"
 #import "APIService.h"
 #import "UIViewController+BaseViewController.h"
@@ -28,6 +29,8 @@
 
 @end
 
+static NSString *const kDetailSegue = @"detailSegue";
+
 @implementation MapViewController
 
 - (void)viewDidLoad {
@@ -38,6 +41,10 @@
     [self setupCompassButton];
     [self setupCameraAndLocationManager];
     [self setupGestures];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -127,6 +134,17 @@
     }
 }
 
+#pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:kDetailSegue]) {
+        MKAnnotationView *annView = sender;
+        CustomPin *pin = annView.annotation;
+        UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
+        DetailViewController *vc = nav.childViewControllers[0];
+        vc.bloodCenter = pin.center;
+    }
+}
+
 #pragma mark - Gesture Methods
 - (void)panGestureOnMap:(UIPanGestureRecognizer *)gesture {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -186,16 +204,7 @@
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    CustomPin *pin = (CustomPin *)view.annotation;
-    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:pin.coordinate
-                                                   addressDictionary:nil];
-    MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
-    mapItem.name = pin.title;
-    
-    MKMapItem *currentLocationMapItem = [MKMapItem mapItemForCurrentLocation];
-    
-    [MKMapItem openMapsWithItems:@[currentLocationMapItem, mapItem]
-                   launchOptions:@{MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving}];
+    [self performSegueWithIdentifier:kDetailSegue sender:view];
 }
 
 #pragma mark - Download Pins

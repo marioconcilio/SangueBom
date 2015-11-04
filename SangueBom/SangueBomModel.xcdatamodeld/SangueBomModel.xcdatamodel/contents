@@ -2,6 +2,7 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="14F27" minimumToolsVersion="Xcode 7.0">
     <entity name="BloodCenter" representedClassName="BloodCenter" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -16,7 +17,7 @@
         <attribute name="thumbnail" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="BloodCenter" positionX="-63" positionY="27" width="128" height="120"/>
+        <element name="BloodCenter" positionX="-63" positionY="27" width="128" height="135"/>
         <element name="Person" positionX="-63" positionY="-18" width="128" height="135"/>
     </elements>
 </model>

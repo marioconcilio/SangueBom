@@ -7,7 +7,6 @@ target 'SangueBom' do
     pod 'KVNProgress'
     pod 'SWRevealViewController', '~> 2.3'
     pod 'JSQMessagesViewController', '~> 7.2'
-    pod 'NYAlertViewController'
     pod 'MagicalRecord'
     pod 'SSKeychain'
     pod 'FBSDKCoreKit'
@@ -15,6 +14,7 @@ target 'SangueBom' do
     pod 'FBSDKLoginKit'
     pod 'BEMCheckBox'
     pod 'GPUImage'
+    pod 'VGParallaxHeader'
 
 end
 

@@ -185,6 +185,7 @@ static NSString *const kDomain = @"com.marioconcilio.SangueBom";
         b1.phone = @"0800-55-0300";
         b1.latitude = -23.496635;
         b1.longitude = -46.872825;
+        b1.image = @"barueri.jpg";
         
         BloodCenter *b2 = [BloodCenter MR_createEntityInContext:localContext];
         b2.name = @"Fundação Pró-Sangue Hemocentro de São Paulo - Posto Clínicas";
@@ -192,6 +193,7 @@ static NSString *const kDomain = @"com.marioconcilio.SangueBom";
         b2.phone = @"0800-55-0300";
         b2.latitude = -23.557110;
         b2.longitude = -46.668857;
+        b2.image = @"clinicas.jpg";
         
         BloodCenter *b3 = [BloodCenter MR_createEntityInContext:localContext];
         b3.name = @"Fundação Pró-Sangue Hemocentro de São Paulo - Posto Dante Pazzanese";
@@ -199,6 +201,7 @@ static NSString *const kDomain = @"com.marioconcilio.SangueBom";
         b3.phone = @"0800-55-0300";
         b3.latitude = -23.585106;
         b3.longitude = -46.652241;
+        b3.image = @"dante.jpg";
         
         BloodCenter *b4 = [BloodCenter MR_createEntityInContext:localContext];
         b4.name = @"Fundação Pró-Sangue Hemocentro de São Paulo - Posto Mandaqui";
@@ -206,6 +209,8 @@ static NSString *const kDomain = @"com.marioconcilio.SangueBom";
         b4.phone = @"0800-55-0300";
         b4.latitude = -23.484512;
         b4.longitude = -46.630251;
+        b4.image = @"mandaqui.jpg";
+        
     } completion:^(BOOL contextDidSave, NSError *error) {
         block(error);
     }];;
