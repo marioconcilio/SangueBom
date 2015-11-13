@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '6ABD8A80C3AB8BF81E1B6DC1'
+               BlueprintIdentifier = '188D2683C282DB7055AD3877'
                BlueprintName = 'AFViewShaker'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libAFViewShaker.a'>

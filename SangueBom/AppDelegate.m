@@ -12,6 +12,7 @@
 #import "UIStoryboard+CustomStoryboard.h"
 #import "Macros.h"
 #import "Constants.h"
+#import <TestFairy.h>
 #import <KVNProgress/KVNProgress.h>
 #import <KVNProgress/KVNProgressConfiguration.h>
 #import <MagicalRecord/MagicalRecord.h>
@@ -23,8 +24,9 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [TestFairy begin:@"939e8063f824164d535ee589a9000b7765bd5ed2"];
+    
 //    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont customThinFontWithSize:18.0],

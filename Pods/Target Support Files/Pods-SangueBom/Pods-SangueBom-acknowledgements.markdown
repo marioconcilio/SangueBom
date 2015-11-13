@@ -343,6 +343,10 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
  Early code inspired on a similar class by Philip Kluz (Philip.Kluz@zuui.org)
 
+## TestFairy
+
+
+
 ## VGParallaxHeader
 
 The MIT License (MIT)

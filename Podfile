@@ -15,6 +15,7 @@ target 'SangueBom' do
     pod 'BEMCheckBox'
     pod 'GPUImage'
     pod 'VGParallaxHeader'
+    pod 'TestFairy', '~> 1.5'
 
 end
 
