@@ -14,7 +14,7 @@
 
 @interface CuriosidadesViewController ()
 
-@property (nonatomic, strong) NSArray *data;
+@property (nonatomic, strong) NSArray<NSString *> *data;
 
 @end
 
