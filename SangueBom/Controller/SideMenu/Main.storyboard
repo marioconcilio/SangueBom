@@ -1492,10 +1492,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="60" id="Nbm-3q-dJd" customClass="DetailCell">
-                                <rect key="frame" x="0.0" y="92" width="600" height="38"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nbm-3q-dJd" id="Kuj-vS-b4o">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="37"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Bp-U8-8L9">
@@ -1538,12 +1538,12 @@
                                             <exclude reference="yCs-KW-UXS"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <exclude reference="KmI-wD-h9f"/>
-                                            <exclude reference="NjZ-To-9Cl"/>
                                             <exclude reference="NSU-cR-lS2"/>
                                             <exclude reference="W6n-xJ-u9s"/>
                                             <exclude reference="efM-cT-18G"/>
                                             <exclude reference="iDm-c4-5Y0"/>
+                                            <exclude reference="KmI-wD-h9f"/>
+                                            <exclude reference="NjZ-To-9Cl"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
@@ -1552,12 +1552,12 @@
                                             <include reference="yCs-KW-UXS"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <include reference="KmI-wD-h9f"/>
-                                            <include reference="NjZ-To-9Cl"/>
                                             <include reference="NSU-cR-lS2"/>
                                             <include reference="W6n-xJ-u9s"/>
                                             <include reference="efM-cT-18G"/>
                                             <include reference="iDm-c4-5Y0"/>
+                                            <include reference="KmI-wD-h9f"/>
+                                            <include reference="NjZ-To-9Cl"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>

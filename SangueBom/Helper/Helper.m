@@ -8,24 +8,24 @@
 
 #import "Helper.h"
 #import "Constants.h"
-#import "Person.h"
 #import "Macros.h"
 #import "UIColor+CustomColor.h"
+#import "VOUser.h"
 #import <JSQMessagesViewController/JSQMessagesAvatarImageFactory.h>
 #import <MagicalRecord/MagicalRecord.h>
 
 @implementation Helper
 
-+ (Person *)loadUser {
-    NSString *email = [NSUserDefaults objectForKey:kUserToken];
-    return [Person MR_findFirstByAttribute:@"email" withValue:email];
++ (VOUser *)loadUser {
+    NSData *myEncodedObject = [NSUserDefaults objectForKey:kProfileInfo];
+    VOUser* obj = (VOUser *)[NSKeyedUnarchiver unarchiveObjectWithData:myEncodedObject];
+    return obj;
 }
 
 + (void)saveCustomObject:(id)obj forKey:(NSString *)key {
     NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:obj];
     [NSUserDefaults setObject:myEncodedObject forKey:key];
 }
-
 + (NSString *)initialsFromName:(NSString *)name {
     NSMutableString * firstCharacters = [NSMutableString string];
     NSArray * words = [name componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
@@ -80,14 +80,14 @@
 
 + (NSString *)formatDate:(NSDate *)date {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"dd/MM/yyyy";
+    formatter.dateFormat = @"dd-MM-yyyy";
     
     return [formatter stringFromDate:date];
 }
 
 + (NSDate *)parseDateFromString:(NSString *)string {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"dd/MM/yyyy";
+    formatter.dateFormat = @"dd-MM-yyyy";
     
     return [formatter dateFromString:string];
 }

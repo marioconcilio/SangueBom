@@ -13,7 +13,6 @@
 #import "UIViewController+BaseViewController.h"
 #import "UIColor+CustomColor.h"
 #import "UIFont+CustomFont.h"
-#import "APIService.h"
 #import <BEMCheckBox.h>
 
 @interface DoeSangueViewController () <BEMCheckBoxDelegate>
@@ -31,9 +30,6 @@ static NSString *const ButtonCellID = @"ButtonCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addDrawerButton];
-    
-//    [[APIService sharedInstance] truncateAllBloodCenters:NULL];
-//    [[APIService sharedInstance] populateBloodCenters:NULL];
     
     self.tableView.estimatedRowHeight = 38.0;
     self.tableView.rowHeight = UITableViewAutomaticDimension;

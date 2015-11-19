@@ -76,21 +76,20 @@
         return;
     }
     
+    [KVNProgress show];
+    NSString *fullName = [NSString stringWithFormat:@"%@ %@", self.name, self.surname];
     // is email login
     if (self.password) {
-        [[APIService sharedInstance] registerUser:self.name
-                                          surname:self.surname
+        [[APIService sharedInstance] registerUser:fullName
                                             email:self.email
                                          password:self.password
-                                         birthday:[Helper parseDateFromString:self.birthdayTextField.text]
                                         bloodType:self.bloodTypeTextField.text
+                                         birthday:self.birthdayTextField.text
                                             block:^(NSError *error) {
+                                                [KVNProgress dismiss];
+                                                
                                                 if (error) {
-                                                    NSLog(@"code: %ld, %@", error.code, error.userInfo[NSLocalizedDescriptionKey]);
-                                                    if (error.code == 400) {
-                                                        self.errorLabel.text = @"Email já existente";
-                                                    }
-                                                    
+                                                    self.errorLabel.text = @"Erro ao registrar Usuário";
                                                     [self showError];
                                                 }
                                                 else {
@@ -107,6 +106,8 @@
                                             bloodType:self.bloodTypeTextField.text
                                             thumbnail:self.thumb
                                                 block:^(NSError *error) {
+                                                    [KVNProgress dismiss];
+                                                    
                                                     if (error) {
                                                         self.errorLabel.text = @"Erro ao fazer login";
                                                         [self showError];

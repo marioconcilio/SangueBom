@@ -11,15 +11,15 @@
 
 #define kCustomPinID    @"CustomPin"
 
-@class BloodCenter;
+@class VOBloodCenter;
 @interface CustomPin : NSObject <MKAnnotation> 
 
 @property (nonatomic) CLLocationCoordinate2D coordinate;;
 @property (readonly, nonatomic, copy) NSString *title;
 @property (readonly, nonatomic, copy) NSString *subtitle;
-@property (readonly, nonatomic, strong) BloodCenter *center;
+@property (readonly, nonatomic, strong) VOBloodCenter *center;
 
-- (instancetype)initWithBloodCenter:(BloodCenter *)center;
+- (instancetype)initWithBloodCenter:(VOBloodCenter *)center;
 - (MKAnnotationView *)annotationView;
 
 @end

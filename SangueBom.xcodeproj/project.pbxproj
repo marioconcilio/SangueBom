@@ -38,11 +38,9 @@
 		4223D4681BE18649001408C6 /* DBCameraGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4223D4471BE18649001408C6 /* DBCameraGridView.m */; };
 		4223D4691BE18649001408C6 /* DBCameraLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4223D4491BE18649001408C6 /* DBCameraLoadingView.m */; };
 		4223D46A1BE18649001408C6 /* DBCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4223D44B1BE18649001408C6 /* DBCameraView.m */; };
-		425969EB1BEAADF00062E2A9 /* barueri.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 425969E81BEAADF00062E2A9 /* barueri.jpg */; };
-		425969EC1BEAADF00062E2A9 /* clinicas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 425969E91BEAADF00062E2A9 /* clinicas.jpg */; };
-		425969ED1BEAADF00062E2A9 /* mandaqui.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 425969EA1BEAADF00062E2A9 /* mandaqui.jpg */; };
-		425969F81BEAAF6D0062E2A9 /* BloodCenter+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 425969F51BEAAF6D0062E2A9 /* BloodCenter+CoreDataProperties.m */; };
-		425969F91BEAAF6D0062E2A9 /* BloodCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 425969F71BEAAF6D0062E2A9 /* BloodCenter.m */; };
+		425969EB1BEAADF00062E2A9 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 425969E81BEAADF00062E2A9 /* 1.jpg */; };
+		425969EC1BEAADF00062E2A9 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 425969E91BEAADF00062E2A9 /* 2.jpg */; };
+		425969ED1BEAADF00062E2A9 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 425969EA1BEAADF00062E2A9 /* 3.jpg */; };
 		425AE3371BA886560059F945 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE3361BA886560059F945 /* main.m */; };
 		425AE33A1BA886560059F945 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE3391BA886560059F945 /* AppDelegate.m */; };
 		425AE3421BA886560059F945 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 425AE3411BA886560059F945 /* Images.xcassets */; };
@@ -58,8 +56,9 @@
 		428BCCBC1BD9526A007DBD77 /* DrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 428BCCBB1BD9526A007DBD77 /* DrawerViewController.m */; };
 		428BCCC21BD95677007DBD77 /* UIColor+CustomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 428BCCC11BD95677007DBD77 /* UIColor+CustomColor.m */; };
 		428BCCC51BD9591A007DBD77 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 428BCCC41BD9591A007DBD77 /* Helper.m */; };
+		42A45ED41BFE16A600527AEE /* VOUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A45ED31BFE16A600527AEE /* VOUser.m */; };
+		42A45ED71BFE19BB00527AEE /* VOBloodCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A45ED61BFE19BB00527AEE /* VOBloodCenter.m */; };
 		42B420EA1BDEDF3800453D31 /* DoeSangueButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B420E91BDEDF3800453D31 /* DoeSangueButtonCell.m */; };
-		42B420EE1BDEF0BC00453D31 /* SangueBomModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42B420EC1BDEF0BC00453D31 /* SangueBomModel.xcdatamodeld */; };
 		42B420F81BDEF9F100453D31 /* PerfilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B420F71BDEF9F100453D31 /* PerfilViewController.m */; };
 		42B421021BDF0A0900453D31 /* MoreInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B421011BDF0A0900453D31 /* MoreInfoViewController.m */; };
 		42B449721BDE8D4F005FA81D /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B449711BDE8D4F005FA81D /* FAQViewController.m */; };
@@ -71,7 +70,7 @@
 		42E0EDBC1BDD52D40097233B /* faq.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42E0EDBB1BDD52D40097233B /* faq.plist */; };
 		42F1252E1BEA7752007D9984 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F1252D1BEA7752007D9984 /* DetailViewController.m */; };
 		42F125321BEA7A1D007D9984 /* DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F125311BEA7A1D007D9984 /* DetailCell.m */; };
-		42F125351BEA7BC7007D9984 /* dante.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 42F125341BEA7BC7007D9984 /* dante.jpg */; };
+		42F125351BEA7BC7007D9984 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 42F125341BEA7BC7007D9984 /* 4.jpg */; };
 		42F1253B1BEA8C38007D9984 /* ParallaxHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F125381BEA8C38007D9984 /* ParallaxHeaderView.m */; };
 		42F1253C1BEA8C38007D9984 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F1253A1BEA8C38007D9984 /* UIImage+ImageEffects.m */; };
 		42F1C8651BA995DD002B6CF2 /* WelcomeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F1C8641BA995DD002B6CF2 /* WelcomeUITests.m */; };
@@ -85,8 +84,6 @@
 		42F543EE1BDB05E900121B77 /* CuriosidadesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F543ED1BDB05E900121B77 /* CuriosidadesCell.m */; };
 		42F543F11BDB060200121B77 /* CuriosidadesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F543F01BDB060200121B77 /* CuriosidadesViewController.m */; };
 		42F543F31BDB075F00121B77 /* curiosidades.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42F543F21BDB075F00121B77 /* curiosidades.plist */; };
-		42F5AA321BE05CF600F007DC /* Person+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F5AA2F1BE05CF600F007DC /* Person+CoreDataProperties.m */; };
-		42F5AA331BE05CF600F007DC /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F5AA311BE05CF600F007DC /* Person.m */; };
 		42FA20131BE5A9DF008394FB /* HelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FA20121BE5A9DF008394FB /* HelperTests.m */; };
 		42FA20161BE5BB67008394FB /* MainUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FA20151BE5BB67008394FB /* MainUITests.m */; };
 		42FE752A1BE2DB9E002E1C80 /* CustomPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FE75291BE2DB9E002E1C80 /* CustomPin.m */; };
@@ -169,13 +166,9 @@
 		4223D4491BE18649001408C6 /* DBCameraLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBCameraLoadingView.m; sourceTree = "<group>"; };
 		4223D44A1BE18649001408C6 /* DBCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCameraView.h; sourceTree = "<group>"; };
 		4223D44B1BE18649001408C6 /* DBCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBCameraView.m; sourceTree = "<group>"; };
-		425969E81BEAADF00062E2A9 /* barueri.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = barueri.jpg; sourceTree = "<group>"; };
-		425969E91BEAADF00062E2A9 /* clinicas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = clinicas.jpg; sourceTree = "<group>"; };
-		425969EA1BEAADF00062E2A9 /* mandaqui.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mandaqui.jpg; sourceTree = "<group>"; };
-		425969F41BEAAF6D0062E2A9 /* BloodCenter+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BloodCenter+CoreDataProperties.h"; path = "Model/BloodCenter+CoreDataProperties.h"; sourceTree = "<group>"; };
-		425969F51BEAAF6D0062E2A9 /* BloodCenter+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BloodCenter+CoreDataProperties.m"; path = "Model/BloodCenter+CoreDataProperties.m"; sourceTree = "<group>"; };
-		425969F61BEAAF6D0062E2A9 /* BloodCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BloodCenter.h; path = Model/BloodCenter.h; sourceTree = "<group>"; };
-		425969F71BEAAF6D0062E2A9 /* BloodCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BloodCenter.m; path = Model/BloodCenter.m; sourceTree = "<group>"; };
+		425969E81BEAADF00062E2A9 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		425969E91BEAADF00062E2A9 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		425969EA1BEAADF00062E2A9 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
 		425AE3311BA886560059F945 /* SangueBom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SangueBom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		425AE3351BA886560059F945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		425AE3361BA886560059F945 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -206,9 +199,12 @@
 		428BCCC11BD95677007DBD77 /* UIColor+CustomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+CustomColor.m"; path = "Categories/UIColor+CustomColor.m"; sourceTree = "<group>"; };
 		428BCCC31BD9591A007DBD77 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Helper.h; path = Helper/Helper.h; sourceTree = "<group>"; };
 		428BCCC41BD9591A007DBD77 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Helper.m; path = Helper/Helper.m; sourceTree = "<group>"; };
+		42A45ED21BFE16A600527AEE /* VOUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VOUser.h; path = Model/VOUser.h; sourceTree = "<group>"; };
+		42A45ED31BFE16A600527AEE /* VOUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VOUser.m; path = Model/VOUser.m; sourceTree = "<group>"; };
+		42A45ED51BFE19BB00527AEE /* VOBloodCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VOBloodCenter.h; path = Model/VOBloodCenter.h; sourceTree = "<group>"; };
+		42A45ED61BFE19BB00527AEE /* VOBloodCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VOBloodCenter.m; path = Model/VOBloodCenter.m; sourceTree = "<group>"; };
 		42B420E81BDEDF3800453D31 /* DoeSangueButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DoeSangueButtonCell.h; path = Controller/SideMenu/DoeSangue/DoeSangueButtonCell/DoeSangueButtonCell.h; sourceTree = "<group>"; };
 		42B420E91BDEDF3800453D31 /* DoeSangueButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DoeSangueButtonCell.m; path = Controller/SideMenu/DoeSangue/DoeSangueButtonCell/DoeSangueButtonCell.m; sourceTree = "<group>"; };
-		42B420ED1BDEF0BC00453D31 /* SangueBomModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SangueBomModel.xcdatamodel; sourceTree = "<group>"; };
 		42B420F61BDEF9F100453D31 /* PerfilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PerfilViewController.h; path = Controller/SideMenu/Perfil/PerfilViewController.h; sourceTree = "<group>"; };
 		42B420F71BDEF9F100453D31 /* PerfilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PerfilViewController.m; path = Controller/SideMenu/Perfil/PerfilViewController.m; sourceTree = "<group>"; };
 		42B421001BDF0A0900453D31 /* MoreInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoreInfoViewController.h; path = Welcome/MoreInfo/MoreInfoViewController.h; sourceTree = "<group>"; };
@@ -228,7 +224,7 @@
 		42F1252D1BEA7752007D9984 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = Controller/SideMenu/Detail/DetailViewController.m; sourceTree = "<group>"; };
 		42F125301BEA7A1D007D9984 /* DetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailCell.h; path = Controller/SideMenu/Detail/DetailCell/DetailCell.h; sourceTree = "<group>"; };
 		42F125311BEA7A1D007D9984 /* DetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailCell.m; path = Controller/SideMenu/Detail/DetailCell/DetailCell.m; sourceTree = "<group>"; };
-		42F125341BEA7BC7007D9984 /* dante.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dante.jpg; sourceTree = "<group>"; };
+		42F125341BEA7BC7007D9984 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
 		42F125371BEA8C38007D9984 /* ParallaxHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParallaxHeaderView.h; path = Lib/ParallaxHeaderView/ParallaxHeaderView.h; sourceTree = "<group>"; };
 		42F125381BEA8C38007D9984 /* ParallaxHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParallaxHeaderView.m; path = Lib/ParallaxHeaderView/ParallaxHeaderView.m; sourceTree = "<group>"; };
 		42F125391BEA8C38007D9984 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "Lib/ParallaxHeaderView/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
@@ -251,10 +247,6 @@
 		42F543EF1BDB060200121B77 /* CuriosidadesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CuriosidadesViewController.h; path = Controller/SideMenu/Curiosidades/CuriosidadesViewController.h; sourceTree = "<group>"; };
 		42F543F01BDB060200121B77 /* CuriosidadesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CuriosidadesViewController.m; path = Controller/SideMenu/Curiosidades/CuriosidadesViewController.m; sourceTree = "<group>"; };
 		42F543F21BDB075F00121B77 /* curiosidades.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = curiosidades.plist; sourceTree = "<group>"; };
-		42F5AA2E1BE05CF600F007DC /* Person+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Person+CoreDataProperties.h"; path = "Model/Person+CoreDataProperties.h"; sourceTree = "<group>"; };
-		42F5AA2F1BE05CF600F007DC /* Person+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Person+CoreDataProperties.m"; path = "Model/Person+CoreDataProperties.m"; sourceTree = "<group>"; };
-		42F5AA301BE05CF600F007DC /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Person.h; path = Model/Person.h; sourceTree = "<group>"; };
-		42F5AA311BE05CF600F007DC /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = Model/Person.m; sourceTree = "<group>"; };
 		42FA20121BE5A9DF008394FB /* HelperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperTests.m; sourceTree = "<group>"; };
 		42FA20141BE5BA08008394FB /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Helper/Constants.h; sourceTree = "<group>"; };
 		42FA20151BE5BB67008394FB /* MainUITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainUITests.m; sourceTree = "<group>"; };
@@ -494,7 +486,6 @@
 				42F543F21BDB075F00121B77 /* curiosidades.plist */,
 				42E0EDBB1BDD52D40097233B /* faq.plist */,
 				42B4497B1BDE982E005FA81D /* doe_sangue.plist */,
-				42B420EC1BDEF0BC00453D31 /* SangueBomModel.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -649,14 +640,10 @@
 		42B420EB1BDEEC7800453D31 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				42F5AA2E1BE05CF600F007DC /* Person+CoreDataProperties.h */,
-				42F5AA2F1BE05CF600F007DC /* Person+CoreDataProperties.m */,
-				42F5AA301BE05CF600F007DC /* Person.h */,
-				42F5AA311BE05CF600F007DC /* Person.m */,
-				425969F41BEAAF6D0062E2A9 /* BloodCenter+CoreDataProperties.h */,
-				425969F51BEAAF6D0062E2A9 /* BloodCenter+CoreDataProperties.m */,
-				425969F61BEAAF6D0062E2A9 /* BloodCenter.h */,
-				425969F71BEAAF6D0062E2A9 /* BloodCenter.m */,
+				42A45ED21BFE16A600527AEE /* VOUser.h */,
+				42A45ED31BFE16A600527AEE /* VOUser.m */,
+				42A45ED51BFE19BB00527AEE /* VOBloodCenter.h */,
+				42A45ED61BFE19BB00527AEE /* VOBloodCenter.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -738,10 +725,10 @@
 		42F125331BEA7BB9007D9984 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				425969E81BEAADF00062E2A9 /* barueri.jpg */,
-				425969E91BEAADF00062E2A9 /* clinicas.jpg */,
-				425969EA1BEAADF00062E2A9 /* mandaqui.jpg */,
-				42F125341BEA7BC7007D9984 /* dante.jpg */,
+				425969E81BEAADF00062E2A9 /* 1.jpg */,
+				425969E91BEAADF00062E2A9 /* 2.jpg */,
+				425969EA1BEAADF00062E2A9 /* 3.jpg */,
+				42F125341BEA7BC7007D9984 /* 4.jpg */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -928,15 +915,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4223D4591BE18649001408C6 /* Hudson.acv in Resources */,
-				425969EC1BEAADF00062E2A9 /* clinicas.jpg in Resources */,
+				425969EC1BEAADF00062E2A9 /* 2.jpg in Resources */,
 				4223D45D1BE18649001408C6 /* Vignette.acv in Resources */,
 				42D516D61BE407B6009211E5 /* Each.gpx in Resources */,
 				4223D45C1BE18649001408C6 /* Valencia.acv in Resources */,
 				42E0EDBC1BDD52D40097233B /* faq.plist in Resources */,
 				425AE35E1BA888800059F945 /* Welcome.storyboard in Resources */,
 				42F543E61BDAF78700121B77 /* etapas.plist in Resources */,
-				42F125351BEA7BC7007D9984 /* dante.jpg in Resources */,
-				425969EB1BEAADF00062E2A9 /* barueri.jpg in Resources */,
+				42F125351BEA7BC7007D9984 /* 4.jpg in Resources */,
+				425969EB1BEAADF00062E2A9 /* 1.jpg in Resources */,
 				4223D45A1BE18649001408C6 /* mayfair.acv in Resources */,
 				4223D45E1BE18649001408C6 /* DBCamera.strings in Resources */,
 				425AE3451BA886560059F945 /* LaunchScreen.xib in Resources */,
@@ -948,7 +935,7 @@
 				428BCCB81BD93650007DBD77 /* Main.storyboard in Resources */,
 				42F543F31BDB075F00121B77 /* curiosidades.plist in Resources */,
 				4223D4571BE18649001408C6 /* amaro.acv in Resources */,
-				425969ED1BEAADF00062E2A9 /* mandaqui.jpg in Resources */,
+				425969ED1BEAADF00062E2A9 /* 3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1076,16 +1063,13 @@
 				4223D44D1BE18649001408C6 /* UIImage+Crop.m in Sources */,
 				4223D4691BE18649001408C6 /* DBCameraLoadingView.m in Sources */,
 				42FF4AAA1BDABAFE00E3BFC5 /* DoeSangueViewController.m in Sources */,
-				42B420EE1BDEF0BC00453D31 /* SangueBomModel.xcdatamodeld in Sources */,
 				4223D4621BE18649001408C6 /* DBCollectionViewCell.m in Sources */,
 				4223D4541BE18649001408C6 /* DBCameraSegueViewController.m in Sources */,
 				425AE36F1BA8944E0059F945 /* FadeInNavigationController.m in Sources */,
-				425969F91BEAAF6D0062E2A9 /* BloodCenter.m in Sources */,
 				4223D4671BE18649001408C6 /* DBCameraFiltersView.m in Sources */,
 				42F1252E1BEA7752007D9984 /* DetailViewController.m in Sources */,
 				4223D4631BE18649001408C6 /* DBCollectionViewFlowLayout.m in Sources */,
 				4223D4551BE18649001408C6 /* DBCameraViewController.m in Sources */,
-				42F5AA321BE05CF600F007DC /* Person+CoreDataProperties.m in Sources */,
 				42B421021BDF0A0900453D31 /* MoreInfoViewController.m in Sources */,
 				42B420F81BDEF9F100453D31 /* PerfilViewController.m in Sources */,
 				425AE3691BA888C40059F945 /* LoginViewController.m in Sources */,
@@ -1097,13 +1081,13 @@
 				4223D4611BE18649001408C6 /* DBCameraFilterCell.m in Sources */,
 				42B4497A1BDE95AC005FA81D /* MapViewController.m in Sources */,
 				425AE33A1BA886560059F945 /* AppDelegate.m in Sources */,
-				425969F81BEAAF6D0062E2A9 /* BloodCenter+CoreDataProperties.m in Sources */,
 				425AE3371BA886560059F945 /* main.m in Sources */,
+				42A45ED71BFE19BB00527AEE /* VOBloodCenter.m in Sources */,
 				4223D4681BE18649001408C6 /* DBCameraGridView.m in Sources */,
 				42F543EE1BDB05E900121B77 /* CuriosidadesCell.m in Sources */,
 				428BCCC51BD9591A007DBD77 /* Helper.m in Sources */,
 				4223D4581BE18649001408C6 /* GrayscaleContrastFilter.m in Sources */,
-				42F5AA331BE05CF600F007DC /* Person.m in Sources */,
+				42A45ED41BFE16A600527AEE /* VOUser.m in Sources */,
 				425AE36E1BA8944E0059F945 /* FadeInAnimator.m in Sources */,
 				4223D4511BE18649001408C6 /* DBCameraCollectionViewController.m in Sources */,
 				4223D44C1BE18649001408C6 /* UIImage+Asset.m in Sources */,
@@ -1346,19 +1330,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		42B420EC1BDEF0BC00453D31 /* SangueBomModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				42B420ED1BDEF0BC00453D31 /* SangueBomModel.xcdatamodel */,
-			);
-			currentVersion = 42B420ED1BDEF0BC00453D31 /* SangueBomModel.xcdatamodel */;
-			path = SangueBomModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 425AE3291BA886560059F945 /* Project object */;
 }

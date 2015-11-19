@@ -8,7 +8,7 @@
 
 #import "PerfilViewController.h"
 #import "AppDelegate.h"
-#import "Person.h"
+#import "VOUser.h"
 #import "Helper.h"
 #import "Constants.h"
 #import "UIViewController+BaseViewController.h"
@@ -45,27 +45,27 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    Person *person = [Helper loadUser];
-    self.nameLabel.text = [NSString stringWithFormat:@"%@ %@", person.name, person.surname];
-    self.emailLabel.text = person.email;
-    self.birthdayLabel.text = [Helper formatDate:person.birthday];
-    self.bloodTypeLabel.text = person.bloodType;
+    VOUser *user = [Helper loadUser];
+    self.nameLabel.text = [NSString stringWithFormat:@"%@", user.name];
+    self.emailLabel.text = user.email;
+    self.birthdayLabel.text = user.birthday;
+    self.bloodTypeLabel.text = user.bloodType;
     
     [Helper avatarFromName:self.nameLabel.text font:[UIFont customUltraLightFontWithSize:38.0] diameter:120.0 callback:^(UIImage *image) {
-        if (person.thumbnail) {
-            NSURL *url;
-            if ([person.thumbnail hasPrefix:@"http"]) {
-                url = [NSURL URLWithString:person.thumbnail];
-            }
-            else {
-                url = [NSURL fileURLWithPath:[person.thumbnail stringByExpandingTildeInPath]];
-            }
-            
-            [self.profileImageView setImageWithURL:url placeholderImage:image];
-        }
-        else {
+//        if (user.thumbnail) {
+//            NSURL *url;
+//            if ([person.thumbnail hasPrefix:@"http"]) {
+//                url = [NSURL URLWithString:person.thumbnail];
+//            }
+//            else {
+//                url = [NSURL fileURLWithPath:[person.thumbnail stringByExpandingTildeInPath]];
+//            }
+//            
+//            [self.profileImageView setImageWithURL:url placeholderImage:image];
+//        }
+//        else {
             self.profileImageView.image = image;
-        }
+//        }
     }];
 }
 
@@ -125,9 +125,9 @@
 #pragma mark - DBCameraViewControllerDelegate
 - (void)camera:(id)cameraViewController didFinishWithImage:(UIImage *)image withMetadata:(NSDictionary *)metadata {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [[APIService sharedInstance] saveThumbnail:image fromPerson:[Helper loadUser] block:^(NSError *error) {
-            self.profileImageView.image = image;
-        }];
+//        [[APIService sharedInstance] saveThumbnail:image fromPerson:[Helper loadUser] block:^(NSError *error) {
+//            self.profileImageView.image = image;
+//        }];
     });
     
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];

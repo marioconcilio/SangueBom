@@ -7,10 +7,8 @@
 //
 
 #import "SignupViewController.h"
-#import "Person.h"
 #import "MoreInfoViewController.h"
 #import <AFViewShaker/AFViewShaker.h>
-#import <KVNProgress/KVNProgress.h>
 
 #define kNameTag    89
 #define kSurnameTag 90

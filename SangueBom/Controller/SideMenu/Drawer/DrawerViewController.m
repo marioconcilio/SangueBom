@@ -11,7 +11,7 @@
 #import "UIFont+CustomFont.h"
 #import "DrawerViewController.h"
 #import "Helper.h"
-#import "Person.h"
+#import "VOUser.h"
 #import "Constants.h"
 #import <SWRevealViewController.h>
 #import <AFNetworking/UIImageView+AFNetworking.h>
@@ -47,25 +47,26 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    Person *person = [Helper loadUser];
-    self.nameLabel.text = [NSString stringWithFormat:@"%@ %@", person.name, person.surname];
+//    Person *person = [Helper loadUser];
+    VOUser *user = [Helper loadUser];
+    self.nameLabel.text = [NSString stringWithFormat:@"%@", user.name];
     
     [Helper avatarFromName:self.nameLabel.text font:[UIFont customUltraLightFontWithSize:30.0] diameter:100.0 callback:^(UIImage *image) {
         
-        if (person.thumbnail) {
-            NSURL *url;
-            if ([person.thumbnail hasPrefix:@"http"]) {
-                url = [NSURL URLWithString:person.thumbnail];
-            }
-            else {
-                url = [NSURL fileURLWithPath:[person.thumbnail stringByExpandingTildeInPath]];
-            }
-            
-            [self.profileImageView setImageWithURL:url placeholderImage:image];
-        }
-        else {
+//        if (person.thumbnail) {
+//            NSURL *url;
+//            if ([person.thumbnail hasPrefix:@"http"]) {
+//                url = [NSURL URLWithString:person.thumbnail];
+//            }
+//            else {
+//                url = [NSURL fileURLWithPath:[person.thumbnail stringByExpandingTildeInPath]];
+//            }
+//            
+//            [self.profileImageView setImageWithURL:url placeholderImage:image];
+//        }
+//        else {
             self.profileImageView.image = image;
-        }
+//        }
     }];
 }
 

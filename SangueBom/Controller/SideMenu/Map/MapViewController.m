@@ -12,7 +12,7 @@
 #import "APIService.h"
 #import "UIViewController+BaseViewController.h"
 #import "CustomPin.h"
-#import "BloodCenter+CoreDataProperties.h"
+#import "VOBloodCenter.h"
 #import <MapKit/MapKit.h>
 
 #define kButtonSize         50
@@ -25,7 +25,7 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (assign, nonatomic, getter=isTrackingUser) BOOL trackingUser;
-@property (assign) BOOL canRequestEvents;
+//@property (assign) BOOL canRequestEvents;
 
 @end
 
@@ -45,6 +45,18 @@ static NSString *const kDetailSegue = @"detailSegue";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    [[APIService sharedInstance] listAllBloodCenters:^(NSArray *centers, NSError *error) {
+        for (VOBloodCenter *center in centers) {
+//            if ([self checkIfPinExists:CLLocationCoordinate2DMake(center.latitude, center.longitude)])
+//                continue;
+            
+            CustomPin *pin = [[CustomPin alloc] initWithBloodCenter:center];
+            [self.mapView addAnnotation:pin];
+        }
+        
+//        _canRequestEvents = YES;
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -174,6 +186,7 @@ static NSString *const kDetailSegue = @"detailSegue";
 }
 
 #pragma mark - MKMapViewDelegate
+/*
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
     if (_canRequestEvents) {
         _canRequestEvents = NO;
@@ -187,6 +200,7 @@ static NSString *const kDetailSegue = @"detailSegue";
         _canRequestEvents = fullyRendered;
     }
 }
+ */
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
     static NSString *AnnotationIdentifier = kCustomPinID;
@@ -207,11 +221,11 @@ static NSString *const kDetailSegue = @"detailSegue";
     [self performSegueWithIdentifier:kDetailSegue sender:view];
 }
 
+/*
 #pragma mark - Download Pins
 - (void)downloadPins:(CLLocationCoordinate2D)coordinate {
-    [[APIService sharedInstance] bloodCenters:^(NSArray *centers) {
-        
-        for (BloodCenter *center in centers) {
+    [[APIService sharedInstance] listAllBloodCenters:^(NSArray *centers, NSError *error) {
+        for (VOBloodCenter *center in centers) {
             if ([self checkIfPinExists:CLLocationCoordinate2DMake(center.latitude, center.longitude)])
                 continue;
             
@@ -235,5 +249,6 @@ static NSString *const kDetailSegue = @"detailSegue";
     
     return NO;
 }
+ */
 
 @end

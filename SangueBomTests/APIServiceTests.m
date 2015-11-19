@@ -8,6 +8,7 @@
 
 #import "APIService.h"
 #import "Helper.h"
+#import "VOBloodCenter.h"
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
@@ -36,33 +37,14 @@
     }];
 }
 
+
 #pragma mark - Test Methods
-- (void)testSingletonSharedInstance {
-    XCTAssertNotNil([APIService sharedInstance], @"returning nil from shared instance");
-}
+- (void)testListAllBloodCenters {
+    XCTestExpectation *expectation = [self expectationWithDescription:@"listAllBloodCenters"];
 
-- (void)testUniqueInstance {
-    XCTAssertNotNil([[APIService alloc] init], @"returning nil from unique instance");
-}
-
-- (void)testSingletonReturnsSameSharedInstance {
-    APIService *s1 = [APIService sharedInstance];
-    APIService *s2 = [APIService sharedInstance];
-    
-    XCTAssertEqual(s1, s2, @"singleton is not the same shared instance");
-}
-
-- (void)testSingletonDifferentFromUniqueInstance {
-    APIService *singleton = [APIService sharedInstance];
-    APIService *unique = [[APIService alloc] init];
-    
-    XCTAssertNotEqual(singleton, unique, @"singleton and unique instance should not be equal");
-}
-
-- (void)testTruncateAllBloodCenters {
-    XCTestExpectation *expectation = [self expectationWithDescription:@"truncate"];
-    
-    [[APIService sharedInstance] truncateAllBloodCenters:^(NSError *error) {
+    [[APIService sharedInstance] listAllBloodCenters:^(NSArray<VOBloodCenter *> *centers, NSError *error) {
+        XCTAssertNotNil(centers);
+        XCTAssertGreaterThan(centers.count, 0);
         XCTAssertNil(error);
         [expectation fulfill];
     }];
@@ -70,37 +52,15 @@
     [self waitForExpectations];
 }
 
-- (void)testPopulateBloodCenters {
-    XCTestExpectation *expectation = [self expectationWithDescription:@"populate"];
-    
-    [[APIService sharedInstance] populateBloodCenters:^(NSError *error) {
-        XCTAssertNil(error);
-        [expectation fulfill];
-    }];
-    
-    [self waitForExpectations];
-}
-
-- (void)testTruncateAllPersons {
-    XCTestExpectation *expectation = [self expectationWithDescription:@"truncate"];
-
-    [[APIService sharedInstance] truncateAllPersons:^(NSError *error) {
-        XCTAssertNil(error);
-        [expectation fulfill];
-    }];
-    
-    [self waitForExpectations];
-}
-
-- (void)testRegisterUser {
+- (void)testSignup {
     XCTestExpectation *expectation = [self expectationWithDescription:@"signup"];
+    u_int32_t randomInt = arc4random() % 1000;
 
-    [[APIService sharedInstance] registerUser:@"Mario"
-                                      surname:@"Concilio"
-                                        email:@"marioconcilio@test.com"
-                                     password:@"mario12345"
-                                     birthday:[Helper parseDateFromString:@"09/01/1989"]
+    [[APIService sharedInstance] registerUser:[NSString stringWithFormat:@"Test User%03d", randomInt]
+                                        email:[NSString stringWithFormat:@"testuser%03d@test.com", randomInt]
+                                     password:@"123456"
                                     bloodType:@"A+"
+                                     birthday:@"11-11-2015"
                                         block:^(NSError *error) {
                                             XCTAssertNil(error);
                                             [expectation fulfill];
@@ -111,13 +71,27 @@
 
 - (void)testLogin {
     XCTestExpectation *expectation = [self expectationWithDescription:@"login"];
-    
-    [[APIService sharedInstance] login:@"marioconcilio@test.com"
-                              password:@"mario12345"
+
+    [[APIService sharedInstance] login:@"caio_uechi@hotmail.com"
+                              password:@"123456"
                                  block:^(NSError *error) {
                                      XCTAssertNil(error);
                                      [expectation fulfill];
                                  }];
+    
+    [self waitForExpectations];
+}
+
+- (void)testUpdateUser {
+    XCTestExpectation *expectation = [self expectationWithDescription:@"update"];
+    
+    [[APIService sharedInstance] updateUserBloodType:@"O+"
+                                               email:@"caio_uechi@hotmail.com"
+                                            password:@"123456"
+                                               block:^(NSError *error) {
+                                                   XCTAssertNil(error);
+                                                   [expectation fulfill];
+                                               }];
     
     [self waitForExpectations];
 }

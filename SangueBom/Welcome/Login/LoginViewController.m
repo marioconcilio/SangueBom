@@ -54,15 +54,14 @@
         return;
     }
     
-//    [KVNProgress show];
+    [KVNProgress show];
     
     [[APIService sharedInstance] login:self.emailTextField.text
                               password:self.passwordTextField.text
                                  block:^(NSError *error) {
-//                                     [KVNProgress dismiss];
+                                     [KVNProgress dismiss];
                                      
                                      if (error) {
-                                         NSLog(@"code: %ld, %@", error.code, error.userInfo[NSLocalizedDescriptionKey]);
                                          [self showError];
                                      }
                                      else {

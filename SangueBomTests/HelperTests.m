@@ -51,7 +51,7 @@
 }
 
 - (void)testDateFormatting {
-    NSString *string = @"09/01/1989";
+    NSString *string = @"09-01-1989";
     NSDate *date = [Helper parseDateFromString:string];
     XCTAssertNotNil(date, @"failed to parse date from string");
     

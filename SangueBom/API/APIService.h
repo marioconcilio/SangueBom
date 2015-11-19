@@ -10,25 +10,29 @@
 
 typedef void (^APIDefaultBlock)(NSError *error);
 
-@class Person, UIImage;
+@class UIImage;
 @interface APIService : NSObject
 
 + (instancetype)sharedInstance;
 
-#pragma mark - Login & Signup Flow
 - (void)registerUser:(NSString *)name
-             surname:(NSString *)surname
                email:(NSString *)email
             password:(NSString *)password
-            birthday:(NSDate *)birthday
            bloodType:(NSString *)bloodType
+            birthday:(NSString *)birthday
                block:(APIDefaultBlock)block;
 
 - (void)login:(NSString *)email
      password:(NSString *)password
         block:(APIDefaultBlock)block;
 
+- (void)updateUserBloodType:(NSString *)bloodType
+                      email:(NSString *)email
+                   password:(NSString *)password
+                      block:(APIDefaultBlock)block;
+
 - (void)loginWithFacebook:(NSString *)email
+                 password:(NSString *)password
                     block:(void (^)(NSError *error))block;
 
 - (void)saveFacebookUser:(NSString *)name
@@ -39,16 +43,10 @@ typedef void (^APIDefaultBlock)(NSError *error);
                thumbnail:(NSString *)thumbnail
                    block:(APIDefaultBlock)block;
 
-- (void)saveThumbnail:(UIImage *)image
-           fromPerson:(Person *)person
-                block:(APIDefaultBlock)block;
+- (void)listAllBloodCenters:(void (^)(NSArray *centers, NSError *error))block;
 
-- (void)truncateAllPersons:(APIDefaultBlock)block;
-
-- (void)truncateAllBloodCenters:(APIDefaultBlock)block;
-
-- (void)bloodCenters:(void (^)(NSArray *centers))block;
-
-- (void)populateBloodCenters:(APIDefaultBlock)block;
+//- (void)saveThumbnail:(UIImage *)image
+//           fromPerson:(Person *)person
+//                block:(APIDefaultBlock)block;
 
 @end

@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@class BloodCenter;
+@class VOBloodCenter;
 @interface DetailViewController : UITableViewController
 
-@property (nonnull, nonatomic, strong) BloodCenter *bloodCenter;
+@property (nonnull, nonatomic, strong) VOBloodCenter *bloodCenter;
 
 @end

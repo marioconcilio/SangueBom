@@ -78,7 +78,8 @@ static NSString *const kMoreInfoSegue = @"moreInfoSegue";
              completionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
                  NSDictionary *responseObject = (NSDictionary *)result;
                  
-                 [[APIService sharedInstance] loginWithFacebook:responseObject[@"email"] block:^(NSError *error) {
+                 NSString *email = [responseObject[@"email"] stringByAppendingString:@".facebook"];
+                 [[APIService sharedInstance] loginWithFacebook:email password:responseObject[@"id"] block:^(NSError *error) {
                      if (error) {
                          [self performSegueWithIdentifier:kMoreInfoSegue sender:result];
                      }

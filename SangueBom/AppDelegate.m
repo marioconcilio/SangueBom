@@ -15,7 +15,6 @@
 #import <TestFairy.h>
 #import <KVNProgress/KVNProgress.h>
 #import <KVNProgress/KVNProgressConfiguration.h>
-#import <MagicalRecord/MagicalRecord.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface AppDelegate ()
@@ -25,7 +24,6 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
     [TestFairy begin:@"939e8063f824164d535ee589a9000b7765bd5ed2"];
     
 //    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
@@ -45,7 +43,6 @@
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
     
-    [MagicalRecord setupCoreDataStack];
     [self defineRootViewControllerAnimated:YES];
     
     return YES;

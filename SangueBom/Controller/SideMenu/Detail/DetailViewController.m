@@ -7,7 +7,7 @@
 //
 
 #import "Macros.h"
-#import "BloodCenter+CoreDataProperties.h"
+#import "VOBloodCenter.h"
 #import "DetailViewController.h"
 #import "DetailCell.h"
 #import "ParallaxHeaderView.h"
@@ -32,7 +32,9 @@ static NSString *const CellID = @"Cell";
     self.tableView.estimatedRowHeight = 38.0;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
 
-    ParallaxHeaderView *headerView = [ParallaxHeaderView parallaxHeaderViewWithImage:[UIImage imageNamed:self.bloodCenter.image]
+    u_int32_t random = arc4random() % 3;
+    NSString *imageName = [NSString stringWithFormat:@"%d.jpg", random+1];
+    ParallaxHeaderView *headerView = [ParallaxHeaderView parallaxHeaderViewWithImage:[UIImage imageNamed:imageName]
                                                                              forSize:CGSizeMake(UIKeyWindowWidth, 200)];
     self.tableView.tableHeaderView = headerView;
     self.tableView.tableFooterView = [[UIView alloc] init];

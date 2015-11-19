@@ -7,17 +7,19 @@
 //
 
 #import "APIService.h"
-#import "Person.h"
-#import "BloodCenter.h"
 #import "Macros.h"
 #import "Helper.h"
 #import "Constants.h"
+#import "VOUser.h"
+#import "VOBloodCenter.h"
 #import <UIKit/UIKit.h>
 #import <MagicalRecord/MagicalRecord.h>
+#import <AFNetworking/AFNetworking.h>
 
 @implementation APIService
 
 static NSString *const kDomain = @"com.marioconcilio.SangueBom";
+static NSString *const kBaseURL = @"http://treinamentomobiledev.tfo.com.br/integracao";
 
 #pragma mark - Shared Instance
 + (instancetype)sharedInstance {
@@ -32,71 +34,138 @@ static NSString *const kDomain = @"com.marioconcilio.SangueBom";
 }
 
 #pragma mark - Private Methods
-- (void)saveUserInfo:(NSString *)email {
-//    [Helper saveCustomObject:person forKey:kProfileInfo];
-    [NSUserDefaults setObject:email forKey:kUserToken];
+- (AFHTTPSessionManager *)managerWithAuth:(BOOL)auth {
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+//    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+//    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+//    [manager.requestSerializer setValue:@"text/html" forHTTPHeaderField:@"Content-Type"];
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    if (auth) {
+        [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:@"x"
+                                                                  password:[NSUserDefaults objectForKey:kUserToken]];
+    }
+    
+    return manager;
+}
+
+- (void)saveUserInfo:(NSDictionary *)dictionary {
+    VOUser *user = [[VOUser alloc] initWithDictionary:dictionary];
+    [Helper saveCustomObject:user forKey:kProfileInfo];
+    [NSUserDefaults setObject:user.email forKey:kUserToken];
     [NSUserDefaults synchronize];
 }
 
 #pragma mark - Login & Register User Flow
-- (void)registerUser:(NSString *)name
-             surname:(NSString *)surname
-               email:(NSString *)email
-            password:(NSString *)password
-            birthday:(NSDate *)birthday
-           bloodType:(NSString *)bloodType
-               block:(APIDefaultBlock)block {
-    __block Person *person = [Person MR_findFirstByAttribute:@"email" withValue:email];
-    if (person) {
-        block([NSError errorWithDomain:kDomain code:400 userInfo:@{NSLocalizedDescriptionKey: @"email already exists"}]);
-        return;
-    }
+- (void)registerUser:(NSString *)name email:(NSString *)email password:(NSString *)password bloodType:(NSString *)bloodType birthday:(NSString *)birthday block:(APIDefaultBlock)block {
+    NSDictionary *parameters = @{@"nome": name,
+                                 @"email": email,
+                                 @"senha": password,
+                                 @"tiposanguineo": bloodType,
+                                 @"dtNascimento": birthday};
     
-    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
-        person = [Person MR_createEntityInContext:localContext];
-        person.name = name;
-        person.surname = surname;
-        person.email = email;
-        person.password = password;
-        person.birthday = birthday;
-        person.bloodType = bloodType;
-    } completion:^(BOOL contextDidSave, NSError *error) {
-        if (contextDidSave) {
-            [self saveUserInfo:email];
-            block(nil);
-        }
-        else {
-            block(error);
-        }
-    }];
+    NSString *url = [kBaseURL stringByAppendingString:@"/WsSBCriacaoUsuario"];
+    AFHTTPSessionManager *manager = [self managerWithAuth:NO];
+    
+    [manager POST:url
+       parameters:parameters
+          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+              NSString *code = responseObject;
+              if ([code isEqualToString:@"200"]) {
+                  NSDictionary *dict = @{@"ID": @"666",
+                                         @"Nome": name,
+                                         @"Email": email,
+                                         @"TipoSanguineo": bloodType,
+                                         @"dtNascimentoFormatada": birthday};
+                  [self saveUserInfo:dict];
+                  block(nil);
+              }
+              else {
+                  block([NSError errorWithDomain:kDomain code:404 userInfo:nil]);
+              }
+          }
+          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+              block(error);
+              NSLog(@"%@", error);
+          }];
 }
 
 - (void)login:(NSString *)email password:(NSString *)password block:(APIDefaultBlock)block {
-    Person *person = [Person MR_findFirstByAttribute:@"email" withValue:email];
-    if (person) {
-        if ([password isEqualToString:person.password]) {
-            [self saveUserInfo:email];
-            block(nil);
-        }
-        else {
-            block([NSError errorWithDomain:kDomain code:400 userInfo:@{NSLocalizedDescriptionKey: @"wrong password"}]);
-        }
-    }
-    else {
-        block([NSError errorWithDomain:kDomain code:400 userInfo:@{NSLocalizedDescriptionKey: @"wrong email"}]);
-    }
-
+    NSDictionary *parameters = @{@"email": email,
+                                 @"senha": password};
+    
+    NSString *url = [kBaseURL stringByAppendingString:@"/WsSBLoginUsuario"];
+    AFHTTPSessionManager *manager = [self managerWithAuth:NO];
+    
+    [manager POST:url
+       parameters:parameters
+          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+              if ([responseObject isKindOfClass:[NSDictionary class]]) {
+                  NSDictionary *dict = responseObject;
+                  [self saveUserInfo:dict];
+                  block(nil);
+              }
+              else {
+                  block([NSError errorWithDomain:kDomain code:404 userInfo:nil]);
+              }
+          }
+          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+              block(error);
+              NSLog(@"%@", error);
+          }];
 }
 
-- (void)loginWithFacebook:(NSString *)email block:(APIDefaultBlock)block {
-    Person *person = [Person MR_findFirstByAttribute:@"email" withValue:email];
-    if (person) {
-        [self saveUserInfo:email];
-        block(nil);
-    }
-    else {
-        block([NSError errorWithDomain:kDomain code:400 userInfo:@{NSLocalizedDescriptionKey: @"wrong email"}]);
-    }
+- (void)updateUserBloodType:(NSString *)bloodType email:(NSString *)email password:(NSString *)password block:(APIDefaultBlock)block {
+    VOUser *user = [Helper loadUser];
+    NSDictionary *parameters = @{@"nome": user.name,
+                                 @"email": email,
+                                 @"senha": password,
+                                 @"tiposanguineo": bloodType,
+                                 @"dtNascimento": user.birthday};
+    
+    NSString *url = [kBaseURL stringByAppendingString:@"/WsSBAtualizacaoUsuario"];
+    AFHTTPSessionManager *manager = [self managerWithAuth:NO];
+    
+    [manager POST:url
+       parameters:parameters
+          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+              if ([responseObject isEqualToString:@"200"]) {
+                  NSDictionary *dict = @{@"ID": @"666",
+                                         @"Nome": user.name,
+                                         @"Email": email,
+                                         @"TipoSanguineo": bloodType,
+                                         @"dtNascimentoFormatada": user.birthday};
+                  [self saveUserInfo:dict];
+                  block(nil);
+              }
+              else {
+                  block([NSError errorWithDomain:kDomain code:404 userInfo:nil]);
+              }
+          }
+          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+              block(error);
+              NSLog(@"%@", error);
+          }];
+}
+
+- (void)loginWithFacebook:(NSString *)email password:(NSString *)password block:(APIDefaultBlock)block {
+    [self login:email password:password block:^(NSError *error) {
+        
+    }];
+    
+//    Person *person = [Person MR_findFirstByAttribute:@"email" withValue:email];
+//    if (person) {
+//        [self saveUserInfo:email];
+//        block(nil);
+//    }
+//    else {
+//        block([NSError errorWithDomain:kDomain code:400 userInfo:@{NSLocalizedDescriptionKey: @"wrong email"}]);
+//    }
 }
 
 - (void)saveFacebookUser:(NSString *)name
@@ -107,113 +176,77 @@ static NSString *const kDomain = @"com.marioconcilio.SangueBom";
                thumbnail:(NSString *)thumbnail
                    block:(APIDefaultBlock)block {
     
-    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
-        Person *newPerson = [Person MR_createEntityInContext:localContext];
-        
-        newPerson.name = name;
-        newPerson.surname = surname;
-        newPerson.email = email;
-        newPerson.birthday = birthday;
-        newPerson.bloodType = bloodType;
-        newPerson.thumbnail = thumbnail;
-    } completion:^(BOOL contextDidSave, NSError *error) {
-        if (contextDidSave) {
-            [self saveUserInfo:email];
-            block(nil);
-        }
-        else {
-            block(error);
-        }
-    }];
+//    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+//        Person *newPerson = [Person MR_createEntityInContext:localContext];
+//        
+//        newPerson.name = name;
+//        newPerson.surname = surname;
+//        newPerson.email = email;
+//        newPerson.birthday = birthday;
+//        newPerson.bloodType = bloodType;
+//        newPerson.thumbnail = thumbnail;
+//    } completion:^(BOOL contextDidSave, NSError *error) {
+//        if (contextDidSave) {
+//            [self saveUserInfo:email];
+//            block(nil);
+//        }
+//        else {
+//            block(error);
+//        }
+//    }];
     
 }
 
-- (void)truncateAllPersons:(APIDefaultBlock)block {
-    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
-        [Person MR_truncateAllInContext:localContext];
-    } completion:^(BOOL contextDidSave, NSError *error) {
-        if (contextDidSave) {
-            [NSUserDefaults setObject:nil forKey:kUserToken];
-        }
-        else {
-            block(error);
-        }
-    }];
-}
-
-- (void)truncateAllBloodCenters:(APIDefaultBlock)block {
-    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
-        [BloodCenter MR_truncateAllInContext:localContext];
-    } completion:^(BOOL contextDidSave, NSError *error) {
-        block(error);
-    }];
-}
-
-- (void)saveThumbnail:(UIImage *)image fromPerson:(Person *)person block:(APIDefaultBlock)block {
-    NSData *imageData = UIImagePNGRepresentation(image);
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = paths[0];
-    NSString *fullPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", person.email]];
-    [fileManager createFileAtPath:fullPath contents:imageData attributes:nil];
-    
-    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
-        Person *newPerson = [person MR_inContext:localContext];
-        newPerson.thumbnail = fullPath;
-    } completion:^(BOOL contextDidSave, NSError *error) {
-        if (contextDidSave) {
-            block(nil);
-        }
-        else {
-            block(error);
-        }
-    }];
-}
+//- (void)saveThumbnail:(UIImage *)image fromPerson:(Person *)person block:(APIDefaultBlock)block {
+//    NSData *imageData = UIImagePNGRepresentation(image);
+//    NSFileManager *fileManager = [NSFileManager defaultManager];
+//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *documentsDirectory = paths[0];
+//    NSString *fullPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", person.email]];
+//    [fileManager createFileAtPath:fullPath contents:imageData attributes:nil];
+//    
+//    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+//        Person *newPerson = [person MR_inContext:localContext];
+//        newPerson.thumbnail = fullPath;
+//    } completion:^(BOOL contextDidSave, NSError *error) {
+//        if (contextDidSave) {
+//            block(nil);
+//        }
+//        else {
+//            block(error);
+//            NSLog(@"%@", error);
+//        }
+//    }];
+//}
 
 #pragma mark - List Blood Centers
-- (void)bloodCenters:(void (^)(NSArray *centers))block {
-    NSArray *centers = [BloodCenter MR_findAll];
-    block(centers);
-}
-
-#pragma mark - Populate Blood Centers
-- (void)populateBloodCenters:(APIDefaultBlock)block {
-    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
-        BloodCenter *b1 = [BloodCenter MR_createEntityInContext:localContext];
-        b1.name = @"Fundação Pró-Sangue Hemocentro de São Paulo - Posto Barueri";
-        b1.address = @"R. Angela Mirella, 354 Térreo - Jardim Barueri - Barueri";
-        b1.phone = @"0800-55-0300";
-        b1.latitude = -23.496635;
-        b1.longitude = -46.872825;
-        b1.image = @"barueri.jpg";
-        
-        BloodCenter *b2 = [BloodCenter MR_createEntityInContext:localContext];
-        b2.name = @"Fundação Pró-Sangue Hemocentro de São Paulo - Posto Clínicas";
-        b2.address = @"Av. Enéas Carvalho Aguiar, 155 1º andar - Cerqueira César - São Paulo";
-        b2.phone = @"0800-55-0300";
-        b2.latitude = -23.557110;
-        b2.longitude = -46.668857;
-        b2.image = @"clinicas.jpg";
-        
-        BloodCenter *b3 = [BloodCenter MR_createEntityInContext:localContext];
-        b3.name = @"Fundação Pró-Sangue Hemocentro de São Paulo - Posto Dante Pazzanese";
-        b3.address = @"Av. Doutor Dante Pazzanese, 500 - Ibirapuera - São Paulo";
-        b3.phone = @"0800-55-0300";
-        b3.latitude = -23.585106;
-        b3.longitude = -46.652241;
-        b3.image = @"dante.jpg";
-        
-        BloodCenter *b4 = [BloodCenter MR_createEntityInContext:localContext];
-        b4.name = @"Fundação Pró-Sangue Hemocentro de São Paulo - Posto Mandaqui";
-        b4.address = @"R. Voluntários da Pátria, 4227 - Mandaqui - São Paulo";
-        b4.phone = @"0800-55-0300";
-        b4.latitude = -23.484512;
-        b4.longitude = -46.630251;
-        b4.image = @"mandaqui.jpg";
-        
-    } completion:^(BOOL contextDidSave, NSError *error) {
-        block(error);
-    }];;
+- (void)listAllBloodCenters:(void (^)(NSArray *, NSError *))block {
+    NSString *url = [NSString stringWithFormat:@"%@/WsSBListaHemocentro", kBaseURL];
+    AFHTTPSessionManager *manager = [self managerWithAuth:NO];
+    
+    [manager GET:url
+      parameters:nil
+         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+             if ([responseObject isKindOfClass:[NSArray class]]) {
+                 NSArray *resp = responseObject;
+                 NSMutableArray *centers = [NSMutableArray arrayWithCapacity:resp.count];
+                 @autoreleasepool {
+                     for (NSDictionary *dict in resp) {
+                         VOBloodCenter *center = [[VOBloodCenter alloc] initWithDictionary:dict];
+                         [centers addObject:center];
+                     }
+                 }
+                 
+                 block(centers, nil);
+             }
+             else {
+                 block(nil, [NSError errorWithDomain:kDomain code:404 userInfo:nil]);
+             }
+         }
+         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+             block(nil, error);
+             NSLog(@"%@", error);
+         }];
 }
 
 @end

@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@class Person;
+@class VOUser;
 @interface Helper : NSObject
 
-+ (Person *)loadUser;
++ (VOUser *)loadUser;
 
 + (void)saveCustomObject:(id)obj forKey:(NSString *)key;
 

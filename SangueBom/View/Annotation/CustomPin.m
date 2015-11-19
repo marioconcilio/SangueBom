@@ -7,8 +7,7 @@
 //
 
 #import "CustomPin.h"
-#import "BloodCenter.h"
-#import "BloodCenter+CoreDataProperties.h"
+#import "VOBloodCenter.h"
 
 #define kPinHeight  60.0
 #define kPinWidth   60.0
@@ -17,14 +16,14 @@
 @private
     NSString *_title;
     NSString *_subtitle;
-    BloodCenter *_bloodCenter;
+    VOBloodCenter *_bloodCenter;
 }
 
 @end
 
 @implementation CustomPin
 
-- (instancetype)initWithBloodCenter:(BloodCenter *)center {
+- (instancetype)initWithBloodCenter:(VOBloodCenter *)center {
     if (self == [super init]) {
         _center = center;
         _coordinate = CLLocationCoordinate2DMake(center.latitude, center.longitude);
